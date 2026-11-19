@@ -6,11 +6,10 @@
 
 <div align="center">
 
-**把故事做成可以走进去的世界。**
+**AI 游戏创作平台 · 2D 像素剧情游戏**
 
-Create World 是一个 AI 游戏创作平台。
-给它一句话、一段小说或一集剧本，它会做成一款能玩的 **2D 像素剧情游戏**。
-场景、角色、对白、选择与结局都在里面；做完还能改，改完可以发布。
+Create World 将一句话、一段小说或一集剧本，制作为可运行的 2D 像素剧情游戏。
+场景、角色、对白、选择与结局均在游戏中；完成后可以继续修改，也可以发布。
 
 <sub>AI game creation · 2D pixel narrative · plugin ecosystem · world co-creation</sub>
 
@@ -19,12 +18,12 @@ Create World 是一个 AI 游戏创作平台。
 [![官网](https://img.shields.io/badge/ONLINE-createworld.games-D8B878?style=flat-square&labelColor=0A1622)](https://createworld.games)
 [![产品介绍](https://img.shields.io/badge/DOCS-PRODUCT-D8B878?style=flat-square&labelColor=0A1622)](PRODUCT.md)
 [![版本](https://img.shields.io/badge/VERSION-0.2.0-9FB0BF?style=flat-square&labelColor=0A1622)](create-world-workbench/package.json)
-[![技术栈](https://img.shields.io/badge/STACK-React_19_·_Node_24_·_TypeScript-9FB0BF?style=flat-square&labelColor=0A1622)](#六它怎么做到的)
+[![技术栈](https://img.shields.io/badge/STACK-React_19_·_Node_24_·_TypeScript-9FB0BF?style=flat-square&labelColor=0A1622)](#architecture)
 [![许可](https://img.shields.io/badge/LICENSE-PROPRIETARY-9FB0BF?style=flat-square&labelColor=0A1622)](LICENSE)
 
 <br/>
 
-[**在线体验**](https://createworld.games) &nbsp;·&nbsp; [**产品介绍**](PRODUCT.md) &nbsp;·&nbsp; [**产品短片**](#先看片) &nbsp;·&nbsp; [**本地运行**](#七把它跑起来) &nbsp;·&nbsp; [**English**](README.en.md)
+[**在线体验**](https://createworld.games) &nbsp;·&nbsp; [**产品介绍**](PRODUCT.md) &nbsp;·&nbsp; [**产品短片**](#film) &nbsp;·&nbsp; [**快速开始**](#quick-start) &nbsp;·&nbsp; [**English**](README.en.md)
 
 </div>
 
@@ -32,44 +31,42 @@ Create World 是一个 AI 游戏创作平台。
 
 ---
 
-## 先看片
+## FILM
 
-> 2 分 30 秒。前半段是游戏，后半段是它怎么做出来的。带字幕。
+2 分 30 秒产品短片，含中文字幕。
 
-https://github.com/user-attachments/assets/3c77994a-eac7-449b-a0c1-e046e7b2382d
+https://github.com/user-attachments/assets/04df0dd9-7341-461d-b7ec-2a46d0729d8b
 
-<sub>视频托管在 GitHub，点开即播。</sub>
+<sub>视频由 GitHub 托管，可直接播放。</sub>
 
 ---
 
-## 一、这是什么
+## OVERVIEW
 
-做游戏难，通常不是难在写代码。
+游戏制作的难点通常在流程。从故事到可玩，需要改编、分镜、美术、对白、交互、构建、测试与修复。
 
-难在故事和可玩之间那条生产线：改编、分镜、美术、对白、交互、构建、测试、修 bug。每一步都要人，每一步都可能卡住。
-
-Create World 把这条线交给一个会自己安排工作的 AI 团队。你描述想做的世界，它把故事拆成场景，把场景画成像素，把像素接上交互，再在真实浏览器里跑一遍。最后给你一个能打开就玩的游戏，和一条可以继续改的路。
+Create World 将这条流程交由一个能自主安排工作的 AI 团队执行：拆分场景、生成像素素材、接入交互，并在真实浏览器中完成验收。交付物是可直接运行的游戏，以及可继续修改的内容档案。
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-**适合**
+**适用场景**
 
-- 有一个很喜欢的故事，想亲自走进去
-- 想给某个角色写一个「如果」
-- 手上有 IP 或品牌，想把内容做成可互动的东西
-- 是开发者，想把做游戏的经验做成插件
+- 将喜欢的故事制作为可玩作品
+- 为已有角色创作支线或番外
+- 将 IP 或品牌内容转化为互动体验
+- 将游戏制作经验封装为可复用插件
 
 </td>
 <td width="50%" valign="top">
 
-**边界**
+**当前边界**
 
-- 不做「一键生成 3A 大作」的按钮
-- 不做开放世界沙盒，只做 2D 像素剧情
-- 不替你决定故事的核心，只负责把它做出来
-- 不隐藏 AI 的痕迹：原作、推断与补写分开标注
+- 不提供 3A 级游戏的一键生成
+- 不支持开放世界沙盒，仅支持 2D 像素剧情
+- 不替代创作者对故事核心的判断
+- AI 生成内容与原创内容分别标注
 
 </td>
 </tr>
@@ -77,63 +74,63 @@ Create World 把这条线交给一个会自己安排工作的 AI 团队。你描
 
 ---
 
-## 二、三步
+## WORKFLOW
 
 <table>
 <tr>
 <td width="33%" valign="top" align="center">
 
-### 01 · 写下
+### 01 · 输入
 
-一句话、一段梗概、一集剧本、一份 SRT 字幕，或者一份结构化 YAML。
+一句话、故事梗概、单集剧本、SRT 字幕，或结构化 YAML 内容档案。
 
-<sub>`把《三体》里最有意思的一段改编成游戏。`</sub>
-
-</td>
-<td width="33%" valign="top" align="center">
-
-### 02 · 生成
-
-AI 读故事、定玩法、画场景、写对白、搭运行时，并在真实浏览器里跑通它。
-
-<sub>`10 分钟 · 5 个场景 · 像素风`</sub>
+<sub>`示例：把《三体》里最有意思的一段改编成游戏。`</sub>
 
 </td>
 <td width="33%" valign="top" align="center">
 
-### 03 · 走进
+### 02 · 制作
 
-试玩，用一句话改，切版本，导出静态 HTML5。也可以上架，让其他人走进来。
+AI 完成故事拆解、玩法设计、场景绘制、对白撰写与运行时搭建，并在真实浏览器中验收。
 
-<sub>`WASD 移动 · E 交互 · 手机横屏`</sub>
+<sub>`目标：约 10 分钟 · 至少 5 个场景`</sub>
+
+</td>
+<td width="33%" valign="top" align="center">
+
+### 03 · 交付
+
+试玩、指令修改、版本切换、静态 HTML5 导出；也可以发布上架，开放二创。
+
+<sub>`WASD 移动 · E 交互 · 移动端横屏`</sub>
 
 </td>
 </tr>
 </table>
 
 <div align="center">
-  <img src="assets/brand/pipeline.jpg" alt="Create World 制作管线：理解来源 → 改编玩法 → 生产美术 → 构建世界 → 真实实测 → 审阅版本" width="100%" />
+  <img src="assets/brand/pipeline.jpg" alt="制作流程：内容理解、玩法改编、美术生产、构建、实测与审阅" width="100%" />
 </div>
 
 ---
 
-## 三、产品一瞥
+## PRODUCT
 
-> 以下页面都截取自线上产品，点击图片可以直达对应页面。
+以下截图来自线上产品，点击图片可打开对应页面。
 
 <div align="center">
-  <a href="https://createworld.games"><img src="assets/shots/shot-home.jpg" alt="Create World 首页：你的故事，世界的开始" width="100%" /></a>
+  <a href="https://createworld.games"><img src="assets/shots/shot-home.jpg" alt="Create World 首页" width="100%" /></a>
 </div>
 
-<div align="center"><sub><b>创作入口</b>：一句话就可以开始。AI 会先把「你想做什么」说清楚，再动手。</sub></div>
+<div align="center"><sub><b>创作入口</b>：以一句话开始；系统先确认需求，再进入制作。</sub></div>
 
 <br/>
 
 <div align="center">
-  <a href="https://createworld.games/#/games"><img src="assets/shots/shot-worlds.jpg" alt="游戏世界：玩家创造的原创作品" width="100%" /></a>
+  <a href="https://createworld.games/#/games"><img src="assets/shots/shot-worlds.jpg" alt="游戏世界：玩家创作的原创作品" width="100%" /></a>
 </div>
 
-<div align="center"><sub><b>游戏世界</b>：封面、标签、试玩、二创。每个作品都有自己的世界页。</sub></div>
+<div align="center"><sub><b>游戏世界</b>：作品以世界页呈现，包含封面、标签、试玩与二创入口。</sub></div>
 
 <br/>
 
@@ -141,76 +138,76 @@ AI 读故事、定玩法、画场景、写对白、搭运行时，并在真实�
   <a href="https://createworld.games/#/plugins"><img src="assets/shots/shot-plugins.jpg" alt="插件市场：Skill、工具、工作流与素材包" width="100%" /></a>
 </div>
 
-<div align="center"><sub><b>插件市场</b>：Skill、工具、工作流、素材包。做游戏的经验可以装到别人的工作台上。</sub></div>
+<div align="center"><sub><b>插件市场</b>：Skill、工具、工作流与素材包，可安装到其他创作者的工作台。</sub></div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-studio.jpg" alt="工作台：左边改一句话，右边游戏立刻变" width="100%" />
+  <img src="assets/shots/shot-studio.jpg" alt="工作台：左侧修改，右侧试玩" width="100%" />
 </div>
 
-<div align="center"><sub><b>工作台</b>：左边改，右边玩。每次修改留下版本；没通过实测，不会覆盖手上能玩的版本。</sub></div>
+<div align="center"><sub><b>工作台</b>：左侧修改，右侧试玩；每次修改生成新版本，未通过实测的版本不会替换当前可玩版本。</sub></div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-gameplay.jpg" alt="像素剧情游戏实机画面：室内场景、角色、对白与交互" width="100%" />
+  <img src="assets/shots/shot-gameplay.jpg" alt="像素剧情游戏实机画面" width="100%" />
 </div>
 
-<div align="center"><sub><b>试玩</b>：场景、角色、对白、地图、交互、存档，都在运行时里真实存在。</sub></div>
+<div align="center"><sub><b>试玩</b>：场景、角色、对白、地图、交互与存档均由运行时提供。</sub></div>
 
 ---
 
-## 四、四个能力
+## CAPABILITIES
 
-| | 能力 | 它解决什么 | 你能得到什么 |
-| :--: | --- | --- | --- |
-| ◆ | **AI 游戏制作** | 从有想法到有作品之间的整条生产线 | 描述 IP、故事或世界设定，生成可玩的 2D 像素剧情游戏，并用自然语言持续修改 |
-| ◆ | **插件生态** | 好经验只留在一个人脑子里 | Skill、工具、工作流、素材包可以上传、复用、推荐；做游戏的方法成为资产 |
-| ◆ | **社区与二创** | 作品做完就停了 | 一键发布、评论反馈、版本迭代，以及「基于这个世界再做一款」 |
-| ◆ | **多世界共创** | 每个游戏都是一座孤岛 | 把不同作品的角色与世界观放进同一个世界，做联动、番外与跨世界叙事 |
+| 能力 | 解决的问题 | 交付内容 |
+| --- | --- | --- |
+| **AI 游戏制作** | 从想法到作品之间的完整制作流程 | 描述 IP、故事或世界设定，生成可玩的 2D 像素剧情游戏，并支持持续修改 |
+| **插件生态** | 制作经验难以复用 | Skill、工具、工作流与素材包可上传、复用与推荐 |
+| **社区与二创** | 作品发布后缺少后续 | 发布、评论反馈、版本迭代，以及基于同一世界的二次创作 |
+| **多世界共创** | 作品之间彼此独立 | 将不同作品的角色与世界观放入同一世界，支持联动、番外与跨世界叙事 |
 
 <br/>
 
 <div align="center">
-  <img src="assets/brand/worlds.jpg" alt="作品共创：不同世界的角色走进同一个故事" width="100%" />
+  <img src="assets/brand/worlds.jpg" alt="世界共创：两个世界，同一个故事" width="100%" />
 </div>
 
 ---
 
-## 五、世界们
+## WORLDS
 
-> 这些是已经上架或正在内测的作品，不是渲染图。
+已上架或处于内测阶段的作品。
 
-| 世界 | 类型 | 状态 | 一句话 |
+| 世界 | 类型 | 状态 | 简介 |
 | --- | --- | :--: | --- |
-| **三体 · 黑暗森林** | 科幻 / 剧情探索 | 可试玩 | 以罗辑的第一视角，走进黑暗森林 |
+| **三体 · 黑暗森林** | 科幻 / 剧情探索 | 可试玩 | 以罗辑的第一视角进入黑暗森林 |
 | **高墙之外** | 剧情冒险 / 解谜 | 可试玩 | 高墙困住脚步，却困不住希望 |
 | **雾港来信** | 探索 / 轻解谜 | 可试玩 | 一座灯塔，一封没有寄出的信 |
 | **山风归途** | 旅行 / 叙事 | 作品展示 | 沿着旧地图，走回记忆深处 |
 | **轨道余声** | 科幻 / 调查 | 可试玩 | 讯号沉寂之后，仍有人等待回音 |
-| **尘埃之外** | 科幻 / 双场景 | 可运行 | 依据《星际穿越》开篇梗概制作的独立小游戏，跑在自己的引擎上 |
+| **尘埃之外** | 科幻 / 双场景 | 可运行 | 依据《星际穿越》开篇梗概制作的独立游戏，运行于自研引擎 |
 
 <br/>
 
 <details>
-<summary><b>◆ 关于「共创」：为什么要把两个不相干的世界放在一起？</b></summary>
+<summary><b>关于世界共创</b></summary>
 
 <br/>
 
-因为玩家记得的往往不是「一个游戏」，而是角色在某个瞬间做出的选择。
+共创作品将不同作品的角色与设定放入同一套规则中。两种世界观需要互相解释时，会产生新的叙事空间。
 
-当孙悟空走进大观园，当漫威英雄抵达三体文明，当 ChatGPT 遇上珍妮纺织机，真正有意思的不是设定撞在一起，而是两种世界观在同一套规则下被迫互相解释。这是我们想验证的事：一个世界可以沿着另一个世界继续长。
+实际案例包括：孙悟空与大观园、漫威英雄与三体文明、ChatGPT 与珍妮纺织机。
 
-> 共创作品的封面与设定由创作者提供，平台负责把它变成可玩的场景与交互。
+> 共创作品的封面与设定由创作者提供，平台负责将其转化为可玩的场景与交互。
 
 </details>
 
 ---
 
-## 六、它怎么做到的
+## ARCHITECTURE
 
-> 一个大模型写不完整个游戏。这里是一条可以被检查、被复现、被追责的生产线。
+制作流程由六个可检查的环节组成，每个环节都会留下可复核的记录。
 
 ```text
              ┌──────────────────────────────────────────────────────────┐
@@ -256,40 +253,44 @@ AI 读故事、定玩法、画场景、写对白、搭运行时，并在真实�
 ```
 
 <details>
-<summary><b>◆ 十秒钟读懂技术栈</b></summary>
+<summary><b>技术栈</b></summary>
 
 <br/>
 
 | 层 | 选择 | 说明 |
 | --- | --- | --- |
-| 前端 | **React 19 + Vite 7 + TypeScript 5.9** | 工作台、社区、插件市场共用一套 UI 与设计语言 |
+| 前端 | **React 19 + Vite 7 + TypeScript 5.9** | 工作台、社区与插件市场共用一套 UI 与设计语言 |
 | 服务端 | **Node.js 24 + TypeScript (tsx)** | 本地优先；SQLite 保存项目、运行、版本与证据 |
-| 智能体 | **Codex App Server + 18 Skills** | 模型自己决定读哪个技能、按什么顺序做，不走固定流水线 |
-| 内容 | **YAML 内容规范 + 场景切片** | 场景、事件、角色、状态、玩法都有稳定 ID，可校验、可 diff |
-| 素材 | **Pillow / 原生图像生成 + 确定性检查** | 母版、来源、检查记录一起入库 |
-| 验收 | **Playwright（Chromium / Firefox / WebKit）** | 真实输入跑通关、失败、取消、刷新与存档恢复 |
-| 交付 | **静态 HTML5 导出** | 导出后不需要 Codex、工作台或后端进程 |
+| 智能体 | **Codex App Server + 18 Skills** | 模型自主选择技能与执行顺序，不使用固定流水线 |
+| 内容 | **YAML 内容规范 + 场景切片** | 场景、事件、角色、状态与玩法均有稳定 ID，可校验、可 diff |
+| 素材 | **Pillow / 原生图像生成 + 确定性检查** | 母版、来源与检查记录一并入库 |
+| 验收 | **Playwright（Chromium / Firefox / WebKit）** | 真实输入覆盖推进、失败、取消、刷新与存档恢复 |
+| 交付 | **静态 HTML5 导出** | 导出后不依赖 Codex、工作台或后端进程 |
 
 </details>
 
 <details>
-<summary><b>◆ 为什么不直接让模型写一个网页游戏？</b></summary>
+<summary><b>验收与证据</b></summary>
 
 <br/>
 
-「能跑」和「能玩」是两件事。
+| 环节 | 证据 |
+| --- | --- |
+| 内容契约 | 场景、事件、角色、状态与玩法均有稳定 ID，可校验 |
+| 构建 | 编译产物与素材清单绑定 |
+| 实测 | 真实键鼠与触屏操作，覆盖推进、失败、取消、刷新与存档恢复 |
+| 审阅 | 同屏画面、机制与文本的实际检查 |
+| 版本 | 构建、素材、实测与审阅记录齐全后，才替换当前可玩版本 |
 
-直接生成一个网页游戏，通常能得到一个 demo；但它很难回答这些问题：这个场景的入口在哪？玩家失败之后还能不能继续？改了一句对白，会不会把别的场景弄坏？上一版还能不能回去？
-
-Create World 的做法是：把内容变成有 ID 的档案，把制作变成有记录的任务，把验收变成真实操作。所以它慢一点，但做出来的东西可以被继续修改、被审阅、被复用。
+验收以实际可玩性为准：只有证据齐备的版本才会被接受，未通过的候选版本不会覆盖当前可玩版本。
 
 </details>
 
 ---
 
-## 七、把它跑起来
+## QUICK START
 
-**A. 只看前端体验版（无需后端）**
+**A. 前端体验版（无需后端）**
 
 ```bash
 git clone https://github.com/Leizhidong-creator/CreateWorld.git
@@ -299,10 +300,10 @@ npm run build
 npx serve dist/web
 ```
 
-项目、修改、版本都保存在浏览器的 localStorage 里，不调用后端。
+项目、修改与版本保存在浏览器 localStorage 中，不调用后端。
 体验账号：`creator` / `createworld`。
 
-**B. 跑完整工作台（需要本机 Codex CLI）**
+**B. 完整工作台（需要本机 Codex CLI）**
 
 ```bash
 cd CreateWorld/create-world-workbench
@@ -311,22 +312,22 @@ npm run build
 npm start              # http://127.0.0.1:8787
 ```
 
-> 需要 Node.js 24+、已登录的 Codex CLI 与 Python 3。完整依赖与配置见
+> 环境要求：Node.js 24+、已登录的 Codex CLI、Python 3。完整配置见
 > [工作台说明](create-world-workbench/README.md) 与 [架构文档](create-world-workbench/docs/ARCHITECTURE.md)。
 
-**C. 玩一个已经导出的游戏**
+**C. 运行已导出的游戏**
 
 ```bash
 cd CreateWorld/interstellar-dust
 npm start              # http://127.0.0.1:4173
 ```
 
-导出的游戏是纯静态 HTML5：解压后 `python3 -m http.server 8000` 就能玩，不需要模型、后端或网络。
+导出的游戏为纯静态 HTML5：解压后运行 `python3 -m http.server 8000` 即可，不依赖模型、后端或网络。
 
 <br/>
 
 <details>
-<summary><b>◆ 目录导览</b></summary>
+<summary><b>目录结构</b></summary>
 
 <br/>
 
@@ -342,18 +343,17 @@ CreateWorld/
 │  ├─ packages/browser-runner/      # 真实浏览器操作与状态观测
 │  └─ content-spec/                 # 2D 像素剧情内容规范（YAML）
 ├─ interstellar-dust/               # 《尘埃之外》：可直接运行的像素剧情游戏
-├─ .agents/skills/                  # 18 个制作技能（角色 / 场景 / 玩法 / 审阅 …）
-├─ docs/                            # 架构、验收记录与完整工程说明
+├─ .agents/skills/                  # 18 个制作技能
+├─ docs/                            # 架构、验收记录与工程说明
 ├─ assets/                          # README 与 PRODUCT.md 使用的品牌与截图资源
-├─ PRODUCT.md                       # 产品介绍：用户、能力、商业与路线图
-└─ scripts/                         # 打包、内容切片，以及一个彩蛋
+└─ PRODUCT.md                       # 产品介绍：用户、能力、商业与路线图
 ```
 
 </details>
 
 ---
 
-## 八、现在进行到哪
+## STATUS
 
 <table>
 <tr>
@@ -372,14 +372,14 @@ CreateWorld/
 
 **社群成员**
 
-每天在群里提需求
+持续提供反馈与需求
 
 </td>
 <td align="center" width="25%">
 
 ### 5
 
-**已上架世界**
+**已上架作品**
 
 科幻、悬疑、旅行、解谜
 
@@ -390,7 +390,7 @@ CreateWorld/
 
 **制作技能**
 
-从美术方向到验收审阅
+覆盖美术方向至验收审阅
 
 </td>
 </tr>
@@ -398,20 +398,20 @@ CreateWorld/
 
 <br/>
 
-**下一步**
+**进展与计划**
 
 - [x] 纯前端体验版上线（`createworld.games`）
 - [x] 《三体》《高墙之外》等作品完成全流程制作
-- [x] 插件市场、共创页、工作台版本管理
+- [x] 插件市场、共创页与工作台版本管理
 - [ ] 后台并发调度与异常恢复
-- [ ] 核心用户灰度（分批开放）
-- [ ] 商业化试点：创作订阅 / IP 定制 / 作品交易
+- [ ] 核心用户灰度，分批开放
+- [ ] 商业化试点：创作订阅、IP 定制与作品交易
 
 <sub>内测数据由项目方提供，两类群体可能重合，不合并计算。</sub>
 
 ---
 
-## 九、团队
+## TEAM
 
 **CW Team** · 太原理工大学 · 4 人
 
@@ -419,8 +419,8 @@ CreateWorld/
 <tr>
 <td width="50%" valign="top">
 
-- 3 人 · 计算机科学与技术（211）
-- 1 人 · 数字媒体艺术
+- 3 人：计算机科学与技术（211）
+- 1 人：数字媒体艺术
 - 分工覆盖产品、Agent 链路、系统开发与 UI/UX
 
 </td>
@@ -436,38 +436,9 @@ CreateWorld/
 
 ---
 
-## 十、彩蛋
-
-<details>
-<summary><b>◆ 点开的人，会得到一个世界种子</b></summary>
-
-<br/>
-
-```text
-        ██████╗██╗    ██╗
-       ██╔════╝██║    ██║
-       ██║     ██║ █╗ ██║
-       ██║     ██║███╗██║
-       ╚██████╗╚███╔███╔╝
-        ╚═════╝ ╚══╝╚══╝     create world
-
-  SEED     0x7A3F-2026
-  WORLD    雾港
-  WEATHER  小雨，灯塔亮着
-  FIRST    「先去看看那封信。」
-```
-
-在终端里运行 `node scripts/seed.mjs`，你会得到属于你的那一个。
-
-</details>
-
----
-
 <div align="center">
 
-### 你的故事，世界的开始。
-
-<sub>FROM WORDS TO WORLDS</sub>
+**Create World** · FROM WORDS TO WORLDS
 
 <br/>
 
@@ -475,8 +446,8 @@ CreateWorld/
 
 <br/>
 
-<sub>© 2026 CW Team · 源码与素材为团队私有资产，未经授权请勿商用或再分发。</sub>
-<sub>《三体》等第三方 IP 相关作品为内测用户二创 demo，版权归原权利人所有；如涉侵权请联系删除。</sub>
+<sub>© 2026 CW Team. All rights reserved. Source code and assets are proprietary; commercial use or redistribution requires prior written permission.</sub>
+<sub>Works based on third-party IP are fan-made demos by beta users. All rights remain with their respective rights holders; removal on request.</sub>
 
 </div>
 

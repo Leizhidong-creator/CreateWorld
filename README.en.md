@@ -6,11 +6,10 @@
 
 <div align="center">
 
-**From a story to a world you can play.**
+**AI game creation platform · 2D pixel narrative games**
 
-Create World is an AI game-creation platform.
-Give it a sentence, a novel or an episode script, and it makes a playable **2D pixel narrative game**:
-scenes, characters, dialogue, choices and endings. You can keep editing it, and publish it when it is ready.
+Create World turns a sentence, a novel or an episode script into a playable 2D pixel narrative game.
+Scenes, characters, dialogue, choices and endings are part of the build. You can keep editing it, and publish it when it is ready.
 
 <sub>AI game creation · 2D pixel narrative · plugin ecosystem · world co-creation</sub>
 
@@ -23,7 +22,7 @@ scenes, characters, dialogue, choices and endings. You can keep editing it, and 
 
 <br/>
 
-[**Play online**](https://createworld.games) &nbsp;·&nbsp; [**Product intro**](PRODUCT.md) &nbsp;·&nbsp; [**The film**](#the-film) &nbsp;·&nbsp; [**Run it locally**](#run-it-locally) &nbsp;·&nbsp; [**中文**](README.md)
+[**Play online**](https://createworld.games) &nbsp;·&nbsp; [**Product intro**](PRODUCT.md) &nbsp;·&nbsp; [**Film**](#film) &nbsp;·&nbsp; [**Quick start**](#quick-start) &nbsp;·&nbsp; [**中文**](README.md)
 
 </div>
 
@@ -31,44 +30,42 @@ scenes, characters, dialogue, choices and endings. You can keep editing it, and 
 
 ---
 
-## The film
+## FILM
 
-> Two and a half minutes. The first half is the game; the second half is how it gets made. Subtitled.
+A 2:30 product film with subtitles.
 
-https://github.com/user-attachments/assets/3c77994a-eac7-449b-a0c1-e046e7b2382d
+https://github.com/user-attachments/assets/04df0dd9-7341-461d-b7ec-2a46d0729d8b
 
-<sub>Hosted by GitHub. Click and it plays.</sub>
+<sub>Hosted by GitHub. Plays inline.</sub>
 
 ---
 
-## What it is
+## OVERVIEW
 
-Making a game is rarely hard because of code.
+The hard part of making a game is usually the pipeline, not the code. Moving from a story to something playable requires adaptation, storyboards, art, dialogue, interaction, build, testing and fixes.
 
-It is hard because of the line between a story and something playable: adaptation, storyboards, art, dialogue, interaction, build, test, bug-fixing. Every step needs a person, and every step can stall.
-
-Create World hands that line to an AI team that organises its own work. You describe the world you want. It turns the story into scenes, paints the scenes as pixels, wires the pixels to interaction, and runs the result in a real browser. What you get is a game you can open and play, plus a path to keep changing it.
+Create World hands that pipeline to an AI team that organises its own work: it splits the story into scenes, produces pixel assets, wires up interaction, and runs acceptance in a real browser. The output is a game you can run, plus a content archive you can keep editing.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-**Built for**
+**Use cases**
 
-- People with a story they want to walk into
-- Fan creators writing an alternate path for a character
-- IP owners and brands turning content into something interactive
-- Developers who want their craft to become a plugin
+- Turning a story into a playable work
+- Writing a side story for an existing character
+- Converting IP or brand content into an interactive experience
+- Packaging game-making practice as a reusable plugin
 
 </td>
 <td width="50%" valign="top">
 
-**Out of scope**
+**Current scope**
 
-- A one-click button for AAA games
-- Open-world sandboxes; we do 2D pixel narrative
-- Deciding the core of your story for you
-- Hiding AI: original text, inference and added content are labelled separately
+- No one-click generation of AAA-scale games
+- No open-world sandbox; 2D pixel narrative only
+- Does not replace the creator's judgment on the core story
+- AI-generated and original content are labelled separately
 
 </td>
 </tr>
@@ -76,33 +73,33 @@ Create World hands that line to an AI team that organises its own work. You desc
 
 ---
 
-## Three steps
+## WORKFLOW
 
 <table>
 <tr>
 <td width="33%" valign="top" align="center">
 
-### 01 · Write
+### 01 · Input
 
-A sentence, a synopsis, an episode, an SRT file, or a structured YAML archive.
+A sentence, a synopsis, a single episode, an SRT file, or a structured YAML archive.
 
-<sub>`Turn the best part of The Three-Body Problem into a game.`</sub>
-
-</td>
-<td width="33%" valign="top" align="center">
-
-### 02 · Generate
-
-It reads the story, designs the mechanics, paints the scenes, writes dialogue, builds the runtime, and playtests it in a real browser.
-
-<sub>`10 min · 5 scenes · pixel`</sub>
+<sub>`Example: turn the best part of The Three-Body Problem into a game.`</sub>
 
 </td>
 <td width="33%" valign="top" align="center">
 
-### 03 · Walk in
+### 02 · Production
 
-Play it, change it with a sentence, switch versions, export a static HTML5 build — or publish it.
+The agent adapts the story, designs mechanics, paints scenes, writes dialogue, builds the runtime, and runs acceptance in a real browser.
+
+<sub>`Target: ~10 minutes · at least 5 scenes`</sub>
+
+</td>
+<td width="33%" valign="top" align="center">
+
+### 03 · Delivery
+
+Play it, revise it by instruction, switch versions, export a static HTML5 build, or publish it for fan works.
 
 <sub>`WASD · E · mobile landscape`</sub>
 
@@ -111,83 +108,100 @@ Play it, change it with a sentence, switch versions, export a static HTML5 build
 </table>
 
 <div align="center">
-  <img src="assets/brand/pipeline.jpg" alt="Production pipeline: understand, adapt, art, build, playtest, review" width="100%" />
+  <img src="assets/brand/pipeline.jpg" alt="Pipeline: understanding, adaptation, art, build, playtest, review" width="100%" />
 </div>
 
 ---
 
-## The product
+## PRODUCT
 
-> Real screens from the live product. Click one to open the page.
+Screens from the live product. Click one to open the page.
 
 <div align="center">
   <a href="https://createworld.games"><img src="assets/shots/shot-home.jpg" alt="Create World home page" width="100%" /></a>
 </div>
-<div align="center"><sub><b>Creation entry</b> — one sentence is enough. It first makes sure it understands what you want.</sub></div>
+<div align="center"><sub><b>Creation entry</b> — start with one sentence; the system confirms the request before production.</sub></div>
 
 <br/>
 
 <div align="center">
   <a href="https://createworld.games/#/games"><img src="assets/shots/shot-worlds.jpg" alt="Worlds created by players" width="100%" /></a>
 </div>
-<div align="center"><sub><b>Worlds</b> — covers, tags, playtests, fan-work entries. Every work gets its own page.</sub></div>
+<div align="center"><sub><b>Worlds</b> — each work has a world page with cover, tags, playtest and fan-work entry.</sub></div>
 
 <br/>
 
 <div align="center">
   <a href="https://createworld.games/#/plugins"><img src="assets/shots/shot-plugins.jpg" alt="Plugin marketplace" width="100%" /></a>
 </div>
-<div align="center"><sub><b>Plugins</b> — skills, tools, workflows and asset packs that install into someone else's workbench.</sub></div>
+<div align="center"><sub><b>Plugins</b> — skills, tools, workflows and asset packs that install into another creator's workbench.</sub></div>
 
 <br/>
 
 <div align="center">
   <img src="assets/shots/shot-studio.jpg" alt="Workbench: edit on the left, play on the right" width="100%" />
 </div>
-<div align="center"><sub><b>Workbench</b> — edit on the left, play on the right. Every change is a version; a failed build never replaces a playable one.</sub></div>
+<div align="center"><sub><b>Workbench</b> — edit on the left, play on the right. Each revision creates a version; a build that fails acceptance never replaces the current playable version.</sub></div>
 
 <br/>
 
 <div align="center">
   <img src="assets/shots/shot-gameplay.jpg" alt="Pixel narrative gameplay" width="100%" />
 </div>
-<div align="center"><sub><b>Playtest</b> — scenes, characters, dialogue, map, interaction and saves all exist at runtime.</sub></div>
+<div align="center"><sub><b>Playtest</b> — scenes, characters, dialogue, map, interaction and saves are provided by the runtime.</sub></div>
 
 ---
 
-## Four parts
+## CAPABILITIES
 
-| | Part | What it addresses | What you get |
-| :--: | --- | --- | --- |
-| ◆ | **AI game making** | The production line between an idea and a work | Describe an IP, story or world; get a playable 2D pixel narrative game and keep editing it in natural language |
-| ◆ | **Plugin ecosystem** | Good practice stuck in one person's head | Skills, tools, workflows and asset packs that can be published, reused and recommended |
-| ◆ | **Community & fan works** | A finished work goes nowhere | Publishing, feedback, iteration, and "build another game on top of this world" |
-| ◆ | **World co-creation** | Every game is an island | Characters and settings from different works in one world: crossovers, spin-offs, cross-world narrative |
+| Capability | Problem addressed | What it delivers |
+| --- | --- | --- |
+| **AI game production** | The full pipeline between an idea and a work | A playable 2D pixel narrative game from an IP, story or world setting, with ongoing edits |
+| **Plugin ecosystem** | Production practice is hard to reuse | Skills, tools, workflows and asset packs that can be published, reused and recommended |
+| **Community & fan works** | A published work has no follow-through | Publishing, feedback, version iteration, and fan works built on the same world |
+| **World co-creation** | Works stay isolated from one another | Characters and settings from different works in one world, with crossovers and spin-offs |
 
 <br/>
 
 <div align="center">
-  <img src="assets/brand/worlds.jpg" alt="Two worlds, one new story" width="100%" />
+  <img src="assets/brand/worlds.jpg" alt="World co-creation: two worlds, one story" width="100%" />
 </div>
 
 ---
 
-## Worlds
+## WORLDS
 
-> Live or in closed beta. Not renders.
+Works that are live or in closed beta.
 
-| World | Genre | Status | One line |
+| World | Genre | Status | Summary |
 | --- | --- | :--: | --- |
-| **The Three-Body Problem · Dark Forest** | Sci-fi / narrative exploration | Playable | Step into the Dark Forest as Luo Ji |
+| **The Three-Body Problem · Dark Forest** | Sci-fi / narrative exploration | Playable | Enter the Dark Forest from Luo Ji's perspective |
 | **Beyond the High Walls** | Adventure / puzzle | Playable | The wall traps your steps, not your hope |
 | **Letters from Fog Harbor** | Exploration / light puzzle | Playable | A lighthouse, and a letter never sent |
 | **Mountain Wind, Way Home** | Travel / narrative | Showcase | Follow the old map back into memory |
 | **Echoes on the Track** | Sci-fi / investigation | Playable | After the signal dies, someone still waits |
-| **Beyond the Dust** | Sci-fi / two scenes | Runnable | A standalone short game built on our runtime |
+| **Beyond the Dust** | Sci-fi / two scenes | Runnable | A standalone game based on the opening of Interstellar, running on our engine |
+
+<br/>
+
+<details>
+<summary><b>On world co-creation</b></summary>
+
+<br/>
+
+A co-created work places characters and settings from different works inside one rule set. Its value is not the combination of settings, but the narrative space created when two worldviews have to explain each other.
+
+Examples include Sun Wukong in the Grand View Garden, Marvel heroes arriving at Three-Body civilisation, and ChatGPT meeting the Jenny spinning machine.
+
+> Covers and settings for co-created works are supplied by the creators; the platform turns them into playable scenes and interaction.
+
+</details>
 
 ---
 
-## How it works
+## ARCHITECTURE
+
+The pipeline has six checkable stages, each leaving a reviewable record.
 
 ```text
         sentence / novel / script / SRT / YAML
@@ -214,7 +228,7 @@ Play it, change it with a sentence, switch versions, export a static HTML5 build
    └──────────────────┬───────────────────────────┘
                       ▼
    ┌──────────────────────────────────────────────┐
-   │  real-browser playtest (Playwright)          │  ←→  advance / fail / cancel /
+   │  real-browser acceptance (Playwright)        │  ←→  advance / fail / cancel /
    │  keyboard, mouse, touch                      │      refresh / save restore
    └──────────────────┬───────────────────────────┘
                       ▼
@@ -225,27 +239,44 @@ Play it, change it with a sentence, switch versions, export a static HTML5 build
 ```
 
 <details>
-<summary><b>◆ Tech stack in ten seconds</b></summary>
+<summary><b>Tech stack</b></summary>
 
 <br/>
 
-| Layer | Choice | Why |
+| Layer | Choice | Purpose |
 | --- | --- | --- |
-| Web | **React 19 + Vite 7 + TypeScript 5.9** | One UI language across studio, community and marketplace |
-| Server | **Node.js 24 + tsx + SQLite** | Local-first; projects, runs, versions and evidence in one place |
-| Agent | **Codex App Server + 18 skills** | The model decides what to read and in which order; no fixed pipeline |
+| Web | **React 19 + Vite 7 + TypeScript 5.9** | One UI and design language for studio, community and marketplace |
+| Server | **Node.js 24 + tsx + SQLite** | Local-first; projects, runs, versions and evidence in one store |
+| Agent | **Codex App Server + 18 skills** | The model selects skills and order; no fixed pipeline |
 | Content | **YAML content spec + scene slicing** | Stable IDs for scenes, events, characters, state and mechanics |
-| Assets | **Pillow / native image generation + deterministic checks** | Masters, provenance and checks are stored together |
-| QA | **Playwright (Chromium / Firefox / WebKit)** | Real input, real save restore, real failure paths |
-| Delivery | **Static HTML5 export** | Play it with `python -m http.server`; no model, no backend |
+| Assets | **Pillow / native image generation + deterministic checks** | Masters, provenance and checks stored together |
+| Acceptance | **Playwright (Chromium / Firefox / WebKit)** | Real input covering advance, fail, cancel, refresh and save restore |
+| Delivery | **Static HTML5 export** | Runs without Codex, the workbench or any backend |
+
+</details>
+
+<details>
+<summary><b>Acceptance and evidence</b></summary>
+
+<br/>
+
+| Stage | Evidence |
+| --- | --- |
+| Content contract | Stable IDs for scenes, events, characters, state and mechanics; machine-checkable |
+| Build | Compile output bound to an asset manifest |
+| Playtest | Real keyboard, mouse and touch input covering advance, fail, cancel, refresh and save restore |
+| Review | Actual inspection of on-screen visuals, mechanics and text |
+| Version | A version is accepted only when build, assets, playtest and review records are complete |
+
+Acceptance is based on actual playability: only fully evidenced versions are accepted, and a failed candidate never replaces the current playable version.
 
 </details>
 
 ---
 
-## Run it locally
+## QUICK START
 
-**A. Front-end demo only (no backend)**
+**A. Front-end demo (no backend)**
 
 ```bash
 git clone https://github.com/Leizhidong-creator/CreateWorld.git
@@ -255,9 +286,9 @@ npm run build
 npx serve dist/web
 ```
 
-Projects, edits and versions live in localStorage. Demo account: `creator` / `createworld`.
+Projects, edits and versions are stored in the browser's localStorage. Demo account: `creator` / `createworld`.
 
-**B. Full workbench (needs a logged-in Codex CLI)**
+**B. Full workbench (requires a local Codex CLI)**
 
 ```bash
 cd CreateWorld/create-world-workbench
@@ -266,84 +297,133 @@ npm run build
 npm start              # http://127.0.0.1:8787
 ```
 
-Requirements: Node.js 24+, a logged-in Codex CLI, Python 3. See the
-[workbench README](create-world-workbench/README.md) and [architecture](create-world-workbench/docs/ARCHITECTURE.md).
+> Requirements: Node.js 24+, a signed-in Codex CLI, Python 3. See the
+> [workbench README](create-world-workbench/README.md) and [architecture](create-world-workbench/docs/ARCHITECTURE.md).
 
-**C. Play an exported game**
+**C. Run an exported game**
 
 ```bash
 cd CreateWorld/interstellar-dust
 npm start              # http://127.0.0.1:4173
 ```
 
-Exported games are plain static HTML5: unzip, run `python3 -m http.server 8000`, and play. No model, backend or network required.
+Exported games are plain static HTML5: unzip and run `python3 -m http.server 8000`. No model, backend or network required.
 
----
-
-## Traction
-
-| 100+ beta users | 100+ community | 5 live worlds | 18 skills |
-| :--: | :--: | :--: | :--: |
-
-**Next**
-
-- [x] Front-end experience live at `createworld.games`
-- [x] Full production runs for *The Three-Body Problem* and *Beyond the High Walls*
-- [ ] Backend concurrency, scheduling and recovery
-- [ ] Staged closed beta
-- [ ] Commercial pilots: subscription / IP commissions / marketplace
-
-<sub>Beta figures are provided by the team; the two groups may overlap.</sub>
-
----
-
-## Team
-
-**CW Team** · Taiyuan University of Technology · 4 people
-
-- 3 × Computer Science (Project 211), 1 × Digital Media Art
-- Product, agent pipeline, systems and UI/UX
-
-**Selected work**
-
-- 2026 ByteDance Douyin AI Innovator Competition — National Final, 2nd Prize
-- AI meeting-room system delivered to a government/enterprise client in one month
-- "Zhi Shan AI" restaurant operations system, delivered across multiple stores
-
----
-
-## A small easter egg
+<br/>
 
 <details>
-<summary><b>◆ Open it and get a world seed</b></summary>
+<summary><b>Repository layout</b></summary>
 
 <br/>
 
 ```text
-        ██████╗██╗    ██╗
-       ██╔════╝██║    ██║
-       ██║     ██║ █╗ ██║
-       ██║     ██║███╗██║
-       ╚██████╗╚███╔███╔╝
-        ╚═════╝ ╚══╝╚══╝     create world
-
-  SEED     0x7A3F-2026
-  WORLD    Fog Harbor
-  WEATHER  light rain, the lighthouse is on
-  FIRST    "Go and read that letter."
+CreateWorld/
+├─ create-world-workbench/          # Workbench: React front end, Node server, agent orchestration
+│  ├─ apps/web/                     # Community, worlds, plugin market, workbench
+│  ├─ apps/server/                  # Local API, SQLite, SSE
+│  ├─ packages/orchestrator/        # Task lifecycle, tool runtime, candidates, revisions
+│  ├─ packages/runtime/             # Scene transitions, state, saves
+│  ├─ packages/compiler/            # Content → playable game compilation
+│  ├─ packages/assets/              # Asset production, validation, caching
+│  ├─ packages/browser-runner/      # Real browser operation and state observation
+│  └─ content-spec/                 # 2D pixel narrative content spec (YAML)
+├─ interstellar-dust/               # Beyond the Dust: standalone playable pixel game
+├─ .agents/skills/                  # 18 production skills
+├─ docs/                            # Architecture, acceptance and engineering notes
+├─ assets/                          # Brand and product assets used by README / PRODUCT
+└─ PRODUCT.md                       # Product introduction
 ```
-
-Run `node scripts/seed.mjs` in the repo and you will get yours.
 
 </details>
 
 ---
 
+## STATUS
+
+<table>
+<tr>
+<td align="center" width="25%">
+
+### 100+
+
+**Beta prospects**
+
+Expressed interest in testing
+
+</td>
+<td align="center" width="25%">
+
+### 100+
+
+**Community members**
+
+Providing feedback and requests
+
+</td>
+<td align="center" width="25%">
+
+### 5
+
+**Live works**
+
+Sci-fi, mystery, travel, puzzle
+
+</td>
+<td align="center" width="25%">
+
+### 18
+
+**Production skills**
+
+From art direction to acceptance
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+**Progress and plan**
+
+- [x] Front-end experience live at `createworld.games`
+- [x] Full production runs for *The Three-Body Problem* and *Beyond the High Walls*
+- [x] Plugin market, co-creation pages and workbench versioning
+- [ ] Backend concurrency and failure recovery
+- [ ] Staged closed beta
+- [ ] Commercial pilots: subscription, IP commissions, marketplace
+
+<sub>Beta figures are provided by the team; the two groups may overlap.</sub>
+
+---
+
+## TEAM
+
+**CW Team** · Taiyuan University of Technology · 4 people
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+- 3 × Computer Science (Project 211)
+- 1 × Digital Media Art
+- Product, agent pipeline, systems and UI/UX
+
+</td>
+<td width="50%" valign="top">
+
+- 2026 ByteDance Douyin AI Innovator Competition — national final, second prize
+- AI meeting-room system delivered to a government/enterprise client in one month
+- "Zhi Shan AI" restaurant operations system, delivered across multiple stores
+
+</td>
+</tr>
+</table>
+
+---
+
 <div align="center">
 
-### Your story. The beginning of a world.
-
-<sub>FROM WORDS TO WORLDS</sub>
+**Create World** · FROM WORDS TO WORLDS
 
 <br/>
 
@@ -351,8 +431,8 @@ Run `node scripts/seed.mjs` in the repo and you will get yours.
 
 <br/>
 
-<sub>© 2026 CW Team. Source and assets are proprietary; please do not redistribute commercially.</sub>
-<sub>Works based on third-party IP are fan-made demos by beta users. All rights belong to their respective owners.</sub>
+<sub>© 2026 CW Team. All rights reserved. Source code and assets are proprietary; commercial use or redistribution requires prior written permission.</sub>
+<sub>Works based on third-party IP are fan-made demos by beta users. All rights remain with their respective rights holders; removal on request.</sub>
 
 </div>
 
