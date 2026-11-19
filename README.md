@@ -1,5 +1,5 @@
 ﻿<div align="center">
-  <img src="assets/brand/banner.png" alt="Create World — 你的故事，世界的开始。FROM WORDS TO WORLDS" width="100%" />
+  <img src="assets/brand/banner.jpg" alt="Create World — 你的故事，世界的开始。FROM WORDS TO WORLDS" width="100%" />
 </div>
 
 <br/>
@@ -111,7 +111,7 @@ AI 自己读故事、定玩法、画场景、写对白、搭运行时，并在�
 </table>
 
 <div align="center">
-  <img src="assets/brand/pipeline.png" alt="Create World 制作管线：理解来源 → 改编玩法 → 生产美术 → 构建世界 → 真实实测 → 审阅版本" width="100%" />
+  <img src="assets/brand/pipeline.jpg" alt="Create World 制作管线：理解来源 → 改编玩法 → 生产美术 → 构建世界 → 真实实测 → 审阅版本" width="100%" />
 </div>
 
 ---
@@ -121,7 +121,7 @@ AI 自己读故事、定玩法、画场景、写对白、搭运行时，并在�
 > 以下页面都截取自线上产品，点击图片可以直达对应页面。
 
 <div align="center">
-  <a href="https://createworld.games"><img src="assets/shots/shot-home.png" alt="Create World 首页：你的故事，世界的开始" width="100%" /></a>
+  <a href="https://createworld.games"><img src="assets/shots/shot-home.jpg" alt="Create World 首页：你的故事，世界的开始" width="100%" /></a>
 </div>
 
 <div align="center"><sub><b>创作入口</b> —— 一句话就可以开始；AI 会先帮你说清楚你想做什么。</sub></div>
@@ -129,7 +129,7 @@ AI 自己读故事、定玩法、画场景、写对白、搭运行时，并在�
 <br/>
 
 <div align="center">
-  <a href="https://createworld.games/#/games"><img src="assets/shots/shot-worlds.png" alt="游戏世界：玩家创造的原创作品" width="100%" /></a>
+  <a href="https://createworld.games/#/games"><img src="assets/shots/shot-worlds.jpg" alt="游戏世界：玩家创造的原创作品" width="100%" /></a>
 </div>
 
 <div align="center"><sub><b>游戏世界</b> —— 不是模型 demo 的陈列柜，是一个个被玩过的世界。</sub></div>
@@ -137,7 +137,7 @@ AI 自己读故事、定玩法、画场景、写对白、搭运行时，并在�
 <br/>
 
 <div align="center">
-  <a href="https://createworld.games/#/plugins"><img src="assets/shots/shot-plugins.png" alt="插件市场：Skill、工具、工作流与素材包" width="100%" /></a>
+  <a href="https://createworld.games/#/plugins"><img src="assets/shots/shot-plugins.jpg" alt="插件市场：Skill、工具、工作流与素材包" width="100%" /></a>
 </div>
 
 <div align="center"><sub><b>插件市场</b> —— 把「怎么做一个好游戏」的经验，做成别人可以复用的能力。</sub></div>
@@ -145,7 +145,7 @@ AI 自己读故事、定玩法、画场景、写对白、搭运行时，并在�
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-studio.png" alt="工作台：左边改一句话，右边游戏立刻变" width="100%" />
+  <img src="assets/shots/shot-studio.jpg" alt="工作台：左边改一句话，右边游戏立刻变" width="100%" />
 </div>
 
 <div align="center"><sub><b>工作台</b> —— 左边说人话，右边直接玩；改动会留下版本，失败不会覆盖能玩的版本。</sub></div>
@@ -153,7 +153,7 @@ AI 自己读故事、定玩法、画场景、写对白、搭运行时，并在�
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-gameplay.png" alt="像素剧情游戏实机画面：室内场景、角色、对白与交互" width="100%" />
+  <img src="assets/shots/shot-gameplay.jpg" alt="像素剧情游戏实机画面：室内场景、角色、对白与交互" width="100%" />
 </div>
 
 <div align="center"><sub><b>真的能玩</b> —— 场景、角色、对白、地图、交互、存档，都是运行时里真实存在的。</sub></div>
@@ -172,7 +172,7 @@ AI 自己读故事、定玩法、画场景、写对白、搭运行时，并在�
 <br/>
 
 <div align="center">
-  <img src="assets/brand/worlds.png" alt="作品共创：不同世界的角色走进同一个故事" width="100%" />
+  <img src="assets/brand/worlds.jpg" alt="作品共创：不同世界的角色走进同一个故事" width="100%" />
 </div>
 
 ---

@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/brand/banner.png" alt="Create World — 你的故事，世界的开始" width="100%" />
+  <img src="assets/brand/banner.jpg" alt="Create World — 你的故事，世界的开始" width="100%" />
 </div>
 
 <br/>
@@ -44,7 +44,7 @@ __VIDEO_URL__
 <br/>
 
 <div align="center">
-  <img src="assets/brand/pipeline.png" alt="Create World 制作管线" width="100%" />
+  <img src="assets/brand/pipeline.jpg" alt="Create World 制作管线" width="100%" />
 </div>
 
 ---
@@ -125,7 +125,7 @@ Create World 切入的，就是这道门槛。
 <br/>
 
 <div align="center">
-  <img src="assets/brand/worlds.png" alt="世界共创：两个世界，一起讲一个新故事" width="100%" />
+  <img src="assets/brand/worlds.jpg" alt="世界共创：两个世界，一起讲一个新故事" width="100%" />
 </div>
 
 ---
@@ -169,35 +169,35 @@ Create World 切入的，就是这道门槛。
 ## 产品长什么样
 
 <div align="center">
-  <img src="assets/shots/shot-home.png" alt="创作入口：一句话开始" width="100%" />
+  <img src="assets/shots/shot-home.jpg" alt="创作入口：一句话开始" width="100%" />
 </div>
 <div align="center"><sub><b>创作入口</b> —— 不用先学会写提示词，写你想看的那个画面就够了。</sub></div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-worlds.png" alt="游戏世界：玩家的原创作品" width="100%" />
+  <img src="assets/shots/shot-worlds.jpg" alt="游戏世界：玩家的原创作品" width="100%" />
 </div>
 <div align="center"><sub><b>游戏世界</b> —— 作品上架后有自己的世界页：封面、标签、试玩、二创。</sub></div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-plugins.png" alt="插件市场：Skill、工具、工作流" width="100%" />
+  <img src="assets/shots/shot-plugins.jpg" alt="插件市场：Skill、工具、工作流" width="100%" />
 </div>
 <div align="center"><sub><b>插件市场</b> —— 把「怎么做好」变成别人可以直接装上的能力。</sub></div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-studio.png" alt="工作台：左边改一句话，右边直接玩" width="100%" />
+  <img src="assets/shots/shot-studio.jpg" alt="工作台：左边改一句话，右边直接玩" width="100%" />
 </div>
 <div align="center"><sub><b>工作台</b> —— 制作、试玩、素材、版本在同一屏；失败不覆盖可玩版本。</sub></div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-gameplay.png" alt="像素剧情游戏实机画面" width="100%" />
+  <img src="assets/shots/shot-gameplay.jpg" alt="像素剧情游戏实机画面" width="100%" />
 </div>
 <div align="center"><sub><b>真的能玩</b> —— 场景、角色、对白、地图、交互、存档，都在运行时里真实存在。</sub></div>
 

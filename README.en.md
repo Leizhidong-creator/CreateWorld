@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/brand/banner.png" alt="Create World — FROM WORDS TO WORLDS" width="100%" />
+  <img src="assets/brand/banner.jpg" alt="Create World — FROM WORDS TO WORLDS" width="100%" />
 </div>
 
 <br/>
@@ -83,7 +83,7 @@ Create World hands that line to an AI team that organises its own work. You desc
 | One sentence, a synopsis, an episode, an SRT file, or a structured YAML archive. | An AI agent reads the story, designs the mechanics, paints the scenes, writes dialogue, builds the runtime, and playtests it in a real browser. | Play it, change it with a sentence, switch versions, export a static HTML5 build, or publish it and let others walk in. |
 
 <div align="center">
-  <img src="assets/brand/pipeline.png" alt="Production pipeline: understand, adapt, art, build, playtest, review" width="100%" />
+  <img src="assets/brand/pipeline.jpg" alt="Production pipeline: understand, adapt, art, build, playtest, review" width="100%" />
 </div>
 
 ---
@@ -93,35 +93,35 @@ Create World hands that line to an AI team that organises its own work. You desc
 > Real screens from the live product. Click to open the corresponding page.
 
 <div align="center">
-  <a href="https://createworld.games"><img src="assets/shots/shot-home.png" alt="Create World home page" width="100%" /></a>
+  <a href="https://createworld.games"><img src="assets/shots/shot-home.jpg" alt="Create World home page" width="100%" /></a>
 </div>
 <div align="center"><sub><b>Creation entry</b> — one sentence is enough; AI first helps you say what you mean.</sub></div>
 
 <br/>
 
 <div align="center">
-  <a href="https://createworld.games/#/games"><img src="assets/shots/shot-worlds.png" alt="Worlds created by players" width="100%" /></a>
+  <a href="https://createworld.games/#/games"><img src="assets/shots/shot-worlds.jpg" alt="Worlds created by players" width="100%" /></a>
 </div>
 <div align="center"><sub><b>Worlds</b> — not a gallery of model demos, but worlds people have played.</sub></div>
 
 <br/>
 
 <div align="center">
-  <a href="https://createworld.games/#/plugins"><img src="assets/shots/shot-plugins.png" alt="Plugin marketplace" width="100%" /></a>
+  <a href="https://createworld.games/#/plugins"><img src="assets/shots/shot-plugins.jpg" alt="Plugin marketplace" width="100%" /></a>
 </div>
 <div align="center"><sub><b>Plugins</b> — the know-how of making a good game, packaged as reusable capability.</sub></div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-studio.png" alt="Workbench: edit on the left, play on the right" width="100%" />
+  <img src="assets/shots/shot-studio.jpg" alt="Workbench: edit on the left, play on the right" width="100%" />
 </div>
 <div align="center"><sub><b>Workbench</b> — edit on the left, play on the right; every change is a version, and a failed build never replaces a playable one.</sub></div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/shots/shot-gameplay.png" alt="Pixel narrative gameplay" width="100%" />
+  <img src="assets/shots/shot-gameplay.jpg" alt="Pixel narrative gameplay" width="100%" />
 </div>
 <div align="center"><sub><b>Actually playable</b> — scenes, characters, dialogue, map, interaction and saves really exist at runtime.</sub></div>
 
@@ -139,7 +139,7 @@ Create World hands that line to an AI team that organises its own work. You desc
 <br/>
 
 <div align="center">
-  <img src="assets/brand/worlds.png" alt="Two worlds, one new story" width="100%" />
+  <img src="assets/brand/worlds.jpg" alt="Two worlds, one new story" width="100%" />
 </div>
 
 ---
