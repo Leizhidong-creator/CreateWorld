@@ -1,0 +1,26 @@
+/* A continuous, unfinished world underneath the entire portal. */
+#root{isolation:isolate}
+.world-atlas{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#050c16}
+.world-atlas-wash{position:absolute;inset:0;background:radial-gradient(ellipse at 5% 35%,#294e6260,transparent 48%),radial-gradient(ellipse at 95% 60%,#55436a4a,transparent 48%),radial-gradient(ellipse at 48% 115%,#295b5940,transparent 50%),radial-gradient(ellipse at 57% 8%,#31415c33,transparent 42%)}
+.world-atlas canvas{position:absolute;inset:0;width:100%;height:100%;transition:opacity 1s;opacity:1}
+.world-atlas canvas.is-quiet{opacity:.35}
+.world-atlas-grain{position:absolute;inset:0;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23g)' opacity='.45' d='M0 0h180v180H0z' fill='%23fff'/%3E%3C/svg%3E")}
+/* Existing artwork and game surfaces retain their own atmosphere. */
+#root>.portal{background:transparent}
+.market-create-page .creation-atmosphere{display:none}
+@media(prefers-reduced-motion:reduce){.world-atlas canvas{transition:none}}
+
+:root[data-theme="light"] .world-atlas{background:#f0f6fb}
+:root[data-theme="light"] .world-atlas-wash{background:radial-gradient(ellipse at 5% 35%,#b7ddcf45,transparent 42%),radial-gradient(ellipse at 100% 65%,#d5c9ef40,transparent 42%),radial-gradient(ellipse at 40% 110%,#b8d9ed40,transparent 45%)}
+:root[data-theme="dark"]{color-scheme:dark}
+
+:root[data-theme="dark"]{background:#050c16}
+:root[data-theme="dark"] .portal .site-header{background:#070f1b}
+
+/* Mist over drawing paper: slow tonal drift, with fine, irregular paper fibres. */
+.world-atlas-wash{inset:-3%;animation:atlas-mist-drift 32s ease-in-out infinite alternate;will-change:transform}
+.world-atlas-grain{opacity:.17}
+.world-atlas-grain:after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='210' viewBox='0 0 240 210'%3E%3Cg fill='none' stroke='%2397a8b4' stroke-width='.45' opacity='.6'%3E%3Cpath d='M19 24l3 1m47 17l4-1m89-23l2 2M41 99l3-1m84 11l3 1m71-36l2-2M12 171l4 1m81 21l2-1m83-36l4 1m37 43l3-2'/%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+:root[data-theme="light"] .world-atlas-grain{opacity:.13}
+@keyframes atlas-mist-drift{from{transform:translate3d(-.5%,.5%,0) scale(1)}to{transform:translate3d(.7%,-.5%,0) scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.world-atlas-wash{animation:none;will-change:auto}}

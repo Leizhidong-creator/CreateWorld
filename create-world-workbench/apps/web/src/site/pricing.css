@@ -1,0 +1,177 @@
+/* 订阅方案：OpenAI 定价页的骨架 + 本站浅色底、宋体标题与金色强调 */
+
+.pricing {
+  margin-top: 54px;
+  padding: 56px 0 72px;
+  border-top: 1px solid #e4ecf3;
+}
+
+.pricing-head { text-align: center; margin-bottom: 34px; }
+.pricing-head h2 {
+  margin: 10px 0 12px;
+  font-family: "Songti SC", SimSun, serif;
+  font-size: clamp(28px, 2.6vw, 38px);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #24384c;
+}
+.pricing-head p { margin: 0 auto; max-width: 520px; font-size: 13px; line-height: 1.9; color: #6d8296; }
+
+.pricing-switch {
+  display: inline-flex; align-items: center; gap: 4px; margin-top: 22px;
+  padding: 4px; border-radius: 999px; background: #eef4fa; border: 1px solid #e0eaf3;
+}
+.pricing-switch button {
+  position: relative; border: 0; background: transparent; cursor: pointer;
+  padding: 8px 18px; border-radius: 999px; font-size: 12.5px; color: #6c8298;
+  transition: background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.pricing-switch button[aria-pressed="true"] {
+  background: #fff; color: #24384c; box-shadow: 0 2px 8px #4a6a8a1f;
+}
+.pricing-switch i {
+  margin-left: 6px; font-style: normal; font-size: 10px; color: #a98443;
+  background: #f7eeda; border-radius: 999px; padding: 1px 6px;
+}
+
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px; align-items: stretch;
+}
+
+.plan {
+  position: relative; display: flex; flex-direction: column;
+  padding: 26px 24px 24px; border-radius: 16px;
+  background: #fff; border: 1px solid #e3ebf2;
+  box-shadow: 0 10px 30px #2f4a6410;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.plan:hover { transform: translateY(-3px); box-shadow: 0 18px 44px #2f4a641c; border-color: #d3e0ec; }
+
+.plan.is-featured {
+  border-color: #e2c184;
+  background: linear-gradient(180deg, #fffdf8, #ffffff 42%);
+  box-shadow: 0 18px 48px #c8a4642e, 0 0 0 1px #e2c18455;
+}
+.plan.is-featured:hover { box-shadow: 0 24px 56px #c8a4643d, 0 0 0 1px #e2c18488; }
+
+.plan-badge {
+  position: absolute; top: -11px; left: 24px;
+  font-size: 10.5px; letter-spacing: .5px; color: #4a3617;
+  background: linear-gradient(135deg, #f7e3b4, #e3c184);
+  border: 1px solid #d9bb80; border-radius: 999px; padding: 3px 10px;
+  box-shadow: 0 6px 14px #c8a46440;
+}
+
+.plan-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.plan-head h3 { margin: 0; font-size: 17px; font-weight: 600; color: #22384c; letter-spacing: .5px; }
+.plan-head small { display: block; margin-top: 4px; font-size: 11px; color: #8ba0b3; }
+
+.plan-tagline { margin: 12px 0 18px; font-size: 12px; line-height: 1.8; color: #6d8296; min-height: 44px; }
+
+.plan-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 18px; }
+.plan-price strong {
+  font-family: "Songti SC", SimSun, serif; font-size: 40px; font-weight: 500;
+  letter-spacing: .5px; color: #22384c; line-height: 1;
+}
+.plan-price.is-text strong { font-size: 30px; }
+.plan-price span { font-size: 11.5px; color: #8ba0b3; }
+
+.plan-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 11px 16px; border-radius: 9px; cursor: pointer;
+  font-size: 12.5px; font-weight: 600; color: #3b5470;
+  background: #fff; border: 1px solid #cfdded;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.plan-cta:hover { border-color: #b9cee2; background: #f7fbfe; transform: translateY(-1px); }
+.plan-cta.is-primary {
+  color: #3b2a12; border-color: #d9bb80;
+  background: linear-gradient(135deg, #f7e3b4, #e3c184);
+  box-shadow: 0 8px 20px #c8a46438;
+}
+.plan-cta.is-primary:hover { box-shadow: 0 11px 26px #c8a46452; }
+
+.plan-note { display: block; margin-top: 9px; text-align: center; font-size: 10.5px; color: #9db0c2; }
+
+.plan-features { margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef3f8; display: grid; gap: 16px; }
+.plan-group-title { display: block; margin-bottom: 7px; font-size: 10px; letter-spacing: 1.4px; color: #9bb0c2; }
+.plan-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.plan-group li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 11.5px; line-height: 1.65; color: #52697f;
+}
+.plan-group li svg { flex: none; margin-top: 3px; color: #9dbb86; }
+.plan.is-featured .plan-group li svg { color: #c1a267; }
+
+.pricing-notice {
+  min-height: 18px; margin: 18px 0 0; text-align: center;
+  font-size: 11.5px; color: #a98443; opacity: 0; transition: opacity .2s ease;
+}
+.pricing-notice.is-on { opacity: 1; }
+
+.pricing-foot {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 26px; padding-top: 22px; border-top: 1px solid #eef3f8;
+  font-size: 11px; color: #8ba0b3;
+}
+.pricing-foot svg { color: #9dbb86; }
+
+@media (max-width: 980px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+  .plan-tagline { min-height: 0; }
+}
+
+/* 定价区微调：压住背景色斑、对齐价格行、提高次要文字对比 */
+.pricing { position: relative; }
+.pricing:before {
+  content: ''; position: absolute; left: -6%; right: -6%; top: -60px; height: 280px; z-index: 0;
+  background: radial-gradient(58% 100% at 50% 0%, #ffffffd9, transparent 72%);
+  pointer-events: none;
+}
+.pricing > * { position: relative; z-index: 1; }
+.plan-head h3 { font-size: 18px; }
+.plan-price { min-height: 54px; align-items: baseline; }
+.plan-tagline { color: #64798e; }
+.plan-group-title { color: #7c93a8; letter-spacing: 1.2px; }
+.plan-group li { font-size: 12px; color: #4c6478; }
+.plan-group li svg { color: #8fae7a; margin-top: 2px; }
+.plan.is-featured .plan-group li svg { color: #b8934f; }
+.plan-features { margin-top: 22px; padding-top: 20px; }
+
+/* 定价区顶部再压一层柔光，遮住背景色斑 */
+.pricing:before {
+  left: -12%; right: -12%; top: -70px; height: 340px;
+  background: radial-gradient(70% 130% at 50% 0%, #f9fcff 0%, #f9fcffe6 46%, transparent 82%);
+}
+
+/* 定价区背景再压一层：覆盖更宽、更实 */
+.pricing:before {
+  left: -22%; right: -22%; top: -90px; height: 380px;
+  background: radial-gradient(78% 140% at 50% -6%, #f9fcff 0%, #f9fcff 46%, #f9fcffe8 64%, transparent 90%);
+}
+
+/* 窄屏：柔光不要盖到上面的输入框 */
+@media (max-width: 980px) {
+  .pricing:before { top: -18px; height: 300px; }
+}
+
+/* 去掉横贯整页的白色幕布，改为无接缝的柔光 */
+.pricing:before {
+  display: none;
+}
+
+/* 收紧与上方输入框的距离，并压掉背景绿色色斑（保留等高线） */
+.pricing { margin-top: 10px; padding: 34px 0 72px; }
+body:has(.portal.page-creation-home) .world-atlas { filter: saturate(.42) brightness(1.06); }
+
+/* 去掉定价区上方的分割线：背景已连续，线反而像接缝 */
+.pricing { border-top: 0; }
+
+/* 体验版：按次计费 + 赠送 token 提示 */
+.plan-price em {
+  font-style: normal; margin-left: auto; align-self: center;
+  font-size: 10.5px; letter-spacing: .2px; color: #8a6a2f;
+  background: #f7eeda; border: 1px solid #ecd9b4; border-radius: 999px;
+  padding: 3px 9px; white-space: nowrap;
+}

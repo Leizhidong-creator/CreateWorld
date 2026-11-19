@@ -1,0 +1,40 @@
+/* Shared shelf finish: soft porcelain surfaces, pill labels and quiet icon wells. */
+.portal .market-page{--card-surface:linear-gradient(145deg,#192b3b,#101f2d);--card-edge:#a5bdd22b;--card-shadow:#02091644;--card-title:#eef2f5;--card-copy:#a0b2c2;--pill-bg:#bfd6ed0d;--pill-edge:#bfd6ed24;--pill-ink:#b9cbe1}
+:root[data-theme="light"] .portal .market-page{--card-surface:linear-gradient(145deg,#fffffff2,#f4f8fdea);--card-edge:#cedbe9b3;--card-shadow:#516c8610;--card-title:#304d68;--card-copy:#73889b;--pill-bg:#e9eff7b3;--pill-edge:#d8e2efc9;--pill-ink:#647fa1}
+.portal .market-page .market-game-card,.portal .market-page .market-feature-card{display:flex;flex-direction:column;border-radius:16px;border:1px solid var(--card-edge);background:var(--card-surface);box-shadow:0 5px 18px var(--card-shadow),inset 0 1px #ffffff12;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s}
+.portal .market-page .market-game-card:hover,.portal .market-page .market-feature-card:hover{transform:translateY(-4px);border-color:#93aacf88;box-shadow:0 15px 32px var(--card-shadow)}
+.portal .market-page .market-game-art,.portal .market-page .market-feature-art{border:0;border-radius:0;flex-shrink:0}
+.portal .market-page .market-game-art img{filter:saturate(.94)}
+.portal .market-page .market-game-copy{display:flex;flex-direction:column;flex:1;padding:19px 18px 16px}
+.portal .market-page .market-feature-copy{padding:20px 22px;gap:16px}
+.portal .market-page .market-feature-copy>div{min-width:0}
+.portal .market-page .market-game-title h3{font-size:18px;font-weight:600;letter-spacing:.3px;line-height:1.5;color:var(--card-title)}
+.portal .market-page .crossover-card h3{font-size:22px!important;font-weight:600;letter-spacing:.3px;line-height:1.45;margin:0 0 12px!important;color:var(--card-title)}
+.portal .market-page .market-feature-copy h3{font-size:21px;color:var(--card-title)}
+.portal .market-page .crossover-card-pair{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-bottom:11px;font-size:14px;letter-spacing:.2px;line-height:1.6;color:var(--card-title)}
+.portal .market-page .crossover-card-pair .pair-character{font-size:14px;color:var(--pill-ink);padding:4px 10px;background:var(--pill-bg);border:1px solid var(--pill-edge);border-radius:999px}
+.portal .market-page .crossover-card-pair .pair-cross{font-size:17px;font-weight:400;color:#899ac1}
+.portal .market-page .market-game-copy .shelf-card-description,.portal .market-page .market-game-copy .crossover-card-description{font-size:12px;color:var(--card-copy);line-height:1.9;white-space:normal;min-height:46px;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.portal .market-page .shelf-card-tags{display:flex;gap:6px;flex-wrap:wrap;margin:13px 0 15px}
+.portal .market-page .shelf-card-tags>span{display:inline-flex;align-items:center;padding:3px 10px;font-size:10px;line-height:1.7;border-radius:999px;border:1px solid var(--pill-edge);color:var(--pill-ink);background:var(--pill-bg)}
+.portal .market-page .market-game-copy .shelf-card-author{font-size:10px;line-height:1.6;color:var(--card-copy);margin:0 0 12px}
+.portal .market-page .market-feature-copy p{white-space:normal;line-height:1.8;color:var(--card-copy)}
+.portal .market-page .market-feature-copy .shelf-card-tags{margin-bottom:0}
+.portal .market-page .market-stats{gap:12px;flex-wrap:wrap;align-items:center}
+.portal .market-page .market-stat{gap:5px;font-size:10px;font-variant-numeric:tabular-nums;color:var(--card-copy)}
+.portal .market-page .market-stat svg{width:25px;height:25px;padding:6px;border-radius:50%;background:var(--pill-bg);border:1px solid var(--pill-edge);color:var(--pill-ink);stroke-width:1.6}
+.portal .market-page .market-game-copy>.market-stats{margin-top:auto;padding-top:12px;border-top:1px solid var(--card-edge)}
+.portal .market-page .crossover-card-footer{margin-top:auto;padding-top:14px;border-color:var(--card-edge)}
+.portal .market-page .crossover-card-footer .market-stats{margin:0;gap:13px}
+.portal .market-page .market-price{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;font-size:11px;line-height:1.7;padding:3px 9px;border-radius:999px;background:var(--pill-bg);border:1px solid var(--pill-edge)}
+.portal .market-page .market-price.is-free{background:#79a99510;border-color:#79a99530}
+.portal .market-page .market-card-badge,.portal .market-page .market-remix-pill{border-radius:999px;padding:5px 10px;backdrop-filter:blur(12px);box-shadow:0 2px 8px #10203012;font-size:10px;letter-spacing:.2px}
+.portal .market-page .market-card-badge{left:12px;top:12px}
+.portal .market-page .market-remix-pill{right:10px;bottom:10px}
+.portal .market-page .market-filter-group button{border:1px solid transparent;border-radius:999px;padding:6px 13px;transition:background .2s,border-color .2s}
+.portal .market-page .market-filter-group button[aria-pressed=true]{border-color:var(--pill-edge);box-shadow:0 2px 6px var(--card-shadow)}
+.portal .market-page .market-view-all{border:1px solid var(--pill-edge);border-radius:999px;padding:7px 13px;background:var(--pill-bg);color:var(--pill-ink)}
+@media(min-width:1400px){.portal .market-crossover-shelf .market-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1000px){.portal .market-page .market-game-copy{padding:16px 14px}.portal .market-page .market-stats{gap:8px}.portal .market-page .market-stat svg{width:23px;height:23px;padding:5px}}
+@media(max-width:700px){.portal .market-page .market-game-card{border-radius:12px}.portal .market-page .crossover-card h3{font-size:20px!important}.portal .market-page .market-game-title h3{font-size:16px}.portal .market-page .market-game-title{display:flex;align-items:start}.portal .market-page .market-game-title .market-price{margin-top:0}.portal .market-page .market-stat{font-size:9px}.portal .market-page .market-stat svg{width:20px;height:20px;padding:4px}.portal .market-page .market-stats{gap:6px}.portal .market-page .market-price{font-size:10px}.portal .market-page .market-feature-copy{padding:17px}.portal .market-page .market-game-copy .shelf-card-author{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.portal .market-page .market-game-card,.portal .market-page .market-feature-card{transition:none}.portal .market-page .market-game-card:hover,.portal .market-page .market-feature-card:hover{transform:none}}

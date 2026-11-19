@@ -1,0 +1,13 @@
+.paper-atlas{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#f6f5f0}
+.paper-atlas canvas{position:absolute;inset:0;width:100%;height:100%}
+.paper-atlas-fibres{position:absolute;inset:0;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.3' filter='url(%23n)'/%3E%3Cg stroke='%23928d81' stroke-width='.35' opacity='.4'%3E%3Cpath d='M14 23l5 1m43 21l3-2m47-30l2 4m41 29l6-1M23 98l4 2m43 18l6-1m45 29l3 2m39-53l3-1M16 167l6 1m92 12l5-1'/%3E%3C/g%3E%3C/svg%3E")}
+html[data-atlas-preview="paper"]{background:#f6f5f0}
+html[data-atlas-preview="paper"] #root>.portal{background:transparent}
+html[data-atlas-preview="paper"] .portal .creation-atmosphere{display:none}
+html[data-atlas-preview="paper"][data-theme="light"] .portal .site-header{background:#fafaf6e8;border-bottom-color:#d9dcd633}
+.paper-atlas-preview-note{position:fixed;bottom:15px;right:18px;z-index:35;display:flex;align-items:center;gap:18px;padding:9px 13px;border:1px solid #c6c8bf70;border-radius:7px;background:#fafaf6ed;box-shadow:0 3px 16px #5e635008;backdrop-filter:blur(10px);font-size:10px;color:#8d9185}
+.paper-atlas-preview-note a{color:#667b8b;text-decoration:none}
+.paper-atlas-preview-note button{border:0;border-radius:4px;padding:3px 7px;background:#e9ede3;color:#647760;font-size:inherit}
+html[data-atlas-preview="paper"][data-theme="dark"] .paper-atlas{background:#141b20}
+html[data-atlas-preview="paper"][data-theme="dark"] .paper-atlas canvas{filter:invert(.8);opacity:.65}
+@media(max-width:640px){.paper-atlas-preview-note{bottom:10px;right:10px;gap:12px;font-size:9px}}

@@ -1,0 +1,261 @@
+﻿/* 导出与展示页：沿用站点浅色底、宋体标题与金色强调 */
+
+.export-page { padding: 24px 0 96px; }
+
+.export-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; color: #7d8fa3; margin-bottom: 20px;
+}
+.export-back svg { transform: rotate(180deg); }
+.export-back:hover { color: #4f6b83; }
+
+.export-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+  padding-bottom: 22px; border-bottom: 1px solid #e3ebf2;
+}
+.export-head h1 {
+  margin: 8px 0 10px; color: #24384c; letter-spacing: 1px;
+  font-family: "Songti SC", SimSun, serif; font-size: clamp(30px, 3vw, 42px); font-weight: 500;
+}
+.export-head p { margin: 0; max-width: 620px; font-size: 13px; line-height: 1.9; color: #6d8296; }
+
+.export-meta { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 4px; }
+.export-chip {
+  font-size: 11px; color: #6f8497; background: #f3f8fc;
+  border: 1px solid #e1eaf2; border-radius: 999px; padding: 5px 11px; white-space: nowrap;
+}
+.export-chip.is-ready { color: #3f7a55; background: #eaf3ea; border-color: #d7e7d7; }
+
+.export-error { margin: 16px 0 0; font-size: 12px; color: #b05f48; }
+
+.export-stages { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 26px; }
+.export-stage { display: grid; gap: 10px; align-content: start; }
+.export-stage-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.export-stage-label { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #2f4759; }
+.export-stage-label svg { color: #c1a267; }
+.export-stage-spec { font-size: 10.5px; letter-spacing: .4px; color: #93a4b4; }
+
+.export-frame {
+  position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden;
+  display: grid; place-items: center;
+  background: linear-gradient(160deg, #fbfdff, #f1f7fb);
+  border: 1px dashed #c3d4e4;
+  box-shadow: inset 0 0 0 1px #ffffffb0;
+}
+.export-frame.has-media { border-style: solid; border-color: #dbe6ef; background: #0b1a24; }
+.export-frame iframe, .export-frame video { width: 100%; height: 100%; border: 0; display: block; object-fit: cover; }
+
+.export-corner { position: absolute; width: 14px; height: 14px; border: 2px solid #bcd0e2; opacity: .7; pointer-events: none; }
+.export-corner.corner-tl { left: 10px; top: 10px; border-right: 0; border-bottom: 0; border-radius: 5px 0 0 0; }
+.export-corner.corner-tr { right: 10px; top: 10px; border-left: 0; border-bottom: 0; border-radius: 0 5px 0 0; }
+.export-corner.corner-bl { left: 10px; bottom: 10px; border-right: 0; border-top: 0; border-radius: 0 0 0 5px; }
+.export-corner.corner-br { right: 10px; bottom: 10px; border-left: 0; border-top: 0; border-radius: 0 0 5px 0; }
+
+.export-placeholder { display: grid; justify-items: center; gap: 9px; padding: 0 30px; text-align: center; }
+.export-placeholder-icon {
+  width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center;
+  color: #9fb6cc; background: #fff; border: 1px solid #dde9f2; box-shadow: 0 8px 20px #5b779312;
+}
+.export-placeholder strong { font-size: 13px; font-weight: 600; color: #4a6172; }
+.export-placeholder small { max-width: 330px; font-size: 11px; line-height: 1.75; color: #90a3b4; }
+
+.export-stage-note { margin: 0; font-size: 11px; color: #93a4b4; }
+
+.export-actions {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin-top: 34px; padding-top: 22px; border-top: 1px solid #e3ebf2;
+}
+.export-actions .site-button:disabled { opacity: .55; cursor: not-allowed; }
+.export-actions .text-link { margin-left: auto; font-size: 12px; }
+
+@media (max-width: 960px) {
+  .export-stages { grid-template-columns: 1fr; }
+}
+
+/* 导出页：压住站点环境底纹，避免右上角出现突兀的绿色光斑 */
+.page-export .world-atlas-wash { opacity: .45; }
+.page-export .export-frame { border-color: #bdd2e4; background: linear-gradient(160deg, #fbfdff, #eff6fb); }
+.export-note { margin: 14px 0 0; font-size: 11px; color: #97a7b6; }
+
+/* 导出页：压掉页面环境色斑（该装饰挂在 body 上，用路由类收敛） */
+/* 环境暗纹与主页一致：保留等高线、颗粒与鼠标跟随的透明度变化 */
+
+/* ===== 星空背景 + 浅色遮罩 + 指针透开 ===== */
+body:has(.portal.page-export) .world-atlas { display: none; }
+
+.export-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.export-bg-photo {
+  position: absolute; inset: -2%;
+  background: url('/export-assets/night-observatory.png') center/cover no-repeat;
+  transform: scale(1.03);
+  filter: saturate(.95) brightness(1.02);
+}
+.export-bg-glow {
+  position: absolute; inset: 0; mix-blend-mode: screen;
+  background: radial-gradient(circle 360px at var(--mx, 50%) var(--my, 24%), rgba(255, 238, 204, .2), transparent 72%);
+}
+.export-bg-veil {
+  position: absolute; inset: 0; opacity: .955;
+  background: linear-gradient(180deg, #f7fbfe, #eef5fa);
+  -webkit-mask-image: radial-gradient(circle 400px at var(--mx, 50%) var(--my, 24%), rgba(0,0,0,0) 0%, rgba(0,0,0,.22) 44%, #000 96%);
+  mask-image: radial-gradient(circle 400px at var(--mx, 50%) var(--my, 24%), rgba(0,0,0,0) 0%, rgba(0,0,0,.22) 44%, #000 96%);
+}
+
+.export-page { position: relative; }
+.export-head h1 { text-shadow: 0 2px 20px #ffffffee, 0 0 34px #ffffffb0; }
+.export-page .site-eyebrow { text-shadow: 0 1px 10px #ffffffcc; }
+.export-back, .export-head p, .export-actions .text-link { text-shadow: 0 1px 8px #ffffffdd; }
+
+/* 深色玻璃展示框 */
+.export-frame {
+  background: linear-gradient(160deg, rgba(13, 24, 36, .78), rgba(8, 17, 26, .86));
+  border: 1px dashed rgba(186, 214, 238, .45);
+  box-shadow: inset 0 0 0 1px #ffffff14, 0 18px 40px #0a1a2430;
+  backdrop-filter: blur(4px);
+}
+.export-frame.has-media { background: #08131c; border-style: solid; border-color: rgba(160, 195, 225, .32); }
+.export-frame iframe, .export-frame video { background: #050d14; }
+.export-corner { border-color: rgba(206, 226, 245, .55); opacity: .8; }
+.export-placeholder-icon {
+  background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .18);
+  color: #cfe3f5; box-shadow: 0 10px 24px #05121b40;
+}
+.export-placeholder strong { color: #e9f2fa; }
+.export-placeholder small { color: #a9bfd2; }
+
+/* ===== 展示框放大 + 更亮更小的跟随窗口（替代整层遮罩，避免闪烁） ===== */
+.export-page.site-container { width: min(1720px, calc(100% - 48px)); }
+.export-stages { gap: 18px; margin-top: 22px; }
+
+.export-bg-photo { inset: 0; transform: none; filter: saturate(.95) brightness(1.02); }
+.export-bg-veil {
+  -webkit-mask-image: none; mask-image: none;
+  background: linear-gradient(180deg, #f7fbfe, #eef4f9); opacity: .965;
+}
+.export-spot {
+  position: fixed; left: 0; top: 0; width: 360px; height: 360px; pointer-events: none;
+  will-change: transform; transform: translate3d(-999px, -999px, 0);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, #000 22%, rgba(0,0,0,.72) 46%, rgba(0,0,0,.28) 66%, transparent 82%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 0%, #000 22%, rgba(0,0,0,.72) 46%, rgba(0,0,0,.28) 66%, transparent 82%);
+}
+.export-spot-photo {
+  position: absolute; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: url('/export-assets/night-observatory.png') center/cover no-repeat;
+  filter: brightness(1.28) saturate(1.08) contrast(1.02);
+  will-change: transform;
+}
+.export-spot-glow {
+  position: absolute; inset: 0; mix-blend-mode: screen;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 240, 208, .26), rgba(255, 226, 178, .10) 45%, transparent 70%);
+}
+
+/* 恢复上一版的柔光效果：大范围、软过渡、低亮度 */
+.export-spot {
+  width: 820px; height: 820px;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, rgba(0,0,0,.92) 26%, rgba(0,0,0,.55) 50%, rgba(0,0,0,.22) 70%, transparent 90%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 0%, rgba(0,0,0,.92) 26%, rgba(0,0,0,.55) 50%, rgba(0,0,0,.22) 70%, transparent 90%);
+}
+.export-spot-photo { filter: saturate(.95) brightness(1.02); }
+.export-spot-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 238, 204, .18), transparent 70%);
+}
+
+/* ===== 直接使用夜景图作页面背景（去掉白色幕布与探索光效）===== */
+.export-bg-veil, .export-spot { display: none; }
+.export-bg-photo { inset: 0; transform: none; filter: saturate(.98) brightness(.94); }
+body:has(.portal.page-export) { background: #08131c; }
+
+:root[data-theme] .portal.page-export .site-header {
+  background: rgba(7, 15, 24, .32);
+  border-bottom-color: rgba(255, 255, 255, .08);
+  backdrop-filter: blur(14px);
+}
+:root[data-theme] .portal.page-export .site-brand,
+:root[data-theme] .portal.page-export .site-nav a,
+:root[data-theme] .portal.page-export .site-account,
+:root[data-theme] .portal.page-export .site-menu { color: #e8f1f9; }
+:root[data-theme] .portal.page-export .site-nav a:hover { color: #ffffff; }
+:root[data-theme] .portal.page-export .site-theme-toggle { color: #dbe8f4; border-color: rgba(255, 255, 255, .2); }
+:root[data-theme] .portal.page-export .site-footer {
+  background: transparent;
+  border-top-color: rgba(255, 255, 255, .1);
+  color: #a9bccd;
+}
+:root[data-theme] .portal.page-export .site-footer a { color: #c9dae8; }
+
+.export-page { color: #e8f1f8; }
+.export-head { border-bottom-color: rgba(255, 255, 255, .12); }
+.export-head h1 { color: #f6f9fc; text-shadow: 0 3px 26px rgba(2, 8, 14, .72); }
+:root[data-theme] .portal.page-export .site-eyebrow { color: #9fb6ca; text-shadow: 0 2px 12px rgba(2, 8, 14, .6); }
+.export-back { color: #a8bfd3; text-shadow: 0 2px 12px rgba(2, 8, 14, .6); }
+.export-back:hover { color: #eaf4ff; }
+.export-stage-label { color: #eef5fb; text-shadow: 0 2px 10px rgba(2, 8, 14, .55); }
+.export-stage-label svg { color: #d9bd85; }
+.export-actions { border-top-color: rgba(255, 255, 255, .12); }
+.export-actions .text-link { color: #cfe0ee; text-shadow: 0 2px 10px rgba(2, 8, 14, .55); }
+.export-error { color: #ffb9a6; }
+:root[data-theme] .portal.page-export .site-button.outline {
+  color: #e2eef8; border-color: rgba(255, 255, 255, .3); background: rgba(255, 255, 255, .05);
+}
+:root[data-theme] .portal.page-export .site-button.outline:hover { border-color: rgba(255, 255, 255, .55); background: rgba(255, 255, 255, .1); }
+
+:root[data-theme] .portal.page-export .export-actions .text-link { color: #cfe0ee; }
+:root[data-theme] .portal.page-export .export-actions .text-link:hover { color: #ffffff; }
+
+/* ===== 一键上架按钮（导出页，深底金色）===== */
+.export-publish {
+  position: relative; display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px; border-radius: 10px; font-size: 13px; font-weight: 600;
+  color: #3b2a12; border: 1px solid #d9bb80; overflow: hidden; cursor: pointer;
+  background: linear-gradient(135deg, #f7e3b4, #e3c184 55%, #f9edcd);
+  box-shadow: 0 10px 26px #c8a46440, inset 0 1px 0 #fff9;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.export-publish:after {
+  content: ''; position: absolute; top: -20%; left: -140%; width: 55%; height: 140%;
+  background: linear-gradient(100deg, transparent, #ffffffc4, transparent);
+  transform: skewX(-18deg); animation: publish-sheen 3.6s ease-in-out infinite;
+}
+@keyframes publish-sheen { 0%, 58% { left: -140%; } 76%, 100% { left: 150%; } }
+.export-publish:hover { transform: translateY(-1px); box-shadow: 0 13px 30px #c8a4645c, inset 0 1px 0 #fff9; }
+.export-publish svg { transform: rotate(90deg); }
+@media (prefers-reduced-motion: reduce) { .export-publish:after { animation: none; } }
+
+/* ===== 商城：刚刚上架的高亮与角标 ===== */
+.market-feature-card { position: relative; }
+.market-feature-card.is-just-published:after {
+  content: ''; position: absolute; inset: -2px; border-radius: 16px; pointer-events: none; z-index: 4;
+  box-shadow: 0 0 0 2px #e0bc7a, 0 0 30px 8px #e0bc7a55;
+  animation: just-published 1.3s ease-in-out 2;
+}
+@keyframes just-published { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+.market-just-badge {
+  position: absolute; top: 12px; right: 12px; z-index: 5;
+  font-size: 11px; padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  color: #3b2a12; background: linear-gradient(135deg, #f7e3b4, #e3c184);
+  border: 1px solid #d9bb80; box-shadow: 0 6px 16px #c8a46455;
+}
+
+/* ===== 上架按钮改深底金边金字 ===== */
+.export-publish {
+  color: #f0d8a4;
+  background: rgba(8, 17, 27, .84);
+  border: 1px solid rgba(226, 193, 132, .72);
+  box-shadow: 0 10px 26px #04101a66, inset 0 1px 0 #ffffff1a;
+  backdrop-filter: blur(8px);
+}
+.export-publish:after { display: none; }
+.export-publish svg { color: #e6c78e; }
+.export-publish:hover {
+  color: #fff4d8; border-color: #f2d9a4;
+  background: rgba(12, 24, 36, .9);
+  box-shadow: 0 0 0 1px #f0d8a455, 0 14px 32px #04101a80, inset 0 1px 0 #ffffff26;
+}
+
+/* ===== 游戏世界页不再显示顶部创建区 ===== */
+.market-create-page.is-listing .creation-hero { display: none; }
+.market-create-page.is-listing .market-discover-heading { margin-top: 20px; }
+
+/* 上架按钮再提亮一档：描边加粗 + 外发光 */
+.export-publish { border-width: 1.5px; box-shadow: 0 10px 26px #04101a66, 0 0 0 1px #e2c18422, inset 0 1px 0 #ffffff1a; }
+.export-publish:hover { box-shadow: 0 0 0 1px #f0d8a4aa, 0 0 24px #e2c18455, 0 14px 32px #04101a80, inset 0 1px 0 #ffffff26; }

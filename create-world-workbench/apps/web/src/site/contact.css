@@ -1,0 +1,112 @@
+/* 联系我们：与全站同一套纸面底 + 金色点缀 */
+
+.contact-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 0 96px;
+  text-align: center;
+}
+
+.contact-head { margin-bottom: 30px; }
+.contact-head h1 {
+  margin: 12px 0 10px;
+  font-family: "Songti SC", SimSun, serif;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #24384c;
+}
+.contact-head p { margin: 0; font-size: 13px; line-height: 1.9; color: #6d8296; }
+
+.contact-qr {
+  margin: 0 auto 28px;
+  padding: 20px 20px 16px;
+  max-width: 340px;
+  background: #fff;
+  border: 1px solid #e6dcc6;
+  border-radius: 18px;
+  box-shadow: 0 18px 44px #2f4a641a, 0 1px 0 #ffffffcc inset;
+}
+.contact-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #fff;
+}
+.contact-qr figcaption {
+  margin-top: 14px;
+  font-size: 12.5px;
+  letter-spacing: .6px;
+  color: #2c4256;
+}
+.contact-qr small { display: block; margin-top: 5px; font-size: 10.5px; color: #9db0c2; }
+
+.contact-phone {
+  margin: 0 auto 14px;
+  padding: 18px 22px;
+  max-width: 380px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fffdf8, #ffffff);
+  border: 1px solid #e8d9b9;
+  box-shadow: 0 12px 30px #c8a4641f;
+}
+.contact-phone-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: #9b8558;
+  text-transform: uppercase;
+}
+.contact-phone-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.contact-phone-number {
+  font-family: "Songti SC", SimSun, serif;
+  font-size: 26px;
+  letter-spacing: 2.4px;
+  color: #24384c;
+  text-decoration: none;
+}
+.contact-phone-number:hover { color: #8a6a2f; }
+.contact-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  font-size: 11px;
+  color: #6d8296;
+  background: #f6f9fc;
+  border: 1px solid #e2ebf3;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+.contact-copy:hover { color: #3b5470; border-color: #cfdded; background: #fff; }
+
+.contact-note {
+  text-align: center;
+  margin: 22px auto 26px;
+  max-width: 420px;
+  font-size: 11.5px;
+  line-height: 1.9;
+  color: #8ba0b3;
+}
+
+.contact-back { margin: 0 auto; }
+
+@media (max-width: 640px) {
+  .contact-page { padding: 40px 0 64px; }
+  .contact-qr { max-width: 300px; }
+  .contact-phone-number { font-size: 22px; }
+}
+
+/* 两个号码：竖排，中间细分隔线 */
+.contact-phone-list { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
+.contact-phone-row + .contact-phone-row { padding-top: 10px; border-top: 1px solid #f1e8d6; }
+.contact-phone-number { font-size: 24px; }
