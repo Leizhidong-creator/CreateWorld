@@ -396,29 +396,6 @@ From art direction to acceptance
 
 ---
 
-## TEAM
-
-**CW Team** · Taiyuan University of Technology · 4 people
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-- 3 × Computer Science (Project 211)
-- 1 × Digital Media Art
-- Product, agent pipeline, systems and UI/UX
-
-</td>
-<td width="50%" valign="top">
-
-- 2026 ByteDance Douyin AI Innovator Competition — national final, second prize
-- AI meeting-room system delivered to a government/enterprise client in one month
-- "Zhi Shan AI" restaurant operations system, delivered across multiple stores
-
-</td>
-</tr>
-</table>
-
 ---
 
 <div align="center">

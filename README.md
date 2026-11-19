@@ -411,29 +411,6 @@ CreateWorld/
 
 ---
 
-## TEAM
-
-**CW Team** · 太原理工大学 · 4 人
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-- 3 人：计算机科学与技术（211）
-- 1 人：数字媒体艺术
-- 分工覆盖产品、Agent 链路、系统开发与 UI/UX
-
-</td>
-<td width="50%" valign="top">
-
-- 2026 字节跳动抖音 AI 创变者比赛 · 全国决赛二等奖
-- 政企 AI 会议室系统 · 一个月交付
-- 餐饮「知膳 AI」系统 · 多门店交付
-
-</td>
-</tr>
-</table>
-
 ---
 
 <div align="center">
