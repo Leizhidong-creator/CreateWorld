@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
   <img src="assets/brand/banner.jpg" alt="Create World — FROM WORDS TO WORLDS" width="100%" />
 </div>
 
@@ -35,7 +35,7 @@ it gives you a **playable 2D pixel narrative game** you can keep editing and pub
 
 > Two and a half minutes, from one sentence to a playable work. Subtitled — sound on.
 
-__VIDEO_URL__
+https://github.com/user-attachments/assets/3c77994a-eac7-449b-a0c1-e046e7b2382d
 
 <sub>Hosted by GitHub, so it plays right here — no redirect to YouTube.</sub>
 
@@ -325,3 +325,4 @@ Run `node scripts/seed.mjs` in the repo and you will get yours.
 <sub>Works based on third-party IP are fan-made demos by beta users. All rights belong to their respective owners.</sub>
 
 </div>
+

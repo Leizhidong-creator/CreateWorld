@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
   <img src="assets/brand/banner.jpg" alt="Create World — 你的故事，世界的开始" width="100%" />
 </div>
 
@@ -37,7 +37,7 @@ Create World 是一个面向 **IP 粉丝、同人创作者、独立开发者与 
 
 > 2 分 30 秒，从一句话到一款能玩的作品。带字幕，建议开声音。
 
-__VIDEO_URL__
+https://github.com/user-attachments/assets/3c77994a-eac7-449b-a0c1-e046e7b2382d
 
 <sub>也可以在 [在线体验](https://createworld.games) 里直接玩到片中的作品。</sub>
 
@@ -315,3 +315,4 @@ Create World 切入的，就是这道门槛。
 <sub>© 2026 CW Team · 产品数据由项目方提供 · 第三方 IP 作品为内测用户二创 demo</sub>
 
 </div>
+

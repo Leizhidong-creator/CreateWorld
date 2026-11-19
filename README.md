@@ -35,7 +35,7 @@
 
 > 2 分 30 秒，从一句话到一款能玩的作品。带字幕，建议开声音。
 
-__VIDEO_URL__
+https://github.com/user-attachments/assets/3c77994a-eac7-449b-a0c1-e046e7b2382d
 
 <sub>↑ 视频直接托管在 GitHub，点开即播，不需要跳转 B 站或 YouTube。</sub>
 
@@ -484,4 +484,5 @@ CreateWorld/
 <sub>《三体》等第三方 IP 相关作品为内测用户二创 demo，版权归原权利人所有；如涉侵权请联系删除。</sub>
 
 </div>
+
 
