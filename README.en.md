@@ -6,11 +6,11 @@
 
 <div align="center">
 
-**Turn a single sentence into a world you can walk into.**
+**From a story to a world you can play.**
 
-`Create World` is an AI game-creation platform.
-Give it a sentence, a novel, a script or a subtitle file —
-it gives you a **playable 2D pixel narrative game** you can keep editing and publish.
+Create World is an AI game-creation platform.
+Give it a sentence, a novel or an episode script, and it makes a playable **2D pixel narrative game**:
+scenes, characters, dialogue, choices and endings. You can keep editing it, and publish it when it is ready.
 
 <sub>AI game creation · 2D pixel narrative · plugin ecosystem · world co-creation</sub>
 
@@ -23,7 +23,7 @@ it gives you a **playable 2D pixel narrative game** you can keep editing and pub
 
 <br/>
 
-[**▶ Play online**](https://createworld.games) &nbsp;·&nbsp; [**Product intro**](PRODUCT.md) &nbsp;·&nbsp; [**Watch the film**](#-the-film) &nbsp;·&nbsp; [**Run it locally**](#-run-it-locally) &nbsp;·&nbsp; [**中文**](README.md)
+[**Play online**](https://createworld.games) &nbsp;·&nbsp; [**Product intro**](PRODUCT.md) &nbsp;·&nbsp; [**The film**](#the-film) &nbsp;·&nbsp; [**Run it locally**](#run-it-locally) &nbsp;·&nbsp; [**中文**](README.md)
 
 </div>
 
@@ -31,23 +31,23 @@ it gives you a **playable 2D pixel narrative game** you can keep editing and pub
 
 ---
 
-## 🎬 The film
+## The film
 
-> Two and a half minutes, from one sentence to a playable work. Subtitled — sound on.
+> Two and a half minutes. The first half is the game; the second half is how it gets made. Subtitled.
 
 https://github.com/user-attachments/assets/3c77994a-eac7-449b-a0c1-e046e7b2382d
 
-<sub>Hosted by GitHub, so it plays right here — no redirect to YouTube.</sub>
+<sub>Hosted by GitHub. Click and it plays.</sub>
 
 ---
 
 ## What it is
 
-> **What you write is not a prompt. It is the first line of a world.**
+Making a game is rarely hard because of code.
 
-Most people never finish a game — not because they cannot code, but because between "an idea" and "something playable" sits an entire production line: adaptation, storyboarding, art, dialogue, interaction, build, test, bug-fixing.
+It is hard because of the line between a story and something playable: adaptation, storyboards, art, dialogue, interaction, build, test, bug-fixing. Every step needs a person, and every step can stall.
 
-Create World hands that line to an AI team that organises its own work. You describe the world you want; it turns the story into scenes, paints the scenes as pixels, wires the pixels to interaction, and runs the result — then gives you a game you can open in a browser.
+Create World hands that line to an AI team that organises its own work. You describe the world you want. It turns the story into scenes, paints the scenes as pixels, wires the pixels to interaction, and runs the result in a real browser. What you get is a game you can open and play, plus a path to keep changing it.
 
 <table>
 <tr>
@@ -55,19 +55,19 @@ Create World hands that line to an AI team that organises its own work. You desc
 
 **Built for**
 
-- People who love a story and want to walk inside it
-- Fan creators writing an alternate ending for a character
-- IP owners and brands turning content into interaction
-- Developers who want their craft to become a reusable plugin
+- People with a story they want to walk into
+- Fan creators writing an alternate path for a character
+- IP owners and brands turning content into something interactive
+- Developers who want their craft to become a plugin
 
 </td>
 <td width="50%" valign="top">
 
-**Not**
+**Out of scope**
 
-- A magic button for AAA games
-- An open-world sandbox — we focus on **2D pixel narrative**
-- A replacement for your story decisions
+- A one-click button for AAA games
+- Open-world sandboxes; we do 2D pixel narrative
+- Deciding the core of your story for you
 - Hiding AI: original text, inference and added content are labelled separately
 
 </td>
@@ -78,9 +78,37 @@ Create World hands that line to an AI team that organises its own work. You desc
 
 ## Three steps
 
-| 01 · Write | 02 · Generate | 03 · Walk in |
-| --- | --- | --- |
-| One sentence, a synopsis, an episode, an SRT file, or a structured YAML archive. | An AI agent reads the story, designs the mechanics, paints the scenes, writes dialogue, builds the runtime, and playtests it in a real browser. | Play it, change it with a sentence, switch versions, export a static HTML5 build, or publish it and let others walk in. |
+<table>
+<tr>
+<td width="33%" valign="top" align="center">
+
+### 01 · Write
+
+A sentence, a synopsis, an episode, an SRT file, or a structured YAML archive.
+
+<sub>`Turn the best part of The Three-Body Problem into a game.`</sub>
+
+</td>
+<td width="33%" valign="top" align="center">
+
+### 02 · Generate
+
+It reads the story, designs the mechanics, paints the scenes, writes dialogue, builds the runtime, and playtests it in a real browser.
+
+<sub>`10 min · 5 scenes · pixel`</sub>
+
+</td>
+<td width="33%" valign="top" align="center">
+
+### 03 · Walk in
+
+Play it, change it with a sentence, switch versions, export a static HTML5 build — or publish it.
+
+<sub>`WASD · E · mobile landscape`</sub>
+
+</td>
+</tr>
+</table>
 
 <div align="center">
   <img src="assets/brand/pipeline.jpg" alt="Production pipeline: understand, adapt, art, build, playtest, review" width="100%" />
@@ -90,51 +118,51 @@ Create World hands that line to an AI team that organises its own work. You desc
 
 ## The product
 
-> Real screens from the live product. Click to open the corresponding page.
+> Real screens from the live product. Click one to open the page.
 
 <div align="center">
   <a href="https://createworld.games"><img src="assets/shots/shot-home.jpg" alt="Create World home page" width="100%" /></a>
 </div>
-<div align="center"><sub><b>Creation entry</b> — one sentence is enough; AI first helps you say what you mean.</sub></div>
+<div align="center"><sub><b>Creation entry</b> — one sentence is enough. It first makes sure it understands what you want.</sub></div>
 
 <br/>
 
 <div align="center">
   <a href="https://createworld.games/#/games"><img src="assets/shots/shot-worlds.jpg" alt="Worlds created by players" width="100%" /></a>
 </div>
-<div align="center"><sub><b>Worlds</b> — not a gallery of model demos, but worlds people have played.</sub></div>
+<div align="center"><sub><b>Worlds</b> — covers, tags, playtests, fan-work entries. Every work gets its own page.</sub></div>
 
 <br/>
 
 <div align="center">
   <a href="https://createworld.games/#/plugins"><img src="assets/shots/shot-plugins.jpg" alt="Plugin marketplace" width="100%" /></a>
 </div>
-<div align="center"><sub><b>Plugins</b> — the know-how of making a good game, packaged as reusable capability.</sub></div>
+<div align="center"><sub><b>Plugins</b> — skills, tools, workflows and asset packs that install into someone else's workbench.</sub></div>
 
 <br/>
 
 <div align="center">
   <img src="assets/shots/shot-studio.jpg" alt="Workbench: edit on the left, play on the right" width="100%" />
 </div>
-<div align="center"><sub><b>Workbench</b> — edit on the left, play on the right; every change is a version, and a failed build never replaces a playable one.</sub></div>
+<div align="center"><sub><b>Workbench</b> — edit on the left, play on the right. Every change is a version; a failed build never replaces a playable one.</sub></div>
 
 <br/>
 
 <div align="center">
   <img src="assets/shots/shot-gameplay.jpg" alt="Pixel narrative gameplay" width="100%" />
 </div>
-<div align="center"><sub><b>Actually playable</b> — scenes, characters, dialogue, map, interaction and saves really exist at runtime.</sub></div>
+<div align="center"><sub><b>Playtest</b> — scenes, characters, dialogue, map, interaction and saves all exist at runtime.</sub></div>
 
 ---
 
-## Four loops
+## Four parts
 
-| | Capability | What it solves | What you get |
+| | Part | What it addresses | What you get |
 | :--: | --- | --- | --- |
-| ◆ | **AI game making** | The production line between "idea" and "work" | Describe an IP, story or world; get a playable 2D pixel narrative game and keep editing it in natural language |
-| ◆ | **Plugin ecosystem** | Good practice stuck in one person's head | Skills, tools, workflows and asset packs can be published, reused and recommended |
-| ◆ | **Community & fan works** | A finished work goes nowhere | One-click publishing, feedback, iteration, and "build another game on top of this world" |
-| ◆ | **World co-creation** | Every game is an island | Put characters and settings from different works into one world: crossovers, spin-offs, cross-world narrative |
+| ◆ | **AI game making** | The production line between an idea and a work | Describe an IP, story or world; get a playable 2D pixel narrative game and keep editing it in natural language |
+| ◆ | **Plugin ecosystem** | Good practice stuck in one person's head | Skills, tools, workflows and asset packs that can be published, reused and recommended |
+| ◆ | **Community & fan works** | A finished work goes nowhere | Publishing, feedback, iteration, and "build another game on top of this world" |
+| ◆ | **World co-creation** | Every game is an island | Characters and settings from different works in one world: crossovers, spin-offs, cross-world narrative |
 
 <br/>
 
@@ -146,7 +174,7 @@ Create World hands that line to an AI team that organises its own work. You desc
 
 ## Worlds
 
-> Not renders — works that are live or in closed beta.
+> Live or in closed beta. Not renders.
 
 | World | Genre | Status | One line |
 | --- | --- | :--: | --- |
@@ -205,7 +233,7 @@ Create World hands that line to an AI team that organises its own work. You desc
 | --- | --- | --- |
 | Web | **React 19 + Vite 7 + TypeScript 5.9** | One UI language across studio, community and marketplace |
 | Server | **Node.js 24 + tsx + SQLite** | Local-first; projects, runs, versions and evidence in one place |
-| Agent | **Codex App Server + 18 skills** | The model decides what to read and in which order |
+| Agent | **Codex App Server + 18 skills** | The model decides what to read and in which order; no fixed pipeline |
 | Content | **YAML content spec + scene slicing** | Stable IDs for scenes, events, characters, state and mechanics |
 | Assets | **Pillow / native image generation + deterministic checks** | Masters, provenance and checks are stored together |
 | QA | **Playwright (Chromium / Firefox / WebKit)** | Real input, real save restore, real failure paths |
@@ -227,7 +255,7 @@ npm run build
 npx serve dist/web
 ```
 
-Everything is stored in your browser's localStorage. Demo account: `creator` / `createworld`.
+Projects, edits and versions live in localStorage. Demo account: `creator` / `createworld`.
 
 **B. Full workbench (needs a logged-in Codex CLI)**
 
@@ -238,6 +266,9 @@ npm run build
 npm start              # http://127.0.0.1:8787
 ```
 
+Requirements: Node.js 24+, a logged-in Codex CLI, Python 3. See the
+[workbench README](create-world-workbench/README.md) and [architecture](create-world-workbench/docs/ARCHITECTURE.md).
+
 **C. Play an exported game**
 
 ```bash
@@ -245,8 +276,7 @@ cd CreateWorld/interstellar-dust
 npm start              # http://127.0.0.1:4173
 ```
 
-Requirements: Node.js 24+, a logged-in Codex CLI, Python 3. See the
-[workbench README](create-world-workbench/README.md) and [architecture](create-world-workbench/docs/ARCHITECTURE.md).
+Exported games are plain static HTML5: unzip, run `python3 -m http.server 8000`, and play. No model, backend or network required.
 
 ---
 

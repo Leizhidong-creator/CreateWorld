@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Create World · seed
  * 一个不需要联网、不需要安装依赖的小彩蛋。
@@ -17,10 +17,10 @@ const WORLDS = [
 ];
 
 const OPENERS = [
-  '你没有写代码。你只是讲了一个故事。',
-  '所有的世界，一开始都只有一句话。',
-  '这一次，NPC 记得你上次的选择。',
-  '世界不会因为被生成而存在，是因为被走进去。',
+  '你只是讲了一个故事。',
+  '一个世界，从一句话开始。',
+  'NPC 记得你上次的选择。',
+  '门没锁，进去看看。',
   '在别人的故事里，做一次自己的决定。',
 ];
 
@@ -56,3 +56,4 @@ console.log(`  ${gold('◆')} ${opener}`);
 console.log('');
 console.log(dim(`  换一个世界：node scripts/seed.mjs ${hex}`));
 console.log('');
+
