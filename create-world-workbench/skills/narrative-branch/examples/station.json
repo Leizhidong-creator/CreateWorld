@@ -1,0 +1,1079 @@
+{
+  "schemaVersion": 1,
+  "id": "station-research",
+  "title": "暴雨车站",
+  "provenance": {
+    "kind": "deterministic_fixture",
+    "notModelOutput": true
+  },
+  "source": {
+    "complete": true,
+    "nodes": [
+      {
+        "id": "arrival",
+        "summary": "维修员留在暴雨车站。",
+        "invariant": "玩家是维修员",
+        "locator": "原创研究原文 P1"
+      },
+      {
+        "id": "records",
+        "summary": "值班室两份记录揭示隧道积水。",
+        "invariant": "证据先于知情判断",
+        "locator": "原创研究原文 P2"
+      },
+      {
+        "id": "permission",
+        "summary": "站长收到证据才开放高架通道。",
+        "invariant": "不能无证据取得信任",
+        "locator": "原创研究原文 P3"
+      },
+      {
+        "id": "repair",
+        "summary": "备用回路二恢复电源，支持救援。",
+        "invariant": "救援依赖供电",
+        "locator": "原创研究原文 P4"
+      },
+      {
+        "id": "departure",
+        "summary": "原作全员从高架离站。",
+        "invariant": "原作结局与新增反事实分开",
+        "locator": "原创研究原文 P5"
+      },
+      {
+        "id": "memorial",
+        "summary": "旧站牌记载先前守站人。",
+        "invariant": "留言是可选发现",
+        "locator": "原创研究原文 P6"
+      }
+    ]
+  },
+  "adaptation": {
+    "playerRole": "值班维修员林禾",
+    "coreExperience": "通过信息与修复承担救援选择的后果",
+    "genre": "2D 叙事解谜",
+    "targetMinutes": 12,
+    "preservedNodeIds": [
+      "arrival",
+      "records",
+      "permission",
+      "repair",
+      "memorial"
+    ],
+    "changes": [
+      {
+        "sourceNodeId": "departure",
+        "change": "加入不救人和走隧道的反事实结局",
+        "reason": "让玩家操作结果产生可见后果，明确并非原作事实"
+      }
+    ],
+    "excludedNodeIds": []
+  },
+  "mechanics": [
+    {
+      "id": "explore",
+      "goal": "调查车站空间",
+      "inputs": [
+        "移动或地点选择"
+      ],
+      "rules": [
+        "在公开地点自由来回"
+      ],
+      "feedback": "地点标题与目标变化",
+      "failure": "未知地点不可进入",
+      "recovery": "返回上一地点",
+      "sourceNodeIds": [
+        "arrival",
+        "memorial"
+      ]
+    },
+    {
+      "id": "evidence",
+      "goal": "用证据改变通行许可",
+      "inputs": [
+        "调查、连接、出示"
+      ],
+      "rules": [
+        "记录→推断→授权，顺序不可反转"
+      ],
+      "feedback": "NPC回应改变",
+      "failure": "无证据时拒绝授权",
+      "recovery": "返回值班室寻找证据",
+      "sourceNodeIds": [
+        "records",
+        "permission"
+      ]
+    },
+    {
+      "id": "circuit",
+      "goal": "修复救援供电",
+      "inputs": [
+        "调整回路并接通"
+      ],
+      "rules": [
+        "只有回路二允许接通"
+      ],
+      "feedback": "电源状态改变",
+      "failure": "错误回路不能接通",
+      "recovery": "可循环调整回路",
+      "sourceNodeIds": [
+        "repair"
+      ]
+    },
+    {
+      "id": "rescue",
+      "goal": "选择疏散后果",
+      "inputs": [
+        "放梯、选择路线"
+      ],
+      "rules": [
+        "供电才可放梯，许可才可上高架"
+      ],
+      "feedback": "结局反映救援选择",
+      "failure": "隧道疏散失败",
+      "recovery": "重开完整旅程",
+      "sourceNodeIds": [
+        "repair",
+        "departure"
+      ]
+    }
+  ],
+  "state": {
+    "variables": [
+      {
+        "id": "clue",
+        "type": "bool",
+        "initial": false
+      },
+      {
+        "id": "linked",
+        "type": "bool",
+        "initial": false
+      },
+      {
+        "id": "trust",
+        "type": "bool",
+        "initial": false
+      },
+      {
+        "id": "power",
+        "type": "bool",
+        "initial": false
+      },
+      {
+        "id": "rescued",
+        "type": "bool",
+        "initial": false
+      },
+      {
+        "id": "egg",
+        "type": "bool",
+        "initial": false
+      },
+      {
+        "id": "circuit",
+        "type": "int",
+        "initial": 0,
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "invariants": [
+      {
+        "id": "knowledge",
+        "if": [
+          {
+            "var": "trust",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "then": [
+          {
+            "var": "linked",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      {
+        "id": "inference",
+        "if": [
+          {
+            "var": "linked",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "then": [
+          {
+            "var": "clue",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      {
+        "id": "rescue_power",
+        "if": [
+          {
+            "var": "rescued",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "then": [
+          {
+            "var": "power",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      }
+    ]
+  },
+  "flow": {
+    "startScreen": "title",
+    "screens": [
+      {
+        "id": "title",
+        "kind": "title",
+        "title": "暴雨车站"
+      },
+      {
+        "id": "hall",
+        "kind": "world",
+        "title": "候车大厅"
+      },
+      {
+        "id": "office",
+        "kind": "world",
+        "title": "值班室"
+      },
+      {
+        "id": "board",
+        "kind": "journal",
+        "title": "证据板"
+      },
+      {
+        "id": "talk",
+        "kind": "dialogue",
+        "title": "与站长交谈"
+      },
+      {
+        "id": "panel",
+        "kind": "puzzle",
+        "title": "备用配电盘"
+      },
+      {
+        "id": "platform",
+        "kind": "world",
+        "title": "积水站台"
+      },
+      {
+        "id": "pause",
+        "kind": "pause",
+        "title": "暂停"
+      },
+      {
+        "id": "together",
+        "kind": "ending",
+        "title": "一起离站"
+      },
+      {
+        "id": "alone",
+        "kind": "ending",
+        "title": "未归之人"
+      },
+      {
+        "id": "flood",
+        "kind": "ending",
+        "title": "隧道积水"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_start",
+        "from": "title",
+        "to": "hall",
+        "actionId": "start"
+      },
+      {
+        "id": "edge_to_office",
+        "from": "hall",
+        "to": "office",
+        "actionId": "to_office"
+      },
+      {
+        "id": "edge_from_office",
+        "from": "office",
+        "to": "hall",
+        "actionId": "from_office"
+      },
+      {
+        "id": "edge_inspect",
+        "from": "office",
+        "to": "office",
+        "actionId": "inspect"
+      },
+      {
+        "id": "edge_open_board",
+        "from": "hall",
+        "to": "board",
+        "actionId": "open_board"
+      },
+      {
+        "id": "edge_close_board",
+        "from": "board",
+        "to": "hall",
+        "actionId": "close_board"
+      },
+      {
+        "id": "edge_link",
+        "from": "board",
+        "to": "board",
+        "actionId": "link"
+      },
+      {
+        "id": "edge_open_talk",
+        "from": "hall",
+        "to": "talk",
+        "actionId": "open_talk"
+      },
+      {
+        "id": "edge_close_talk",
+        "from": "talk",
+        "to": "hall",
+        "actionId": "close_talk"
+      },
+      {
+        "id": "edge_convince",
+        "from": "talk",
+        "to": "talk",
+        "actionId": "convince"
+      },
+      {
+        "id": "edge_open_panel",
+        "from": "hall",
+        "to": "panel",
+        "actionId": "open_panel"
+      },
+      {
+        "id": "edge_close_panel",
+        "from": "panel",
+        "to": "hall",
+        "actionId": "close_panel"
+      },
+      {
+        "id": "edge_switch_one",
+        "from": "panel",
+        "to": "panel",
+        "actionId": "switch_one"
+      },
+      {
+        "id": "edge_switch_two",
+        "from": "panel",
+        "to": "panel",
+        "actionId": "switch_two"
+      },
+      {
+        "id": "edge_switch_zero",
+        "from": "panel",
+        "to": "panel",
+        "actionId": "switch_zero"
+      },
+      {
+        "id": "edge_power_on",
+        "from": "panel",
+        "to": "panel",
+        "actionId": "power_on"
+      },
+      {
+        "id": "edge_to_platform",
+        "from": "hall",
+        "to": "platform",
+        "actionId": "to_platform"
+      },
+      {
+        "id": "edge_from_platform",
+        "from": "platform",
+        "to": "hall",
+        "actionId": "from_platform"
+      },
+      {
+        "id": "edge_rescue",
+        "from": "platform",
+        "to": "platform",
+        "actionId": "rescue"
+      },
+      {
+        "id": "edge_leave_together",
+        "from": "platform",
+        "to": "together",
+        "actionId": "leave_together"
+      },
+      {
+        "id": "edge_leave_alone",
+        "from": "platform",
+        "to": "alone",
+        "actionId": "leave_alone"
+      },
+      {
+        "id": "edge_leave_tunnel",
+        "from": "platform",
+        "to": "flood",
+        "actionId": "leave_tunnel"
+      },
+      {
+        "id": "edge_old_sign",
+        "from": "hall",
+        "to": "hall",
+        "actionId": "old_sign"
+      },
+      {
+        "id": "edge_pause",
+        "from": "hall",
+        "to": "pause",
+        "actionId": "pause"
+      },
+      {
+        "id": "edge_resume",
+        "from": "pause",
+        "to": "hall",
+        "actionId": "resume"
+      }
+    ],
+    "terminals": [
+      "together",
+      "alone",
+      "flood"
+    ],
+    "mainEndingScreenIds": [
+      "together"
+    ]
+  },
+  "interactions": [
+    {
+      "id": "start",
+      "screenId": "title",
+      "targetScreen": "hall",
+      "label": "开始救援",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "开始救援完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "to_office",
+      "screenId": "hall",
+      "targetScreen": "office",
+      "label": "前往值班室",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "前往值班室完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "from_office",
+      "screenId": "office",
+      "targetScreen": "hall",
+      "label": "返回大厅",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "返回大厅完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "inspect",
+      "screenId": "office",
+      "targetScreen": "office",
+      "label": "调查线路记录",
+      "guard": [
+        {
+          "var": "clue",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "var": "clue",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "repeat": "once",
+      "mechanicId": "evidence",
+      "sourceNodeIds": [
+        "records"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "调查线路记录完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "open_board",
+      "screenId": "hall",
+      "targetScreen": "board",
+      "label": "打开证据板",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "打开证据板完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "close_board",
+      "screenId": "board",
+      "targetScreen": "hall",
+      "label": "收起证据板",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "收起证据板完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "link",
+      "screenId": "board",
+      "targetScreen": "board",
+      "label": "连接停电与积水记录",
+      "guard": [
+        {
+          "var": "clue",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "var": "linked",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "var": "linked",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "repeat": "once",
+      "mechanicId": "evidence",
+      "sourceNodeIds": [
+        "records"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "连接停电与积水记录完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "open_talk",
+      "screenId": "hall",
+      "targetScreen": "talk",
+      "label": "与站长交谈",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "与站长交谈完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "close_talk",
+      "screenId": "talk",
+      "targetScreen": "hall",
+      "label": "结束交谈",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "结束交谈完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "convince",
+      "screenId": "talk",
+      "targetScreen": "talk",
+      "label": "出示证据请求合作",
+      "guard": [
+        {
+          "var": "linked",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "var": "trust",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "var": "trust",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "repeat": "once",
+      "mechanicId": "evidence",
+      "sourceNodeIds": [
+        "permission"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "出示证据请求合作完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "open_panel",
+      "screenId": "hall",
+      "targetScreen": "panel",
+      "label": "前往配电室",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "前往配电室完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "close_panel",
+      "screenId": "panel",
+      "targetScreen": "hall",
+      "label": "离开配电室",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "离开配电室完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "switch_one",
+      "screenId": "panel",
+      "targetScreen": "panel",
+      "label": "回路调至一",
+      "guard": [
+        {
+          "var": "circuit",
+          "op": "eq",
+          "value": 0
+        }
+      ],
+      "effects": [
+        {
+          "var": "circuit",
+          "op": "set",
+          "value": 1
+        }
+      ],
+      "repeat": "repeatable",
+      "mechanicId": "circuit",
+      "sourceNodeIds": [
+        "repair"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "回路调至一完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "switch_two",
+      "screenId": "panel",
+      "targetScreen": "panel",
+      "label": "回路调至二",
+      "guard": [
+        {
+          "var": "circuit",
+          "op": "eq",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "var": "circuit",
+          "op": "set",
+          "value": 2
+        }
+      ],
+      "repeat": "repeatable",
+      "mechanicId": "circuit",
+      "sourceNodeIds": [
+        "repair"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "回路调至二完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "switch_zero",
+      "screenId": "panel",
+      "targetScreen": "panel",
+      "label": "回路归零",
+      "guard": [
+        {
+          "var": "circuit",
+          "op": "eq",
+          "value": 2
+        }
+      ],
+      "effects": [
+        {
+          "var": "circuit",
+          "op": "set",
+          "value": 0
+        }
+      ],
+      "repeat": "repeatable",
+      "mechanicId": "circuit",
+      "sourceNodeIds": [
+        "repair"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "回路归零完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "power_on",
+      "screenId": "panel",
+      "targetScreen": "panel",
+      "label": "接通备用电源",
+      "guard": [
+        {
+          "var": "circuit",
+          "op": "eq",
+          "value": 2
+        },
+        {
+          "var": "power",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "var": "power",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "repeat": "once",
+      "mechanicId": "circuit",
+      "sourceNodeIds": [
+        "repair"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "接通备用电源完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "to_platform",
+      "screenId": "hall",
+      "targetScreen": "platform",
+      "label": "前往站台",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "前往站台完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "from_platform",
+      "screenId": "platform",
+      "targetScreen": "hall",
+      "label": "返回大厅",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "返回大厅完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "rescue",
+      "screenId": "platform",
+      "targetScreen": "platform",
+      "label": "放下救援梯",
+      "guard": [
+        {
+          "var": "power",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "var": "rescued",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "var": "rescued",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "repeat": "once",
+      "mechanicId": "rescue",
+      "sourceNodeIds": [
+        "repair"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "放下救援梯完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "leave_together",
+      "screenId": "platform",
+      "targetScreen": "together",
+      "label": "带旅客沿高架离站",
+      "guard": [
+        {
+          "var": "trust",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "var": "rescued",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "repeat": "once",
+      "mechanicId": "rescue",
+      "sourceNodeIds": [
+        "departure"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "带旅客沿高架离站完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "leave_alone",
+      "screenId": "platform",
+      "targetScreen": "alone",
+      "label": "立即沿高架离站",
+      "guard": [
+        {
+          "var": "trust",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "var": "rescued",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "repeat": "once",
+      "mechanicId": "rescue",
+      "sourceNodeIds": [
+        "departure"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "立即沿高架离站完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "leave_tunnel",
+      "screenId": "platform",
+      "targetScreen": "flood",
+      "label": "尝试隧道疏散",
+      "guard": [],
+      "effects": [],
+      "repeat": "once",
+      "mechanicId": "rescue",
+      "sourceNodeIds": [
+        "departure"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "尝试隧道疏散完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "old_sign",
+      "screenId": "hall",
+      "targetScreen": "hall",
+      "label": "查看旧站牌",
+      "guard": [
+        {
+          "var": "egg",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "var": "egg",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "repeat": "once",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "memorial"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "查看旧站牌完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "pause",
+      "screenId": "hall",
+      "targetScreen": "pause",
+      "label": "暂停",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "暂停完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    },
+    {
+      "id": "resume",
+      "screenId": "pause",
+      "targetScreen": "hall",
+      "label": "继续",
+      "guard": [],
+      "effects": [],
+      "repeat": "repeatable",
+      "mechanicId": "explore",
+      "sourceNodeIds": [
+        "arrival"
+      ],
+      "input": "点击按钮或聚焦后按 Enter",
+      "feedback": "继续完成后显示状态结果",
+      "failure": "条件不成立时保持原状态并提示缺少条件",
+      "cancel": "返回不改变剧情状态"
+    }
+  ],
+  "branches": [
+    {
+      "id": "evacuation",
+      "decisionScreenId": "platform",
+      "options": [
+        {
+          "id": "save_all",
+          "actionId": "leave_together",
+          "consequence": "完成救援后全员离站"
+        },
+        {
+          "id": "self_first",
+          "actionId": "leave_alone",
+          "consequence": "遗留受困旅客"
+        },
+        {
+          "id": "tunnel",
+          "actionId": "leave_tunnel",
+          "consequence": "隧道受阻导致疏散失败"
+        }
+      ],
+      "endingScreenIds": [
+        "together",
+        "alone",
+        "flood"
+      ]
+    }
+  ],
+  "easterEggs": [
+    {
+      "id": "memory",
+      "sourceNodeIds": [
+        "memorial"
+      ],
+      "interactionIds": [
+        "old_sign"
+      ],
+      "reward": "读到守站人留言；不改变救援能力",
+      "optional": true,
+      "spoilerGuard": []
+    }
+  ],
+  "assembly": {
+    "entryScreen": "title",
+    "requiredArtifactIds": [],
+    "assets": [],
+    "artifactStatus": {}
+  }
+}

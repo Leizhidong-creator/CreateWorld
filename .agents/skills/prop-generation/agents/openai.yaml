@@ -1,0 +1,6 @@
+interface:
+  display_name: "道具生成规则"
+  short_description: "依据上游固定道具、功能与状态清单，制作一致的像素道具、形态和必要动画。"
+  default_prompt: "使用 $prop-generation 按上游固定道具清单与统一美术规范制作资产，不增删道具或改写玩法。"
+policy:
+  allow_implicit_invocation: true

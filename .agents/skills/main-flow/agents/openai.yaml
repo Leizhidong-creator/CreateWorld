@@ -1,0 +1,6 @@
+interface:
+  display_name: "整部游戏流程"
+  short_description: "组织场景、事件与机制的推进依赖，保证完整游戏可开始、推进、回访、保存并到达结局。"
+  default_prompt: "使用 $main-flow 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "统一游戏状态"
+  short_description: "定义剧情与机制所需的唯一状态、条件、事务效果与存档兼容性，并使用实际运行时核验。"
+  default_prompt: "使用 $game-state 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

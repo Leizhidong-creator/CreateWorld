@@ -1,0 +1,145 @@
+{
+  "source": "uploaded-source-zip",
+  "scope": "title-and-real-start-input-only",
+  "pageErrors": [],
+  "states": [
+    {
+      "scene": "menu",
+      "quest": "quest_start",
+      "checkpoint": "CP_START",
+      "dialogueActive": false,
+      "dialogueLine": null,
+      "activeInteraction": null,
+      "cellInspectionPhase": "idle",
+      "cellInspectionResult": null,
+      "sideRouteStage": "none",
+      "office": {
+        "mode": "story",
+        "curtainsClosed": false,
+        "firstWarningSeen": false,
+        "inspectionScheduled": false,
+        "inspectionTimer": 0,
+        "inspectionHideTimer": 0,
+        "inspectionVisitTimer": 0,
+        "inspectionVisitorKind": null
+      },
+      "corridor": {
+        "entryPortal": null,
+        "originScene": null,
+        "lastExitPortal": null,
+        "mode": "free",
+        "cameraY": 0,
+        "escortRouteIndex": 0
+      },
+      "sideTalkActiveNpcId": null,
+      "sideTalkQueuedNpcId": null,
+      "ambientConversation": {
+        "activeTopicId": null,
+        "participantKeys": [],
+        "lineIndex": 0,
+        "cooldown": 0,
+        "observedEvidenceIds": []
+      },
+      "yardNavigationMap": {
+        "unlocked": false,
+        "availableThisRun": false,
+        "expanded": false,
+        "revealedCellCount": 0,
+        "discoveredLandmarks": []
+      },
+      "player": {
+        "x": 250,
+        "y": 440,
+        "facing": "down",
+        "yardFootX": null,
+        "yardFootY": null,
+        "yardWalkable": null
+      }
+    },
+    {
+      "scene": "livingRoom",
+      "quest": "quest_living_room_tv",
+      "checkpoint": "CP_START",
+      "dialogueActive": false,
+      "dialogueLine": null,
+      "activeInteraction": null,
+      "cellInspectionPhase": "idle",
+      "cellInspectionResult": null,
+      "sideRouteStage": "none",
+      "office": {
+        "mode": "story",
+        "curtainsClosed": false,
+        "firstWarningSeen": false,
+        "inspectionScheduled": false,
+        "inspectionTimer": 0,
+        "inspectionHideTimer": 0,
+        "inspectionVisitTimer": 0,
+        "inspectionVisitorKind": null
+      },
+      "corridor": {
+        "entryPortal": null,
+        "originScene": null,
+        "lastExitPortal": null,
+        "mode": "free",
+        "cameraY": 0,
+        "escortRouteIndex": 0
+      },
+      "sideTalkActiveNpcId": null,
+      "sideTalkQueuedNpcId": null,
+      "ambientConversation": {
+        "activeTopicId": null,
+        "participantKeys": [],
+        "lineIndex": 0,
+        "cooldown": 0,
+        "observedEvidenceIds": []
+      },
+      "yardNavigationMap": {
+        "unlocked": false,
+        "availableThisRun": false,
+        "expanded": false,
+        "revealedCellCount": 0,
+        "discoveredLandmarks": []
+      },
+      "player": {
+        "x": 250,
+        "y": 440,
+        "facing": "down",
+        "yardFootX": null,
+        "yardFootY": null,
+        "yardWalkable": null
+      }
+    }
+  ],
+  "actions": [
+    {
+      "kind": "click",
+      "selector": "#game",
+      "position": {
+        "x": 640,
+        "y": 450
+      }
+    },
+    {
+      "kind": "key",
+      "key": "Space"
+    }
+  ],
+  "passed": true,
+  "sourceArchiveSha256": "637a3d3082f1c8a33a2ce4c9dbf04e57f17dce0fc3808882205472eaf9d36187",
+  "screenshots": [
+    {
+      "path": "source-title.png",
+      "sha256": "2864e67c95e536daa17a9a43a7362d5716c42fa394ca42f0cb4f824eec1845ae"
+    },
+    {
+      "path": "source-after-start.png",
+      "sha256": "92039c46789358d6710cd1e3e60ab4e9dc199f095fb834fa05ef41adb38c4ab3"
+    }
+  ],
+  "notCovered": [
+    "full-story",
+    "small-room-movement",
+    "yard-map",
+    "all-endings"
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "故事游戏对白"
+  short_description: "为小说、电影、剧本等改编游戏生成符合人物知识、当前事件和操作需求的对白，审查重复与信息泄漏。"
+  default_prompt: "使用 $narrative-npc-dialogue 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

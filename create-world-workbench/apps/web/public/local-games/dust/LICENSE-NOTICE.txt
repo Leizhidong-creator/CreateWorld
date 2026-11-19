@@ -1,0 +1,9 @@
+Pixel Story Kit — source and usage notice
+
+This package contains code adapted from SSxs-wym/Beyond-The-Walls- at
+93cf4540e8c1d64e0b45844ddb1b14eaf06177d5.
+The upstream project is UNLICENSED and explicitly reserves copying,
+modification, redistribution and commercial use without permission.
+This package does not grant a new license for upstream or derived code.
+See provenance/README.md for the source mapping and retained restrictions.
+No third-party runtime libraries are bundled in this version.

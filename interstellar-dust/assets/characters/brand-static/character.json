@@ -1,0 +1,20 @@
+{
+  "character_id": "brand",
+  "asset_type": "static-npc-only",
+  "cell": {
+    "width": 48,
+    "height": 64
+  },
+  "frame_count": 1,
+  "row_order": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "foot_anchor": {
+    "x": 24,
+    "y": 61
+  },
+  "sheet": "atlas.png"
+}

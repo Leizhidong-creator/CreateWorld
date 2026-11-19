@@ -1,0 +1,46 @@
+{
+  "name": "create-world-workbench",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "tsx apps/server/index.ts",
+    "dev:web": "vite --config apps/web/vite.config.ts",
+    "start": "tsx apps/server/index.ts",
+    "build": "vite build --config apps/web/vite.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test && npm run build",
+    "skills:sync": "tsx scripts/sync-skills.ts",
+    "content:slice": "tsx scripts/slice-content.ts",
+    "package:world-kit": "python scripts/package-world-kit.py",
+    "test:browser": "tsx scripts/five-scene-acceptance.ts",
+    "test:frontend": "tsx scripts/frontend-acceptance.ts",
+    "test:codex": "tsx scripts/autonomous-probe.ts",
+    "test:text": "node --import tsx --test tests/text-*.test.ts",
+    "test:text:codex": "tsx scripts/text-workflow-probe.ts",
+    "test:text-game:codex": "tsx scripts/text-game-probe.ts"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sharp": "^0.34.3",
+    "yaml": "^2.9.1",
+    "zod": "^4.1.12",
+    "@create-world/creative-completion": "file:vendor/creative-completion-1.0.0.tgz"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "playwright": "^1.56.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.10"
+  }
+}

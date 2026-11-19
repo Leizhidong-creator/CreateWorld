@@ -1,0 +1,132 @@
+
+> create-world-workbench@0.2.0 check
+> npm run typecheck && npm test && npm run build
+
+
+> create-world-workbench@0.2.0 typecheck
+> tsc --noEmit
+
+
+> create-world-workbench@0.2.0 test
+> node --import tsx --test tests/*.test.ts
+
+✔ event logs redact token keys and large media while retaining useful fields (3.642625ms)
+✔ cancelled Codex invocation never starts a process (1.003458ms)
+✔ host work does not consume the model thinking timeout (5202.131208ms)
+✔ asset path resolution rejects symlinks and path traversal (13.387959ms)
+✔ clothing edits select only the named character even if the model returns the whole plan (2.117875ms)
+✔ scene adapter maps shapes and anchors and refuses unsupported disconnected walkable regions (0.578167ms)
+✔ host reruns scene geometry, body and overlay QA then reuses the identical verified result (523.135833ms)
+✔ model claims do not bypass failing geometry or preserve a production output (117.562083ms)
+✔ host rebuilds original character pack then assembles 4x4 atlas and imports the actual foot anchor (1409.631125ms)
+✔ duplicated gait phases fail the unchanged original character QA despite model pass claims (670.5405ms)
+✔ basic original WAVs are copied as real sounds and digital silence is rejected (2.824292ms)
+✔ model-written generation claims cannot replace a native provider result (6.704708ms)
+✔ actual provider call count enforces the original scene retry bound (7.629334ms)
+✔ a master changed after native capture is rejected even when the candidate claims success (7.155ms)
+✔ visual reviewer cannot overwrite images or host QA after deterministic validation (147.425458ms)
+✔ cache needs the external host receipt and does not trust a modified workspace manifest (154.725ms)
+✔ two consecutive service failures stop an asset batch without spending every remaining request (8.564875ms)
+✔ asset IDs and entity bindings are checked before spending a model request (0.557792ms)
+✔ an explicit usage limit stops immediately and preserves completed asset receipts (154.611917ms)
+✔ split content compiles identically and rejects duplicate scene IDs (4.914833ms)
+✔ candidate evidence is invalidated by extension or source changes (2.143833ms)
+✔ formal acceptance cannot accept a short fixture as a full production game (3.186666ms)
+✔ action events fire once, pause dt does not advance, destruction cancels (0.381375ms)
+✔ incompatible new run archives old save and old version can still resume (0.521667ms)
+✔ changing an arbitrary content fragment invalidates the candidate and stale geometry patch (5.06175ms)
+✔ final coverage uses observed scenes and mechanism IDs, not declared steps (0.142125ms)
+✔ model failure restores protected inputs and removes fabricated read-only outputs (10.103708ms)
+✔ successful model turn cannot silently modify read-only directory (2.112292ms)
+✔ missing Codex process rejects pending initialization immediately (15.76375ms)
+✔ joystick and action button maintain separate simultaneous pointers (1.76125ms)
+✔ pointer cancel, hiding, blur and destroy release held controls (0.25825ms)
+✔ keyboard supports arrows and E, normalizes diagonal, resets on focus loss (0.805833ms)
+✔ modal input blocks movement and repeated keydown cannot skip dialogue (0.175833ms)
+✔ both story configurations validate without engine changes (4.050166ms)
+✔ reject duplicate global object IDs (0.663541ms)
+✔ reject missing dialogue reference (0.347625ms)
+✔ reject an exit into a wall (0.473708ms)
+✔ reject unknown asset and quest targets (0.48875ms)
+✔ reject unknown condition operator (0.327584ms)
+✔ reject invalid item quantity (0.314166ms)
+✔ nested conditions support all, any and not (0.697459ms)
+✔ dialogue once key prevents duplicate items after repeated interactions (0.158709ms)
+✔ early acquisition satisfies newly unlocked tasks (0.180125ms)
+✔ branch actions consume a specific item, change ending and complete story (0.16725ms)
+✔ achievements unlock once even if triggering condition remains true (0.954417ms)
+✔ new run clears all story/transient collections but preserves profile (18.982334ms)
+✔ save/load resumes task, position, items and one-shot rewards (0.802541ms)
+✔ different games cannot load or clear each other saves (0.20175ms)
+✔ corrupt JSON preserves independent profile and reports problem (0.133041ms)
+✔ malformed and out-of-bounds saves do not start in invalid locations (0.127375ms)
+✔ unknown save versions do not overwrite the original record on read (0.036583ms)
+✔ unavailable storage allows state progression and only warns once (0.197167ms)
+✔ collision substeps prevent tunneling even for a large delta (0.474958ms)
+✔ movement slides along blocked axis and clamps map boundary (0.456875ms)
+✔ fixed rooms and large-scene camera remain in bounds (0.268208ms)
+✔ map conversion uses the same world coordinates (0.08575ms)
+✔ interaction picks eligible nearest target with deterministic priority (0.17975ms)
+✔ mini-game settles only once and destroys component (0.4705ms)
+✔ mini-game failure and cancel have distinct recoverable results (0.127792ms)
+✔ mini-game loader failure reports error and releases host (0.083667ms)
+✔ closing during async loading cannot resurrect UI (0.056542ms)
+✔ closing during async mounting destroys late component (0.063167ms)
+✔ synchronous completion during mount still cleans returned component (0.05975ms)
+✔ re-activating a completed quest cannot duplicate completion rewards (0.230833ms)
+✔ validator checks plugin result actions and malformed arrays (0.494333ms)
+✔ failed transaction rolls back state, once, profile and UI commands (7.724083ms)
+✔ guard observes old state and once commits only after success (2.762875ms)
+✔ typed state and invariants reject whole candidate (1.380625ms)
+✔ reward failure rolls back quest progression (0.993167ms)
+✔ early acquisition settles later quests once (0.750167ms)
+✔ circle foot cannot clip polygon boundary or circle obstacle (0.579042ms)
+✔ polygon obstacle and coordinate round trip (0.242125ms)
+✔ four-frame atlas and normalized foot anchors (0.209417ms)
+✔ compiler produces relocatable verified build and detects altered/extra resources (107.434708ms)
+✔ compiler refuses escaped/remote/symlink assets and missing plugins (10.917917ms)
+✔ compiler rejects atlas rectangles outside actual image (8.273833ms)
+✔ bounded explorer uses transaction semantics and produces ending witnesses (404.70375ms)
+✔ explorer detects softlock and reports budget/custom as unknown (4.953625ms)
+✔ command events precede persistence and failed commits publish neither (0.919834ms)
+✔ damaged saved state and missing pending references are rejected without throwing (4.231ms)
+✔ all 14 versioned skill entries and unchanged legacy assets exist and match the manifest (117.8595ms)
+✔ stage selection is grouped and only enables optional branches and eggs when needed (1.660042ms)
+✔ loaded instructions are actual versioned files and prompts enforce write ownership (4.928084ms)
+✔ unknown canon ending is a valid blocked artifact, never a pass (0.627ms)
+✔ downstream output cannot bypass a blocked source (0.15725ms)
+✔ safe local asset paths reject traversal, URL, encoded scheme and absolute paths (0.086541ms)
+✔ asset plans require actual four-frame metadata, regardless of JSON key order (0.189542ms)
+✔ every ending must have a real-input journey and state-write shortcuts are rejected (0.165125ms)
+✔ semantic reviews cannot impersonate trusted host acceptance (0.080042ms)
+✔ custom mechanism journeys accept bounded real inputs and reject execution shortcuts (0.152625ms)
+✔ incremental invalidation preserves unrelated assets, but combines multi-intent changes (0.219584ms)
+✔ deterministic script recipes point to real local executables without invoking them (2.165792ms)
+✔ direct grid processes synthetic QA fixture without fabricating frames (64.883ms)
+✔ duplicated gait is rejected; special action uses action-specific geometry/events (86.039333ms)
+✔ restart recovers interrupted tasks without claiming passed (3.831958ms)
+✔ atomic version pointer transaction rolls back on failure (1.867958ms)
+✔ project event cursors and records remain isolated (1.764208ms)
+✔ file resolution rejects traversal, absolute paths and symlinks (2.613459ms)
+✔ version rollback and change isolation preserve accepted content; modified evidence is rejected (83.143708ms)
+ℹ tests 99
+ℹ suites 0
+ℹ pass 99
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5432.027625
+
+> create-world-workbench@0.2.0 build
+> vite build --config apps/web/vite.config.ts
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 36 modules transformed.
+rendering chunks...
+computing gzip size...
+../../dist/web/index.html                   0.59 kB │ gzip:  0.41 kB
+../../dist/web/assets/index-DwG3UHn8.css   36.43 kB │ gzip:  9.01 kB
+../../dist/web/assets/index-oU_-2IaM.js   277.89 kB │ gzip: 87.31 kB │ map: 1,185.69 kB
+✓ built in 487ms

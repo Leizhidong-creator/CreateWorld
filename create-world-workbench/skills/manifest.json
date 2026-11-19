@@ -1,0 +1,1260 @@
+{
+  "schemaVersion": 1,
+  "hashPolicy": "text-lf-v1",
+  "releaseVersion": "0.2.0-autonomous.1",
+  "productionMode": "story-driven-autonomous",
+  "skills": [
+    {
+      "id": "art-direction",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 接收上游已确定的完整剧情玩法需求和资产清单，为指定场景、角色与道具制定16比9的2D像素统一美术规范及制作提示词，不重新规划剧情或资产范围。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "art-direction/SKILL.md",
+      "sha256": "61c62e3620ed9247ab83c8ec5b3d522d469a85ff3fd4a31e783d161d94713604",
+      "originalSkillSha256": "7a9b8fb3bf46bf57c7c98732b1374756024c175fd86f3ae62a21a03cc866e4b6",
+      "treeSha256": "f3b937d89db180949474a7a4a2801ac1b2646c2888debdae8aae3b5f3aed121d",
+      "productionRevision": "d139f1c0be0e47ce38c27debdb0b4f36f1c653aaf3c5fecbd97fa572329022fb",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "sha256": "134dd6041145ef2ed188d605d109c2137ed7b6abe260acd4ef9917aaa5ed28d9"
+        },
+        {
+          "path": ".gitignore",
+          "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b"
+        },
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "7a9b8fb3bf46bf57c7c98732b1374756024c175fd86f3ae62a21a03cc866e4b6"
+        },
+        {
+          "path": "README.md",
+          "sha256": "b26f1eedee33acf4daeeafba220c025b6bd0efb322461cab5ab794c37802bdf8"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "61c62e3620ed9247ab83c8ec5b3d522d469a85ff3fd4a31e783d161d94713604"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "324482f5ccfd41ae1d329a67e4aa2a0b17f6a717f201788c0efce802586c7e8c"
+        },
+        {
+          "path": "references/art-direction-v1.schema.json",
+          "sha256": "0e0df9fc351990a80a329f557bfe885689c69817924143184bec11f23a9e3177"
+        },
+        {
+          "path": "references/beyond-walls-case-study.md",
+          "sha256": "ecf088ae52b5c351a639d106f9a2a1d219412c9934e0bf9789b2ea253ea681ad"
+        },
+        {
+          "path": "references/decision-method.md",
+          "sha256": "01418c02d23fdd5df15b9cfd4590644e76ff3eea2f6031c32adf002952bc2e90"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "7a9b8fb3bf46bf57c7c98732b1374756024c175fd86f3ae62a21a03cc866e4b6"
+        },
+        {
+          "path": "references/local-changes.md",
+          "sha256": "9d2e6a06de48149898906d5fefe1b660b493ffeb399103aaa7210b96d9e93b87"
+        },
+        {
+          "path": "references/method.md",
+          "sha256": "d0468dba58c85406c0b7443a95e062f39216a5f8ec843ee7500aec874d7ef86a"
+        },
+        {
+          "path": "references/player-analysis-v1.schema.json",
+          "sha256": "704511caedf7278065f610f857bce6d5957f4a447ce543196a5c057ecd63425e"
+        },
+        {
+          "path": "references/prototype-production.md",
+          "sha256": "8c6affa0ddd1b9223baeadd43ff5420c681c065d96b3c20e67c104e7363348f1"
+        },
+        {
+          "path": "references/schema.md",
+          "sha256": "9b9df50e83f5ded12dd2c554477808ca7a7cf161d47b11dbd44690a480bb7c0d"
+        },
+        {
+          "path": "references/stardew-pixel-profile.md",
+          "sha256": "ed88658a7ca14ea80f9de5eae5c49a1c2d74d4566e4d8004d1d26d0010aa115e"
+        },
+        {
+          "path": "references/style-contract-v1.schema.json",
+          "sha256": "e816ffee0aede78ac2462f0ea604a3c8db1967843c0a8cc3ae2dbeec81ea1512"
+        },
+        {
+          "path": "references/visual-decision-schema.md",
+          "sha256": "a201dbbe8278daffb32c4b5f8beaa25f78d61fe77ab285ddbc65c1d0569ac014"
+        },
+        {
+          "path": "references/visual-decision-v1.schema.json",
+          "sha256": "a6a42a39fb1d6d224570de3abc21e5dbeb120898a901d68172c0e77df56c9d25"
+        },
+        {
+          "path": "references/visual-standard.md",
+          "sha256": "df48156b29b7c6db2f2351f10372407b30a064a5b9fb8600a4c0d5665aecfde7"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "8e68e8cf1f0548c0950efa2d06bf803a6dd4d45f7b340c09484035a1b8535b1d"
+        },
+        {
+          "path": "requirements.txt",
+          "sha256": "9607199b68ba0d01e7de830070ae52ac0c04f4fa629aecffc4bab91eaaaaa2ee"
+        },
+        {
+          "path": "scripts/prototype_production.py",
+          "sha256": "ec46646455cfda7302c8f62de3b4d0f54f8402b727afb9eaee651c4773c5ef23"
+        },
+        {
+          "path": "scripts/render_art_direction.py",
+          "sha256": "84317476128d83285712fca6ba6c6f8fb8a86157486152f6d89dfb4146b96e6c"
+        },
+        {
+          "path": "scripts/validate_art_direction.py",
+          "sha256": "ad1d59e9d6659d99f9f8e76f2bb2d250ba3f68069d6bf9ac68b7bf5554b11197"
+        },
+        {
+          "path": "scripts/visual_decision.py",
+          "sha256": "88aa1172a453dff4c3370046f7b877e1d19150601c716a7b61139340c66bd30f"
+        },
+        {
+          "path": "tests/fixtures/fog-harbor.yaml",
+          "sha256": "af4afcc9a9f833c7e10b3e0a9a0a3aa6f6e4d323b772e7544c2fca70a15eaa9c"
+        },
+        {
+          "path": "tests/fixtures/prototype/prototype-direction.yaml",
+          "sha256": "7d925c74c9c6281b957fddf49d8b06d8682c0ecd37f02cb5bd3bee9f97f12151"
+        },
+        {
+          "path": "tests/fixtures/prototype/sample.svg",
+          "sha256": "469253359dffbb540714e81145984f793dd33d9bbbd9dac4d93890b33ab77880"
+        },
+        {
+          "path": "tests/fixtures/visual-decision/candidates/candidate-A.svg",
+          "sha256": "469253359dffbb540714e81145984f793dd33d9bbbd9dac4d93890b33ab77880"
+        },
+        {
+          "path": "tests/fixtures/visual-decision/candidates/candidate-B.svg",
+          "sha256": "3af36400cfa826d92d4d7c25f04e0631c3fc39ee7825cdce9785ca17d54f8775"
+        },
+        {
+          "path": "tests/fixtures/visual-decision/candidates/candidate-C.svg",
+          "sha256": "26a2c96fea17d1086a3af95ed0cb0c5635fb4251a78d1806c92b45bd06db7582"
+        },
+        {
+          "path": "tests/fixtures/visual-decision/visual-decision.yaml",
+          "sha256": "0cb158db791df9c4e3184cab517e195c67d44b34a8ace9fa962c36fd0522fd26"
+        },
+        {
+          "path": "tests/forward-evals.yaml",
+          "sha256": "d9dcadfff3ef719781b6524523218806ff9e7589f90b9e368e5010d01fa37f05"
+        },
+        {
+          "path": "tests/test_art_direction.py",
+          "sha256": "da1b8890bec17b44331ff910bbad34cfae22ebbf95a7fcdfb3fcb777be037e96"
+        },
+        {
+          "path": "tests/test_portability.py",
+          "sha256": "cbf46eeda4f49cc6dcbb84ebe61955c32e0f7d3589063a9918140844fdda1f82"
+        },
+        {
+          "path": "tests/test_prototype_production.py",
+          "sha256": "4d13193f20313b1879b9e583a31886f650394b24b555774ebf688d83fc28ab3a"
+        },
+        {
+          "path": "tests/test_visual_decision.py",
+          "sha256": "0dc36b76321fbe426e94ba2d7920e405c64b1733e794bb56d17c45e5b59e3616"
+        }
+      ]
+    },
+    {
+      "id": "character-generation",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 按上游完整需求包指定的角色、形态及动作清单，在统一美术规范下制作一致的三视图、基础移动和特殊动作，不新增角色、形态或玩法。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "character-generation/SKILL.md",
+      "sha256": "e097ebae9f9a0ff07747348c327331a97ed08ad4d534e5c53c4ea728cdeb16f9",
+      "originalSkillSha256": "cc0cbaf8afab7e73223540c4a3043c45c97a8cf2c8d482cb71ddf24a2f203bbe",
+      "treeSha256": "60b60fa2603ab57afbfa9ca1f29b4683900ba10c709821965c8db683ed5892e1",
+      "productionRevision": "9284064063b9d6dd994ee3ec6230482f70f00408dcff34176771547b05f6a81d",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "cc0cbaf8afab7e73223540c4a3043c45c97a8cf2c8d482cb71ddf24a2f203bbe"
+        },
+        {
+          "path": "README.md",
+          "sha256": "e36b3ac0bd7eb4a2d0980accfb640b125f04638bbac5c0d2a9dc9dd1acf07d48"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "e097ebae9f9a0ff07747348c327331a97ed08ad4d534e5c53c4ea728cdeb16f9"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "e21f9db730227e62030e8150db3bd7e9d0c7bd578004ad31385c12877d510ec4"
+        },
+        {
+          "path": "assets/beyond-walls-style-board.png",
+          "sha256": "981ac90e518a6f973c319eedd093fa9c8728f0b4d6fc70aaff172b6a01170741"
+        },
+        {
+          "path": "assets/character-generation-preview-backward.gif",
+          "sha256": "24f6889678ff42a6ac91364f6a0acbaa6f8aca62f81cf893dcb473fa8ce717a9"
+        },
+        {
+          "path": "assets/character-generation-preview-forward.gif",
+          "sha256": "10a2ac98d7f44bb77d63be54a56a4e71344400dd1b8e2b621c027928de40799b"
+        },
+        {
+          "path": "assets/character-generation-preview-left.gif",
+          "sha256": "25c86d43645f38d98df8ead044312c3812d47e3ab1a30fd24e97642ebadcde1e"
+        },
+        {
+          "path": "assets/character-generation-preview-right.gif",
+          "sha256": "bb51f7cc4246c687cde8edcdeb766b3cafdf30bc02f84d30de24d777cd91027e"
+        },
+        {
+          "path": "assets/character-generation-preview.gif",
+          "sha256": "267e751aae4f75dce8d3eb8d06c3101058d8ae872022a5a1e341336913a8f0c1"
+        },
+        {
+          "path": "assets/character-generation-showcase-source.png",
+          "sha256": "154c6ead9194bd2195b95fcd5cbb10b83629b07a7b52b4e106d7d07135b77dd2"
+        },
+        {
+          "path": "assets/walk-layout-template.png",
+          "sha256": "e95a03560628e62748cf8c98a0d029574dd97360327b50b3f7b8ceb51760b417"
+        },
+        {
+          "path": "references/action-pack-v2.md",
+          "sha256": "999e4f15495e8be7c48167ccb305aa302a1f81f3cb0c58d67d07eabad52e0799"
+        },
+        {
+          "path": "references/fictional-design.md",
+          "sha256": "9c8afff5b9053e13fb7d7b0b4c8383cb232539b14a4a2329c3706254c1effa15"
+        },
+        {
+          "path": "references/generation-workflow.md",
+          "sha256": "fd80a780cd7648e1967cd8b08fc657bfb5912557184b8b63b14add483a1612f1"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "cc0cbaf8afab7e73223540c4a3043c45c97a8cf2c8d482cb71ddf24a2f203bbe"
+        },
+        {
+          "path": "references/pack-contract.md",
+          "sha256": "403ef55e4822ceb10bd491b6dd5135a6eef7f3346b5ac107a3c440e587e17169"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "8e68e8cf1f0548c0950efa2d06bf803a6dd4d45f7b340c09484035a1b8535b1d"
+        },
+        {
+          "path": "requirements.txt",
+          "sha256": "1954ca940740c612a12e7abf0a307b7394715964d66dc8037d503fdd5c1b6424"
+        },
+        {
+          "path": "scripts/build_character_pack.py",
+          "sha256": "dafff59f47a285841ab0aec6bfcf9111b6917d313f37f2d7da376dbc9c7fdbd0"
+        },
+        {
+          "path": "scripts/build_showcase_preview.py",
+          "sha256": "8efa3bf84d6106dddf12580ea99051f32aec349398179884a5465267091b07bc"
+        },
+        {
+          "path": "scripts/character_job.py",
+          "sha256": "293a082b8225600e83f51e7df48d3ea918aabe1f0c9e965ae51cd6fae8d6d7ba"
+        },
+        {
+          "path": "scripts/generate_reference_assets.py",
+          "sha256": "ddc4f74713a1a8953c5a5215157ac1900cf7ebfd102f41560fd1c7bb6ce6c9cf"
+        },
+        {
+          "path": "scripts/test_build_character_pack.py",
+          "sha256": "84755430a26ddafdd5e6d4313a1a352748de3ec67ab4f7ff3507d458587d7592"
+        },
+        {
+          "path": "scripts/test_character_job.py",
+          "sha256": "cde18685d03de347db94e569b66c920cf45cd25b85cdcb333df2625d838a685d"
+        },
+        {
+          "path": "scripts/test_fictional_job.py",
+          "sha256": "1d9c35f2e5a5e341af7ab3d6157bb5179880f10c21a27c7c605f1a6366174e7e"
+        }
+      ]
+    },
+    {
+      "id": "content-understanding",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 拆解小说、剧本、字幕等故事材料，提取人物动机、事件因果和可定位来源，为完整游戏改编提供依据。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "content-understanding/SKILL.md",
+      "sha256": "5a27baa63f50b5eab5d77c72635ab18863c89c240e86aed914f39ed50729df5b",
+      "originalSkillSha256": "c3361f863f332df1cada8c851b918fab66e41e93088094966624462e8c072ad4",
+      "treeSha256": "7ce81e30cb05cb1eb8c15586ebb4efce9ba1907652efc3c0021c0d2d90917336",
+      "productionRevision": "354f1e96d6718bd77f58f9f701e517678e6805c8716a4b292a36150a30a50b5b",
+      "files": [
+        {
+          "path": ".gitignore",
+          "sha256": "a1d47740e3c017adaeefe9e2a07786fc068b1c17f227cfe83bf0798e10481ff3"
+        },
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "c3361f863f332df1cada8c851b918fab66e41e93088094966624462e8c072ad4"
+        },
+        {
+          "path": "README.md",
+          "sha256": "c2abd6e2cfd3ffcd212ef4b2a8aa4defa1be5ca8a9fa6d135c3d3002a6d3f03a"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "5a27baa63f50b5eab5d77c72635ab18863c89c240e86aed914f39ed50729df5b"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "3f774db914cefa4299b7263a5db28e306665459ba4a9dca2daff65f6e17ed084"
+        },
+        {
+          "path": "references/example.md",
+          "sha256": "538dc3337f68f1719958fc03acd5da060ea6098f6f17a503efa3e2e5e91b6150"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "c3361f863f332df1cada8c851b918fab66e41e93088094966624462e8c072ad4"
+        },
+        {
+          "path": "references/method.md",
+          "sha256": "0c1ac24aa19047ca06be67e7444cdd92791ef827cc7f33ad7960821871740c6a"
+        },
+        {
+          "path": "references/schema.md",
+          "sha256": "3241894d564bfba4828ba161a9c3750a82249b2261a88173219eb3a0dc432235"
+        },
+        {
+          "path": "references/structure-v2.schema.json",
+          "sha256": "62bfb9ad47569eaca0b1ee2cbf009ff716729540025830dba02b048f83f45e1e"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "requirements.txt",
+          "sha256": "28dc6dbd886039b691f6ccb07105371a3a82805d3c63b32763625898c7489e01"
+        },
+        {
+          "path": "scripts/archive_revision.py",
+          "sha256": "3ff2d3963c5dc0bcb762de591b6dd624ba814e8a81a03e50377f1c25bc82bfe7"
+        },
+        {
+          "path": "scripts/install_skill.py",
+          "sha256": "45dbef3a3651dbdc283ec5f7a43ab856e1705c7c222e1864edc0ba3ad91d819a"
+        },
+        {
+          "path": "scripts/render_structure.py",
+          "sha256": "165d8eb485a7731f1655b5253eb21dd2526f7af996105aceba16733a03c0e5e3"
+        },
+        {
+          "path": "scripts/validate_structure.py",
+          "sha256": "2d1bbacdcc198f43bc37ef92fcb528b7292ece526a34c9c19cbec15a7b2560e3"
+        },
+        {
+          "path": "tests/fixtures/fog-harbor-v2.yaml",
+          "sha256": "981ecff409e5b497e90e640fd7e77ca2677c26cea20242a6da6ce8e27cc36c72"
+        },
+        {
+          "path": "tests/test_content_understanding.py",
+          "sha256": "156c59a0593138a06c64fa359b1f9c81800ca1a22d5775d00aa124f6c14f920b"
+        }
+      ]
+    },
+    {
+      "id": "easter-egg",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 按需设计可跳过的隐藏互动和奖励，不阻断主线，不制造必需收集或重复领奖。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "easter-egg/SKILL.md",
+      "sha256": "dd163071944ef71b0054f2dc57669990c55cff9e7b4c39b595067b0037415ef3",
+      "originalSkillSha256": "bc2b84f6176ea2a4e05626f0c93f451e52f0a4d2effc4c1fb00f09388bda469a",
+      "treeSha256": "8ba9efa699a8b109654f6bf3b908f1b0f5500abc0c2ccbc45b2d496bb778fa28",
+      "productionRevision": "bea6ef6d605ca6cee5323f7fa69a96c9c126c40c21ccad0c5a8a6cd0d1863d50",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "bc2b84f6176ea2a4e05626f0c93f451e52f0a4d2effc4c1fb00f09388bda469a"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "dd163071944ef71b0054f2dc57669990c55cff9e7b4c39b595067b0037415ef3"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "a9e78dbed150272d816033a379299c090f55ed993a29a9a3dc50fec32f9b649b"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "4799f2e87a3c4515617f2cc20ad2dce1a4f882258ca6e1a2f70a30dd9fdad93e"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "c0e2c05f065ff2c5957a28e576e68ce6690ce1d3d1d1c89401367ce97e4bc676"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "f89a6003f5f4b17e8b31824d2fa3dba4ebf6312c5eed9ad090eed2b42ed1a60b"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "c277da8ef0f518a8e631e79b6a44f4edd4df91640ea62b5e04cd7690154966e5"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "bc2b84f6176ea2a4e05626f0c93f451e52f0a4d2effc4c1fb00f09388bda469a"
+        },
+        {
+          "path": "references/model-contract.md",
+          "sha256": "3e05abd7605da79d0329f3ec39756865937336a7ed6fcfd1ae8d2e3c680d9a71"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "a511dedc1521d484e45a191eb70ee68f8fd70d32a16852184541059298137fd5"
+        },
+        {
+          "path": "tests/test_contract.py",
+          "sha256": "651242bef57a2941d4c4bc5b2d803aa5cf31034e9752aea2d666ad25e5493806"
+        }
+      ]
+    },
+    {
+      "id": "game-adaptation",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 确定故事游戏的玩家身份、改编范围和应由玩家亲自经历的过程；不预设所有故事使用同一玩法。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "game-adaptation/SKILL.md",
+      "sha256": "497cb0608bb032916752527baea2d6725ae7efa85e216edf16941c996fbbd66a",
+      "originalSkillSha256": "d005e03e8595fd744981d2f8f08afa4e970b0236e4c907817c0527f0ccff17ad",
+      "treeSha256": "f6a96e5916feed97aea0641e5bc1a780ed235b5f0210ffa479f2ce0b5c4240f4",
+      "productionRevision": "0bcb3cbb79fb0bdd318bff9df46d1d7761b13aa64607b20e9fc8946b014ac527",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "d005e03e8595fd744981d2f8f08afa4e970b0236e4c907817c0527f0ccff17ad"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "497cb0608bb032916752527baea2d6725ae7efa85e216edf16941c996fbbd66a"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "ca094f0eb75018342972357773032135fadc0e52242d94077f29005f5e65375e"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "94a0493cce030103ac9e0b027665c24cfd36b0dfcb0c6a1f3b93ef0e8ebafab8"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "f6859a6e2007d80ced5939a2ed5db66155714daa439afc51d98488e6896597c6"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "75b70c88624177b16b9dd77ad52ebae01c96dd22ff49c08f5dd3aa5826c072c6"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "e5dfdce61e1edb149561733c630a5059e29290b0610eceaf57aaec53a39ac5c0"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "d005e03e8595fd744981d2f8f08afa4e970b0236e4c907817c0527f0ccff17ad"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/_validation.py",
+          "sha256": "68bb86feda6ae624baadcb37c24208c1dd51c737ba3169c29454a7d21aa4c7cc"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "7788c055e98355ffe47787d647edf053b4ea0c23e1d32a6069527bb15b0be61c"
+        },
+        {
+          "path": "tests/test_contract.py",
+          "sha256": "559ceaf2f40b6949ee6c48d4bd5ceacad68e291892c6feac9e00fb6a44da0592"
+        }
+      ]
+    },
+    {
+      "id": "game-assembly",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 将项目内容、定制机制和资源接入通用框架；常规构建由宿主执行，技能解决实际接入问题。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "game-assembly/SKILL.md",
+      "sha256": "47fa741f052e8fb6e42d0dce46fe07751bf580f7ec5ff0adef4557761b7149b4",
+      "originalSkillSha256": "93b0cd4d4ce32181e9afb6978b633ceaf41c1e3ad500827cadf33eb584ba608f",
+      "treeSha256": "5272c6dece64cb71ba6716e5c6d8a25ef6df3ae285d77b9c0508551263c32c7d",
+      "productionRevision": "f69ef029ed10b92bad2acdbdcf8fe265adca8ce065be09680830dadc72a0ed3b",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "93b0cd4d4ce32181e9afb6978b633ceaf41c1e3ad500827cadf33eb584ba608f"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "47fa741f052e8fb6e42d0dce46fe07751bf580f7ec5ff0adef4557761b7149b4"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "8ab5f13b4bd8dbf9ae76d527444cda4d504115c937f5691ff181167ba2d97ef6"
+        },
+        {
+          "path": "assets/canvas-room/engine.js",
+          "sha256": "b8ba565af4c80e7da5950372fd981e3288327f30a6c16fb83dd2951d4d4587e7"
+        },
+        {
+          "path": "assets/canvas-room/index.html",
+          "sha256": "3dae773a58aac4a4b2894a70a17324740e7ba975de07a0ab15a243fbb0e15983"
+        },
+        {
+          "path": "assets/canvas-room/runtime.js",
+          "sha256": "6ae5a881135181a8a2a9cccb66f12f1f0bf065bd3a95037bcc440874f93c1546"
+        },
+        {
+          "path": "assets/canvas-room/style.css",
+          "sha256": "5778fea1b41bb61122feabe489c8e53527b043601d02735b9fdcc4fb68a05848"
+        },
+        {
+          "path": "assets/index.html",
+          "sha256": "66e377796f2a59e508faec4b6a421f6cea20d41862aeb121968fbacec9b2d26f"
+        },
+        {
+          "path": "assets/runtime.js",
+          "sha256": "772a731253d0ebb8fbae5f733b3d2c6c8f2c0c01a9004be65acaf894e809661b"
+        },
+        {
+          "path": "assets/style.css",
+          "sha256": "dc4a929365489ee61a58db1ae0d50563b6c4b6c7eb5dac90ed9d6c62e6feea4b"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "4799f2e87a3c4515617f2cc20ad2dce1a4f882258ca6e1a2f70a30dd9fdad93e"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "f11d77f8d707513eb4e1125a821e40cd5956ac1b22a7e7cd1e40ce00e6e6cd70"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "33d197b71095f2f62c766358273c1255a9f9662625c470f72044efd358fa9160"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "04fa73b3e68908a155cf51c9c350eefae4d79eb723282d52d7fb573d6ae2ecb0"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "93b0cd4d4ce32181e9afb6978b633ceaf41c1e3ad500827cadf33eb584ba608f"
+        },
+        {
+          "path": "references/room-contract.md",
+          "sha256": "69fbe9539234d20b59661c2aa0ddf3700faf23b52c7b47330eab1c8ce9550ba5"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/assembly_core.py",
+          "sha256": "5df81bca2aee5270f58385214f0bee4ae4aaccbad22e4940e57b9798084c68f5"
+        },
+        {
+          "path": "scripts/build.py",
+          "sha256": "ea2ef26e2868d529e3ce2778c96506eaff82e68c8e2a0d1b3ceecf983a70aaed"
+        },
+        {
+          "path": "scripts/build_room.py",
+          "sha256": "a6d8cc91809d9b8ed04b982b5188be359a9d8e541fa82a02c9edd53c81f4f91c"
+        },
+        {
+          "path": "scripts/room_contract.py",
+          "sha256": "4c55ac8576325178f54af03a68d05c64dc864ab78b3440bbe27222949c26630c"
+        },
+        {
+          "path": "scripts/runtime_core.py",
+          "sha256": "791df197134fb2a82e7f0eb0621d159303d3394341345838a5b30b9eb23ef0d1"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "c3e9310523e6e090921fad96333ac064d4bc244220eaa98b108b082de6465a02"
+        },
+        {
+          "path": "tests/test_assembly.py",
+          "sha256": "8d30243df24e25a6837e759fabaa0e5dafb2218bf6ee05cadb8478230d57a895"
+        },
+        {
+          "path": "tests/test_room.py",
+          "sha256": "0a072ea67391ae908f3dd8dad330a2bb3e64f1c5d975bf784456a369549076c1"
+        }
+      ]
+    },
+    {
+      "id": "game-reviewer",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 审查整部游戏是否实现剧情机制和完整流程，区分规则、真实操作、视觉与内容证据。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "game-reviewer/SKILL.md",
+      "sha256": "d28370bafabc927cfd66e1518409da459cc36bee3dabfb6ed06e5c7d9b09aaec",
+      "originalSkillSha256": "9c7f4dfc7d5a912d28260437695352d7aa36f8442058b7e0a9ff0aa5c380f14d",
+      "treeSha256": "2839a93b0fcf5770ddf5f7b0a0c8521147cc01ee6fe87bcd4537f225ccaaef10",
+      "productionRevision": "3a90d67841856eb3a3876b78a35b77e9b696c974e2b826acfe48f2f9128fbdbb",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "9c7f4dfc7d5a912d28260437695352d7aa36f8442058b7e0a9ff0aa5c380f14d"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "d28370bafabc927cfd66e1518409da459cc36bee3dabfb6ed06e5c7d9b09aaec"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "bfe7a3bb18af792028484c0fdde0ad74ed9b1378d4fdcf8858732bbd92883c5c"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "4799f2e87a3c4515617f2cc20ad2dce1a4f882258ca6e1a2f70a30dd9fdad93e"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "7c0ff3e6f0ae68da4e24b62041e7bb1c4cae549ebd78bea55f901efc28aab2a0"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "ef6b16855f59cf01e0cdd310b0b77f8f8d634106512b27dfd6a0c8c8dd8b9ddd"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "aa577923de38a48e4e27ab6afe1727c8175370a44f46346ecf8719d1f25ac040"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "9c7f4dfc7d5a912d28260437695352d7aa36f8442058b7e0a9ff0aa5c380f14d"
+        },
+        {
+          "path": "references/room-review.md",
+          "sha256": "a9a24d1831bf5b5ac1e127ec4b5bad7f1d41d2b158a5cb73794e1cc20753af57"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/assembly_core.py",
+          "sha256": "5df81bca2aee5270f58385214f0bee4ae4aaccbad22e4940e57b9798084c68f5"
+        },
+        {
+          "path": "scripts/review_room.py",
+          "sha256": "4419ce16b3332a54fd3fbd5fcebb9d156d7b114900aded47f11f134f6b63dfc9"
+        },
+        {
+          "path": "scripts/runtime_core.py",
+          "sha256": "791df197134fb2a82e7f0eb0621d159303d3394341345838a5b30b9eb23ef0d1"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "75c9a14fc31a9884886c4100b3aaa15e58948e32a10df69cf23f3b1c6c82b0db"
+        },
+        {
+          "path": "tests/test_review.py",
+          "sha256": "d4976b15e151215a059ab6363136846ab7d654ca911c30e26ff589c86b843abd"
+        },
+        {
+          "path": "tests/test_room_review.py",
+          "sha256": "a6a8b76404a8de43786f6f1c28dead377bac53d81102869e2e0d0b7ee5ca2738"
+        }
+      ]
+    },
+    {
+      "id": "game-state",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 定义剧情与机制所需的唯一状态、条件、事务效果与存档兼容性，并使用实际运行时核验。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "game-state/SKILL.md",
+      "sha256": "0ba5f328bb14a0fb01cd4bb550a7722a8ef3cdd11d836dd601b0fa0bd585ede8",
+      "originalSkillSha256": "83d187f51d5a8112dfe15259a01fd1a9405ab96f4021a6a4d5489dcd74ad80cf",
+      "treeSha256": "df1250ee269c5d14f73cebd13e1f3829be8c5339054f9302142c326ddd3b607c",
+      "productionRevision": "8b9a1cd31d55d5b5c40220732ddac9ca97bb37d6d89c166bd8338278850ad415",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "83d187f51d5a8112dfe15259a01fd1a9405ab96f4021a6a4d5489dcd74ad80cf"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "0ba5f328bb14a0fb01cd4bb550a7722a8ef3cdd11d836dd601b0fa0bd585ede8"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "678dec4a914bf13d6e2b32f75fb115a1dad47c0ba3c5f0a096b59122101f10fa"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "4799f2e87a3c4515617f2cc20ad2dce1a4f882258ca6e1a2f70a30dd9fdad93e"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "1ee6379c1b52c8af6c750e2f6763406981acb42cc1c68454320291f8f7f9dee9"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "9bd37aa781b7b4835db9b9ff9d712118c2be033d6677e7f92966854d1633598a"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "86c3620f9dce6ad3541474979b3c8d1df8922b4d0d38219999d33b18c1782576"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "83d187f51d5a8112dfe15259a01fd1a9405ab96f4021a6a4d5489dcd74ad80cf"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/runtime_core.py",
+          "sha256": "791df197134fb2a82e7f0eb0621d159303d3394341345838a5b30b9eb23ef0d1"
+        },
+        {
+          "path": "scripts/simulate.py",
+          "sha256": "5415be6cc8e3de828460455db6f2b4e4dd2651607c76725921f439a3d66d0e60"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "2faa4ca93913477df246a7665bdcbc34f5c40aa76186c5bb9eae5fabe6465cf4"
+        },
+        {
+          "path": "tests/test_state.py",
+          "sha256": "95fd1003e8f15d610646aedd58e218d6a0e85b61e4ec8315b939b1ed702bce98"
+        }
+      ]
+    },
+    {
+      "id": "game-ui-styling",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 复用已确定的游戏美术规范，实际适配摇杆、交互按钮、地图、发现提示、对话、背包、存档继续和暂停界面的样式及素材，不改变功能、玩法或存档语义。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "game-ui-styling/SKILL.md",
+      "sha256": "3ea430f2f91b470f9f8ef7384edc1925098581671655c0976d2e9e22c588581f",
+      "originalSkillSha256": null,
+      "treeSha256": "312f2a005f06b34cec18c2815e8efb01740910fbb426bf2c61cbcb970b000338",
+      "productionRevision": "312f2a005f06b34cec18c2815e8efb01740910fbb426bf2c61cbcb970b000338",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3ea430f2f91b470f9f8ef7384edc1925098581671655c0976d2e9e22c588581f"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "5dedb9ef00af53116427cd0095ff5f1febfb8f26931ed5208d26896288b47412"
+        },
+        {
+          "path": "references/runtime-mapping.md",
+          "sha256": "f52b53618287916c7800d7b51b28eb405e6293b73bd6637b8f339c2236e53722"
+        },
+        {
+          "path": "references/verification.md",
+          "sha256": "187a723172d433fecb750f531ec96558c8ce72f99d14bfaafc6d0bca7bcb6533"
+        }
+      ]
+    },
+    {
+      "id": "gameplay-design",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 根据每部故事的目标、阻碍和行动设计实际可操作的核心玩法与简单机制，而不是固定模板换皮。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "gameplay-design/SKILL.md",
+      "sha256": "31996f95c819f9df79603540f81a054b1baae84a37c2838ab628e6d365f91da7",
+      "originalSkillSha256": "3e11b6752456b9b01269c2ba9d0a6afbffa274c5b78e5b23a9f9bb3a6cda74b6",
+      "treeSha256": "9e911145a324a958261550ead162f22437a2dca68bd7b1c929a6d5f2d9b710b2",
+      "productionRevision": "77b4019537c2c9168aea1281e960aa08345c9bd6fd86f3d0f31ffdf89b54c247",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "3e11b6752456b9b01269c2ba9d0a6afbffa274c5b78e5b23a9f9bb3a6cda74b6"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "31996f95c819f9df79603540f81a054b1baae84a37c2838ab628e6d365f91da7"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "cc074f2e493af3d640ef7a56eb1db958ea01ec7db1b73612e9da365eb6f334ec"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "94a0493cce030103ac9e0b027665c24cfd36b0dfcb0c6a1f3b93ef0e8ebafab8"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "27951eb450df24c34e464f5bb6dd05d91d8b42e2aebc822b42380cda93f89483"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "08292e59f6481557e992cbac93f34240295f5cdca74b259da23ae7b78a42d052"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "166a81223a9a881d70dc1ba06cefc9a91e0d30158d541f6da05cfffb6a4f57d6"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "3e11b6752456b9b01269c2ba9d0a6afbffa274c5b78e5b23a9f9bb3a6cda74b6"
+        },
+        {
+          "path": "references/minigame-index.json",
+          "sha256": "18c15f77cf9cdc6ae404fef4267e40f2b923be7db1030f6afa8e404342fa6cd0"
+        },
+        {
+          "path": "references/minigame-library.zh-CN.md",
+          "sha256": "107fcd2e6fcb0b70f94e614593a67b145e5aa96f38f35ad5da76810f5380ebd8"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/_validation.py",
+          "sha256": "68bb86feda6ae624baadcb37c24208c1dd51c737ba3169c29454a7d21aa4c7cc"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "2992c98fca90b248b35d48151b88c95f092a796c829762b7d62275f7a72ed062"
+        },
+        {
+          "path": "tests/test_contract.py",
+          "sha256": "97dd6111b35878fb9a875cf0d26bea9beab3acc06fa58bc948280710f5d54d34"
+        }
+      ]
+    },
+    {
+      "id": "interaction-generation",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 将剧情机制落实为实际对象、输入、状态效果和反馈，覆盖失败、取消、重复及输入生命周期。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "interaction-generation/SKILL.md",
+      "sha256": "0f47f175ade29233ca098b4bc04893e5c5bc5f716a61131bd2dbcd5c844a6f17",
+      "originalSkillSha256": "308af301c094690463e1e493b59f8e941f9812696a0199c86a053e999406e00d",
+      "treeSha256": "845f4431e9cbd9642be911d35c751b10dbac0d69827bfef2243dd6d917b054d5",
+      "productionRevision": "088bb99c5e713b77a20914e5ae6f65f1abd0e3fba5f4fa82d3cd4feaeefc78eb",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "308af301c094690463e1e493b59f8e941f9812696a0199c86a053e999406e00d"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "0f47f175ade29233ca098b4bc04893e5c5bc5f716a61131bd2dbcd5c844a6f17"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "30dbbe9c7136db75d15419055a92fa7c5aad67500b9873722e9be044cedea694"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "4799f2e87a3c4515617f2cc20ad2dce1a4f882258ca6e1a2f70a30dd9fdad93e"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "28a5829c7bfc1e9e7654b2d3140f586373180233efecfcc7b51888836f01537b"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "e2137dbd413043a93cc112011ccab92ca56e7719e658fd3b02186e4d6f5d70c0"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "b61f73e7f261e43a8dc1a216a755e6daee701f11a6731a69007cfc2ffc233b91"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "308af301c094690463e1e493b59f8e941f9812696a0199c86a053e999406e00d"
+        },
+        {
+          "path": "references/model-contract.md",
+          "sha256": "3e05abd7605da79d0329f3ec39756865937336a7ed6fcfd1ae8d2e3c680d9a71"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "4eb6e68e62ac2ce5ab289f3329cbaae33dfe84bdc3f328eb2cc7a99004971070"
+        },
+        {
+          "path": "tests/test_contract.py",
+          "sha256": "1cbe90b1513f26c1b52d71209bd92ad6331fbb17a794f5659ce7e346fb0089ec"
+        }
+      ]
+    },
+    {
+      "id": "main-flow",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 组织场景、事件与机制的推进依赖，保证完整游戏可开始、推进、回访、保存并到达结局。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "main-flow/SKILL.md",
+      "sha256": "03cd2f79f93d94cdc25615fadbd30513c0c6e1239634cd2fbd1139d2f22f5e71",
+      "originalSkillSha256": "bc585c761dbf6d32f6262fbdcc22b34f59a9d91338e5367c5d36434cb0152163",
+      "treeSha256": "cee33924c1385ed3d0a667a868fc4b479341f0e965c07da8c55f28f2c197e731",
+      "productionRevision": "52bef8f3a64b840299ad7e4691409bf6e3bcc8229ef052a2ef6ef07a9ca6518b",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "bc585c761dbf6d32f6262fbdcc22b34f59a9d91338e5367c5d36434cb0152163"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "03cd2f79f93d94cdc25615fadbd30513c0c6e1239634cd2fbd1139d2f22f5e71"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "f4340e76437e525de8c138a8dd098f7a9b324829b6c05957755ee84706c763ba"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "94a0493cce030103ac9e0b027665c24cfd36b0dfcb0c6a1f3b93ef0e8ebafab8"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "3b6c06a85ea0b7680e88fcada942f08597d78d3c2f781a316ebd2c6ef87bf040"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "767fdcf84a1ebe7730a1ae25b20ca05dc1e741064116bd2ef547819f9ca77174"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "532cd883e548f6757c99ebdd5fd1d41ded24688b1e2db00751047cf7b10c2765"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "bc585c761dbf6d32f6262fbdcc22b34f59a9d91338e5367c5d36434cb0152163"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/_validation.py",
+          "sha256": "68bb86feda6ae624baadcb37c24208c1dd51c737ba3169c29454a7d21aa4c7cc"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "84760f8beb54a404b044c1547bb5eb475fc42d103dfcdd79e84de2d4425b5bb2"
+        },
+        {
+          "path": "tests/test_contract.py",
+          "sha256": "5e1b51d325a7404c8c3bbaefdddb00473f2e369b63ea29fe3f7f2bbb04364265"
+        }
+      ]
+    },
+    {
+      "id": "narrative-branch",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 按作品需要设计选择、后果和汇合；保留固定原作结局，不为调用技能强加支线。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "narrative-branch/SKILL.md",
+      "sha256": "d4098a4d288f4d2423798119d2655a1999c5fc780ccd49a30fbe6f9ebde23158",
+      "originalSkillSha256": "607e21a195016adb5619925f5d75f3dcddce343bc0ca3eb8a1b11264cefb2127",
+      "treeSha256": "fd8af8264f21c13b853f415e7e148a5c08c94ce61a13787efcffdcb5f5bceecf",
+      "productionRevision": "09fb0447941ec9260c909fc97c3d1a53f38e2f95fdba88e9ab92f5691baef557",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "607e21a195016adb5619925f5d75f3dcddce343bc0ca3eb8a1b11264cefb2127"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "d4098a4d288f4d2423798119d2655a1999c5fc780ccd49a30fbe6f9ebde23158"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "b2346254b2f1f5a108c9158e7c5b13e66718770cb966ae0cecbff2099980d646"
+        },
+        {
+          "path": "examples/authoring.md",
+          "sha256": "b787256a39914457c33d80a6ba6223ea8cb892859571c114b0e4eca143326705"
+        },
+        {
+          "path": "examples/eval-prompts.md",
+          "sha256": "39108c87eb64ba8d54e4bf5ce1129d34a884ecf7189d055292eff494bb2135ee"
+        },
+        {
+          "path": "examples/station.json",
+          "sha256": "4799f2e87a3c4515617f2cc20ad2dce1a4f882258ca6e1a2f70a30dd9fdad93e"
+        },
+        {
+          "path": "references/contract.md",
+          "sha256": "ff33af33ef9fd9740dd4ef19cb37310cfc566a32a7502f9089b430a5f70647ab"
+        },
+        {
+          "path": "references/design.md",
+          "sha256": "fddd99a76d9d1f47b11fde0d590305d9e8c97eb4be637c1981a0ec8ed96f49ac"
+        },
+        {
+          "path": "references/evaluation.md",
+          "sha256": "fee0ceef6bd605908abf6de4d391f156d9d67612fd6b87f70a6eaf1b85554695"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "607e21a195016adb5619925f5d75f3dcddce343bc0ca3eb8a1b11264cefb2127"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "6e5a03302697febda817ea93bd760c0f2a5dd97a1aa19d0958dca7166aceb01d"
+        },
+        {
+          "path": "tests/test_contract.py",
+          "sha256": "0400a9c0df728683917a9b414b4ac44173f9a557804afc1a1cff39697ea9500a"
+        }
+      ]
+    },
+    {
+      "id": "narrative-npc-dialogue",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 为小说、电影、剧本等改编游戏生成符合人物知识、当前事件和操作需求的对白，审查重复与信息泄漏。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "narrative-npc-dialogue/SKILL.md",
+      "sha256": "ec285d0b1b43e7a5bcf03e3065e1bc41be6a64e482e7552d5149ef0341d5fa8a",
+      "originalSkillSha256": "0a3e0fcc5b66db8d0b22a52d4ce2de419f37a679777ec9791cd8784ca9966670",
+      "treeSha256": "e6d3cf942db241825496cfdc38ec9df10980ad6e1f69998e751e79c39b39c0cf",
+      "productionRevision": "c1ffcb7619cbafa136680592da055e45c12d20d9b49e18660365269096a4bf5e",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "0a3e0fcc5b66db8d0b22a52d4ce2de419f37a679777ec9791cd8784ca9966670"
+        },
+        {
+          "path": "README.md",
+          "sha256": "666654658c93a1776ea308481d5625a23c8090691179815f9fd3103b6fa65a6e"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "ec285d0b1b43e7a5bcf03e3065e1bc41be6a64e482e7552d5149ef0341d5fa8a"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "9d9f00150ef903898ac9e4833d339027e45355d6f03586959095e413d56b2a63"
+        },
+        {
+          "path": "references/canvas-room-validation.md",
+          "sha256": "3d3c04f7559f752cd941e6172b802e81429c08451c9b1f3a194813626767affd"
+        },
+        {
+          "path": "references/conversation-craft.md",
+          "sha256": "d5e67d74510056f9fe244b54a69e7e5656c392426eb5836133804e646fd52f90"
+        },
+        {
+          "path": "references/film-adaptation-workflow.md",
+          "sha256": "9ce3b253c5f7227aa8cd4cef9115f450818036795eaad6823cf4056278e7c788"
+        },
+        {
+          "path": "references/high-wall-patterns.md",
+          "sha256": "a07d71b5d2c166c83b761935e5891ae02fe1ca85b63a92479e74aab5eead95ac"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "0a3e0fcc5b66db8d0b22a52d4ce2de419f37a679777ec9791cd8784ca9966670"
+        },
+        {
+          "path": "references/output-contract.md",
+          "sha256": "118331d40fe2dd8375b833da1635844d231922efe49f029fbab42a8f02e22eba"
+        },
+        {
+          "path": "references/research-and-provenance.md",
+          "sha256": "30c5c35adeb3ef89f6a8258a4ff48b0b3c3c6101fec69d66caab62351ff22cc6"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "bdec6a6e3bee6383100dcfff9308fc4447e3244e0498067895f5d7e77d64f2c6"
+        },
+        {
+          "path": "scripts/validate_runtime_dialogue.py",
+          "sha256": "7e54950ab304e3df8f1306e4a3727eed71f10bb08164a29faff705230225a364"
+        },
+        {
+          "path": "tests/fixtures/audit.json",
+          "sha256": "52dad40bf4177a0b245daa5238480cfd0d850a4b5fc3c3bf54827bad486942e9"
+        },
+        {
+          "path": "tests/fixtures/room.json",
+          "sha256": "54628cdfe435a92fc12cf55866812b3e3168547e18427204957801202eb6a7e6"
+        },
+        {
+          "path": "tests/forward-evals.yaml",
+          "sha256": "5707e69d8fba9fb48ebfe36ee4dfed5c23558c20ea88407b6966836c5caf07cc"
+        },
+        {
+          "path": "tests/test_runtime_dialogue.py",
+          "sha256": "15a6c60bdb796ea0966bc2bfc7c1a2c74a4876997b1813e2bd67c45ac71cc24e"
+        }
+      ]
+    },
+    {
+      "id": "prop-generation",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 按上游完整需求包中确定的道具、功能、状态与动画清单，在统一美术规范下制作像素物品、机关及骑乘对象，不新增道具或设计玩法。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "prop-generation/SKILL.md",
+      "sha256": "5c9348cf3a6eb1af34223a661aac69b2cb919622ae1e0ad0053e0aa63ea98ad9",
+      "originalSkillSha256": null,
+      "treeSha256": "72b1a26ea21a7b6b1046e62d8323985f9b2b22143b56b22917d82e5ea120a1e7",
+      "productionRevision": "2e789fe1c5c42c370990d76e25524b8678087ef7088c6725f99df3598b826a72",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "5c9348cf3a6eb1af34223a661aac69b2cb919622ae1e0ad0053e0aa63ea98ad9"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "1390ce33a17de0c3f3695f946c38bb656e82849abc627a1a95ab57f0793c7343"
+        }
+      ]
+    },
+    {
+      "id": "scene-generation",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 按上游完整需求包中已确定的场景清单与玩法约束，制作统一美术规范下的简洁16比9像素场景、空间几何和碰撞，不增删场景或改写剧情玩法。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "scene-generation/SKILL.md",
+      "sha256": "28aa53324165b075bfcbb9645dcb77ec42f642f53d47076a77863793ed316ec5",
+      "originalSkillSha256": "2cca5db3e85ee26fa2f258f434d7779dca771efba3b0a32b5463258fc622bc98",
+      "treeSha256": "9cba8117931052e4b8e2ae6cbe49233feccade7be77e57cae002681844e7587f",
+      "productionRevision": "aec50ebaeb74bf6e08a84e7f2ab1201e17e8a2bb21661334284b0fa206870623",
+      "files": [
+        {
+          "path": ".gitignore",
+          "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b"
+        },
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "2cca5db3e85ee26fa2f258f434d7779dca771efba3b0a32b5463258fc622bc98"
+        },
+        {
+          "path": "README.md",
+          "sha256": "615a64d314eba4c6f8cc74108178c6b5821d3446fe947ad3434ef3f676e4c273"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "28aa53324165b075bfcbb9645dcb77ec42f642f53d47076a77863793ed316ec5"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "008f5ed4164347bc956faf6bcc2af51ac364f1e875a245a3ae916719dd8485c4"
+        },
+        {
+          "path": "assets/collision-notation-board.png",
+          "sha256": "6476a8e9c90ff186b5dae93d7d27fd5272e5721e80e419bdb7936cea08d19e1e"
+        },
+        {
+          "path": "assets/playable-scene-style-board.png",
+          "sha256": "9a2ef65ac111696a0cc9a8983f7c5a998e5fbd075b88c960fc96454cceedc2f5"
+        },
+        {
+          "path": "references/collision-spec.md",
+          "sha256": "22b5e2c35156e03cbc3962d0bb426d7a6ad5482751dcec98d8ac24e013795fb8"
+        },
+        {
+          "path": "references/design-workflow.md",
+          "sha256": "4142e2e8cd798c04a5538b0f598cfae9b3befbb42fb3de9e52d80b917392b9e3"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "2cca5db3e85ee26fa2f258f434d7779dca771efba3b0a32b5463258fc622bc98"
+        },
+        {
+          "path": "references/workbench-v2.md",
+          "sha256": "8e68e8cf1f0548c0950efa2d06bf803a6dd4d45f7b340c09484035a1b8535b1d"
+        },
+        {
+          "path": "requirements.txt",
+          "sha256": "1954ca940740c612a12e7abf0a307b7394715964d66dc8037d503fdd5c1b6424"
+        },
+        {
+          "path": "scripts/body_clearance.py",
+          "sha256": "3058b23dce9121e2f89d83f4d3ea0cfbc293abd9bcc4fbebee3e94c2f8470091"
+        },
+        {
+          "path": "scripts/generate_reference_assets.py",
+          "sha256": "f9e3c3fb4910a74d86b5c37c2171e3fdf54bea84c95adedfe975ae9fb7cc256f"
+        },
+        {
+          "path": "scripts/scene_collision.py",
+          "sha256": "8cebf83937ffb0f4753d8d262412ca9ede8afb29114ef4aabb79e27158a83d6e"
+        },
+        {
+          "path": "scripts/test_body_clearance.py",
+          "sha256": "5a7992105e9813721de5e63eb85a0a20c0dfdff0afa27023d90718a9d09d908c"
+        },
+        {
+          "path": "tests/fixtures/courtyard-collision.json",
+          "sha256": "1f1d13d669e45748297f4efe71915b81bffb12dd583dad22383040e56ababb27"
+        },
+        {
+          "path": "tests/test_scene_collision.py",
+          "sha256": "ef3ba1d34bb57c9ca2ed51edd064ed99c4d74def749e96fbf8e7de61e515dff4"
+        }
+      ]
+    },
+    {
+      "id": "visual-asset-production",
+      "description": "仅在 CreateWorldAgent 项目及子目录按相关性自动使用；其他项目需用户明确指定。 美术资产生成统一入口：接收上游已确定的完整剧情玩法与详细资产清单，统筹统一美术规范、固定界面适配、场景、角色及道具制作，交付一致的像素资产包，不重新规划剧情、玩法或资产范围。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "visual-asset-production/SKILL.md",
+      "sha256": "2f886bfeb001b16dd1651daa1f0819ce62c616d513849465a4798dd8f8a77e29",
+      "originalSkillSha256": null,
+      "treeSha256": "266751af3111c94d087e972126fd650862d8363870d163925ce5651a75948206",
+      "productionRevision": "266751af3111c94d087e972126fd650862d8363870d163925ce5651a75948206",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "2f886bfeb001b16dd1651daa1f0819ce62c616d513849465a4798dd8f8a77e29"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "1d8f347bc1bf7e28951d01a6117ae3c4f82f557c6a1fa9c8e4e5b4e554d2d975"
+        },
+        {
+          "path": "references/content-boundaries.md",
+          "sha256": "6c8dfeb9ff1c85bcbd6b1f662776302d95c0384f8525fa6562a9b77cc9e698fe"
+        },
+        {
+          "path": "references/input-output.md",
+          "sha256": "22ea83da8522595bdb77906ab1c0fa50f8bf870002f31f7c30a08f7384501746"
+        }
+      ]
+    },
+    {
+      "id": "world-kit",
+      "description": "复用 Create World 固定的摇杆、地图和交互键源码库；需要移动、触屏交互或地图时优先读取。",
+      "version": "0.2.0-autonomous.1",
+      "entry": "world-kit/SKILL.md",
+      "sha256": "570440428eb781717570def1606fd634682e09ec41225e9d18933b38fb84f177",
+      "originalSkillSha256": "71071aac54704db22d0901909424dcaa56c00620f5bb822ff4ed5fff16fcf8d0",
+      "treeSha256": "7b1b3807e9dfd9ba6503d6289d90a3639adaaf7ab0a4feeb24210462bf4ec236",
+      "productionRevision": "7b1b3807e9dfd9ba6503d6289d90a3639adaaf7ab0a4feeb24210462bf4ec236",
+      "files": [
+        {
+          "path": "LEGACY_SKILL.md",
+          "sha256": "71071aac54704db22d0901909424dcaa56c00620f5bb822ff4ed5fff16fcf8d0"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "570440428eb781717570def1606fd634682e09ec41225e9d18933b38fb84f177"
+        },
+        {
+          "path": "references/legacy-entry-v1.md",
+          "sha256": "71071aac54704db22d0901909424dcaa56c00620f5bb822ff4ed5fff16fcf8d0"
+        }
+      ]
+    }
+  ]
+}

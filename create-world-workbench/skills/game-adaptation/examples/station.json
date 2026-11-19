@@ -1,0 +1,729 @@
+{
+  "schemaVersion": 1,
+  "id": "storm-station",
+  "title": "暴雨车站制作规格",
+  "source": {
+    "complete": true,
+    "nodes": [
+      {
+        "id": "flood",
+        "summary": "暴雨漫过低处月台，旅客被困。",
+        "locator": "原创样例第1段",
+        "invariant": "旅客在积水排空前无法自行离开。"
+      },
+      {
+        "id": "reserve",
+        "summary": "站内仅有两格备用电力，可用于排水或信号求援。",
+        "locator": "原创样例第2段",
+        "invariant": "有限电力不能同时完成两项大功率任务。"
+      },
+      {
+        "id": "rescue",
+        "summary": "维修员核实水位和线路后决定救援方式。",
+        "locator": "原创样例第3段",
+        "invariant": "信息和资源决定可实施的救援方式。"
+      }
+    ]
+  },
+  "constraints": {
+    "playerRole": "车站维修员",
+    "genre": "2D 调查与资源解谜",
+    "platform": "web",
+    "minMinutes": 8,
+    "maxMinutes": 15,
+    "supportedInputs": [
+      "button"
+    ],
+    "requiredPreservedNodeIds": [
+      "flood",
+      "rescue"
+    ]
+  },
+  "adaptation": {
+    "playerRole": "车站维修员",
+    "genre": "2D 调查与资源解谜",
+    "platform": "web",
+    "coreExperience": "用证据理解环境，再承担有限资源下的救援取舍。",
+    "targetMinutes": 12,
+    "preservedNodeIds": [
+      "flood",
+      "rescue"
+    ],
+    "changes": [
+      {
+        "sourceNodeId": "reserve",
+        "change": "把原作电力短缺转化为可见的两格资源。",
+        "reason": "让抽象限制成为可预测的玩家决策。"
+      }
+    ],
+    "excludedNodeIds": [],
+    "experiences": [
+      {
+        "id": "responsibility",
+        "experience": "承担知情选择",
+        "sourceNodeIds": [
+          "reserve",
+          "rescue"
+        ],
+        "playerActions": [
+          {
+            "verb": "核对",
+            "decision": "证据是否支持安全接线",
+            "consequence": "获得配电权限"
+          },
+          {
+            "verb": "分配",
+            "decision": "即时排水或保留资源并发信",
+            "consequence": "改变资源结余与救援方式"
+          }
+        ]
+      }
+    ],
+    "inventions": []
+  },
+  "mechanics": [
+    {
+      "id": "investigate",
+      "goal": "通过水位与线路记录确认救援条件。",
+      "inputs": [
+        "button"
+      ],
+      "rules": [
+        "查看记录获得证据，证据板核对后可访问配电台。",
+        "日志和暂停共享世界状态，关闭后回到月台。"
+      ],
+      "feedback": "显示已经发现的记录及其推论。",
+      "failure": "没有水位证据不能确认推论。",
+      "recovery": "返回月台重新检查原始记录。",
+      "sourceNodeIds": [
+        "flood",
+        "rescue"
+      ]
+    },
+    {
+      "id": "allocate",
+      "goal": "在有限备用电力下选择救援行动。",
+      "inputs": [
+        "button"
+      ],
+      "rules": [
+        "备用电力初始两格，排水消耗两格，发信消耗一格。",
+        "错误接线自动断电，断电重试不扣除备用电力。",
+        "结束选择原子提交后冻结结果。"
+      ],
+      "feedback": "实时显示电力与行动后果。",
+      "failure": "错误接线进入断电提示；电力不足拒绝操作。",
+      "recovery": "断电页面可回到配电台，保留之前有效证据。",
+      "sourceNodeIds": [
+        "reserve",
+        "rescue"
+      ]
+    }
+  ],
+  "mechanicDetails": [
+    {
+      "id": "investigate",
+      "successCondition": "获得证据并确认配电方案。",
+      "cancelPolicy": "关闭临时界面不提交尚未确认的动作。",
+      "testScenarios": {
+        "success": "实际点击从开始到对应结束页面。",
+        "failureRecovery": "故意错误操作，确认状态不变，再点击重试完成。",
+        "alternative": "采用另一合法路线，核对资源与结局差异。"
+      },
+      "loop": {
+        "startStepId": "observe",
+        "steps": [
+          {
+            "id": "observe",
+            "playerAction": "查看线索和资源",
+            "feedback": "显示当前可用信息",
+            "nextStepIds": [
+              "decide"
+            ]
+          },
+          {
+            "id": "decide",
+            "playerAction": "根据可见条件选择行动",
+            "feedback": "预告消耗和结果",
+            "nextStepIds": [
+              "respond"
+            ]
+          },
+          {
+            "id": "respond",
+            "playerAction": "阅读结果并决定重试或推进",
+            "feedback": "确认状态变化或拒绝原因",
+            "nextStepIds": [
+              "observe"
+            ]
+          }
+        ]
+      },
+      "decisions": []
+    },
+    {
+      "id": "allocate",
+      "successCondition": "完成排水或等待救援结局。",
+      "cancelPolicy": "关闭临时界面不提交尚未确认的动作。",
+      "testScenarios": {
+        "success": "实际点击从开始到对应结束页面。",
+        "failureRecovery": "故意错误操作，确认状态不变，再点击重试完成。",
+        "alternative": "采用另一合法路线，核对资源与结局差异。"
+      },
+      "loop": {
+        "startStepId": "observe",
+        "steps": [
+          {
+            "id": "observe",
+            "playerAction": "查看线索和资源",
+            "feedback": "显示当前可用信息",
+            "nextStepIds": [
+              "decide"
+            ]
+          },
+          {
+            "id": "decide",
+            "playerAction": "根据可见条件选择行动",
+            "feedback": "预告消耗和结果",
+            "nextStepIds": [
+              "respond"
+            ]
+          },
+          {
+            "id": "respond",
+            "playerAction": "阅读结果并决定重试或推进",
+            "feedback": "确认状态变化或拒绝原因",
+            "nextStepIds": [
+              "observe"
+            ]
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "information": "有两格电力，排水能立即救人但耗尽资源；发信省电但必须等待。",
+          "options": [
+            {
+              "id": "immediate",
+              "actionId": "pump",
+              "tradeoff": "耗尽电力换取即时脱困。"
+            },
+            {
+              "id": "reserve_power",
+              "actionId": "signal",
+              "tradeoff": "保留一格电力，接受等待外部救援。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "state": {
+    "variables": [
+      {
+        "id": "evidence",
+        "type": "bool",
+        "initial": false
+      },
+      {
+        "id": "charge",
+        "type": "int",
+        "initial": 2,
+        "min": 0,
+        "max": 2
+      },
+      {
+        "id": "route",
+        "type": "enum",
+        "initial": "none",
+        "values": [
+          "none",
+          "pump",
+          "signal"
+        ]
+      }
+    ],
+    "invariants": []
+  },
+  "flow": {
+    "startScreen": "start",
+    "screens": [
+      {
+        "id": "start",
+        "kind": "title",
+        "title": "暴雨车站"
+      },
+      {
+        "id": "platform",
+        "kind": "world",
+        "title": "积水月台"
+      },
+      {
+        "id": "board",
+        "kind": "puzzle",
+        "title": "证据板"
+      },
+      {
+        "id": "supply",
+        "kind": "puzzle",
+        "title": "配电台"
+      },
+      {
+        "id": "failure",
+        "kind": "dialogue",
+        "title": "错误接线"
+      },
+      {
+        "id": "journal",
+        "kind": "journal",
+        "title": "调查记录"
+      },
+      {
+        "id": "pause",
+        "kind": "pause",
+        "title": "暂停"
+      },
+      {
+        "id": "rescued",
+        "kind": "ending",
+        "title": "排水救援"
+      },
+      {
+        "id": "waiting",
+        "kind": "ending",
+        "title": "发信等待救援"
+      }
+    ],
+    "terminals": [
+      "rescued",
+      "waiting"
+    ],
+    "edges": [
+      {
+        "id": "edge_begin",
+        "from": "start",
+        "to": "platform",
+        "actionId": "begin"
+      },
+      {
+        "id": "edge_read_water",
+        "from": "platform",
+        "to": "board",
+        "actionId": "read_water"
+      },
+      {
+        "id": "edge_reason",
+        "from": "board",
+        "to": "supply",
+        "actionId": "reason"
+      },
+      {
+        "id": "edge_wrong_wire",
+        "from": "supply",
+        "to": "failure",
+        "actionId": "wrong_wire"
+      },
+      {
+        "id": "edge_retry",
+        "from": "failure",
+        "to": "supply",
+        "actionId": "retry"
+      },
+      {
+        "id": "edge_pump",
+        "from": "supply",
+        "to": "rescued",
+        "actionId": "pump"
+      },
+      {
+        "id": "edge_signal",
+        "from": "supply",
+        "to": "waiting",
+        "actionId": "signal"
+      },
+      {
+        "id": "edge_open_journal",
+        "from": "platform",
+        "to": "journal",
+        "actionId": "open_journal"
+      },
+      {
+        "id": "edge_close_journal",
+        "from": "journal",
+        "to": "platform",
+        "actionId": "close_journal"
+      },
+      {
+        "id": "edge_open_pause",
+        "from": "platform",
+        "to": "pause",
+        "actionId": "open_pause"
+      },
+      {
+        "id": "edge_close_pause",
+        "from": "pause",
+        "to": "platform",
+        "actionId": "close_pause"
+      }
+    ]
+  },
+  "interactions": [
+    {
+      "id": "begin",
+      "screenId": "start",
+      "targetScreen": "platform",
+      "mechanicId": "investigate",
+      "label": "开始检修",
+      "input": "button",
+      "sourceNodeIds": [
+        "flood"
+      ],
+      "guard": [],
+      "effects": [],
+      "feedback": "开始检修后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "read_water",
+      "screenId": "platform",
+      "targetScreen": "board",
+      "mechanicId": "investigate",
+      "label": "检查水位记录",
+      "input": "button",
+      "sourceNodeIds": [
+        "flood"
+      ],
+      "guard": [],
+      "effects": [
+        {
+          "var": "evidence",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "feedback": "检查水位记录后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "reason",
+      "screenId": "board",
+      "targetScreen": "supply",
+      "mechanicId": "investigate",
+      "label": "核对线路与水位",
+      "input": "button",
+      "sourceNodeIds": [
+        "flood"
+      ],
+      "guard": [
+        {
+          "var": "evidence",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "feedback": "核对线路与水位后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "wrong_wire",
+      "screenId": "supply",
+      "targetScreen": "failure",
+      "mechanicId": "allocate",
+      "label": "尝试错误接线",
+      "input": "button",
+      "sourceNodeIds": [
+        "reserve"
+      ],
+      "guard": [],
+      "effects": [],
+      "feedback": "尝试错误接线后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "retry",
+      "screenId": "failure",
+      "targetScreen": "supply",
+      "mechanicId": "allocate",
+      "label": "断电后重新接线",
+      "input": "button",
+      "sourceNodeIds": [
+        "reserve"
+      ],
+      "guard": [],
+      "effects": [],
+      "feedback": "断电后重新接线后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "pump",
+      "screenId": "supply",
+      "targetScreen": "rescued",
+      "mechanicId": "allocate",
+      "label": "耗费两格电力排水",
+      "input": "button",
+      "sourceNodeIds": [
+        "reserve"
+      ],
+      "guard": [
+        {
+          "var": "charge",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "var": "evidence",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "var": "charge",
+          "op": "add",
+          "value": -2
+        },
+        {
+          "var": "route",
+          "op": "set",
+          "value": "pump"
+        }
+      ],
+      "feedback": "耗费两格电力排水后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "signal",
+      "screenId": "supply",
+      "targetScreen": "waiting",
+      "mechanicId": "allocate",
+      "label": "耗费一格电力发送信号",
+      "input": "button",
+      "sourceNodeIds": [
+        "reserve"
+      ],
+      "guard": [
+        {
+          "var": "charge",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "var": "charge",
+          "op": "add",
+          "value": -1
+        },
+        {
+          "var": "route",
+          "op": "set",
+          "value": "signal"
+        }
+      ],
+      "feedback": "耗费一格电力发送信号后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "open_journal",
+      "screenId": "platform",
+      "targetScreen": "journal",
+      "mechanicId": "investigate",
+      "label": "查看记录",
+      "input": "button",
+      "sourceNodeIds": [
+        "flood"
+      ],
+      "guard": [],
+      "effects": [],
+      "feedback": "查看记录后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "close_journal",
+      "screenId": "journal",
+      "targetScreen": "platform",
+      "mechanicId": "investigate",
+      "label": "返回月台",
+      "input": "button",
+      "sourceNodeIds": [
+        "flood"
+      ],
+      "guard": [],
+      "effects": [],
+      "feedback": "返回月台后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "open_pause",
+      "screenId": "platform",
+      "targetScreen": "pause",
+      "mechanicId": "investigate",
+      "label": "暂停",
+      "input": "button",
+      "sourceNodeIds": [
+        "flood"
+      ],
+      "guard": [],
+      "effects": [],
+      "feedback": "暂停后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    },
+    {
+      "id": "close_pause",
+      "screenId": "pause",
+      "targetScreen": "platform",
+      "mechanicId": "investigate",
+      "label": "继续",
+      "input": "button",
+      "sourceNodeIds": [
+        "flood"
+      ],
+      "guard": [],
+      "effects": [],
+      "feedback": "继续后的世界状态在界面显示。",
+      "failure": "条件不足时显示具体原因，世界状态不变。",
+      "cancel": "取消不提交任何效果。",
+      "repeat": "repeatable"
+    }
+  ],
+  "branches": [
+    {
+      "id": "rescue_choice",
+      "decisionScreenId": "supply",
+      "options": [
+        {
+          "id": "drain",
+          "actionId": "pump",
+          "consequence": "耗尽电力，立即排水救援。"
+        },
+        {
+          "id": "radio",
+          "actionId": "signal",
+          "consequence": "保留电力，等待外部救援。"
+        }
+      ],
+      "endingScreenIds": [
+        "rescued",
+        "waiting"
+      ]
+    }
+  ],
+  "easterEggs": [],
+  "assembly": {
+    "entryScreen": "start",
+    "requiredArtifactIds": [],
+    "assets": [],
+    "artifactStatus": {}
+  },
+  "flowDetails": {
+    "restartPolicy": "reset-all",
+    "tutorialScreenIds": [
+      "platform"
+    ],
+    "advancedScreenIds": [
+      "supply"
+    ],
+    "failureRecovery": [
+      {
+        "from": "failure",
+        "to": "supply"
+      }
+    ],
+    "screens": [
+      {
+        "id": "start",
+        "playerGoal": "在暴雨车站完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": false
+      },
+      {
+        "id": "platform",
+        "playerGoal": "在积水月台完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": false
+      },
+      {
+        "id": "board",
+        "playerGoal": "在证据板完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": false
+      },
+      {
+        "id": "supply",
+        "playerGoal": "在配电台完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": false
+      },
+      {
+        "id": "failure",
+        "playerGoal": "在错误接线完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": false
+      },
+      {
+        "id": "journal",
+        "playerGoal": "在调查记录完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": true,
+        "returnToScreenIds": [
+          "platform"
+        ],
+        "stateOwner": "world",
+        "pausesWorld": true
+      },
+      {
+        "id": "pause",
+        "playerGoal": "在暂停完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": true,
+        "returnToScreenIds": [
+          "platform"
+        ],
+        "stateOwner": "world",
+        "pausesWorld": true
+      },
+      {
+        "id": "rescued",
+        "playerGoal": "在排水救援完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": false
+      },
+      {
+        "id": "waiting",
+        "playerGoal": "在发信等待救援完成当前行动",
+        "entryFeedback": "显示地点、目标与已有信息",
+        "completionFeedback": "展示行动结果与后续操作",
+        "overlay": false
+      }
+    ]
+  }
+}

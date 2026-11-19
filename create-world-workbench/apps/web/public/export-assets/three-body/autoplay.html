@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN" data-demo-pace="fast"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>三体 · 快速自动演示</title><link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="story.css"><link rel="stylesheet" href="autoplay.css"></head>
+<body><main id="app">
+<header><span class="sigil">三体</span><nav><button id="pause">暂停 <kbd>Esc</kbd></button><button id="help">操作说明</button></nav></header>
+<section id="stage"><canvas id="world" width="960" height="540" tabindex="0" aria-label="使用方向键或 WASD 移动罗辑"></canvas><div id="loading">正在载入雪夜…</div><aside id="map-panel"><span>区域地图 · <b id="map-name">室内</b></span><canvas id="minimap" width="240" height="160"></canvas></aside></section>
+<div id="arrival-speech" hidden role="status">你先去吧。</div>
+<div id="objective" role="status"></div>
+<footer><div id="joystick" role="group" aria-label="拖动摇杆控制移动"><span class="cross horizontal"></span><span class="cross vertical"></span><span id="stick"></span></div><div class="status"><p id="prompt"></p></div><button id="interact">交互 <kbd>E</kbd></button></footer>
+<section id="overlay" hidden aria-label="剧情与设备界面"></section>
+<div id="paused" hidden>已暂停<span>按 Esc 或点击继续</span><button id="resume">继续游戏</button></div>
+<dialog id="help-dialog"><h2>操作说明</h2><p>WASD / 方向键或左侧摇杆：移动。<br>E / 右侧按钮：与附近人物、物件交互。<br>点击画面 / Enter / 空格：继续对白或分镜。<br>设备界面：方向键选择，Enter 确认，也可直接点击。<br>Esc：暂停或继续。<br><br>先与庄颜交谈，再翻阅东侧书桌的笔记。每段操作都有目标提示。</p><button id="close-help">返回游戏</button></dialog>
+</main><script src="engine.js"></script><script src="maps.js"></script><script src="story-maps.js"></script><script src="observatory-geometry.js"></script><script src="atmosphere.js"></script><script src="comic-data.js"></script><script src="comic-effects.js"></script><script src="story.js"></script><script src="game.js"></script><script src="autoplay.js"></script></body></html>

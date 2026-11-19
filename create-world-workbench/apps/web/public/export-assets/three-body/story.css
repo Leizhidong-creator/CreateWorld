@@ -1,0 +1,167 @@
+#objective{position:absolute;top:16px;left:175px;max-width:46%;padding:7px 12px;background:#0a111bcc;border-left:2px solid #b69a65;font-size:12px;pointer-events:none;z-index:3}#overlay{position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;background:#050a10a6;padding:22px}#overlay.comic{padding:0;background:#030608}#overlay.ending{background:#030608}#paused{z-index:10;pointer-events:auto}#paused button{margin-top:20px}header{z-index:11}.panel{width:min(680px,95%);max-height:100%;overflow:auto;background:#0e1822f5;border:1px solid #9a845a;padding:24px;box-shadow:0 15px 80px #0008}.panel h1{font:32px 'SimSun',serif;letter-spacing:8px;margin:12px 0 20px}.panel h2{font-size:20px;font-weight:500;margin:6px 0 14px}.panel p{white-space:pre-line;line-height:1.9}.eyebrow{color:#b8a17b;font-size:11px;letter-spacing:3px}.actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;margin-top:18px}.primary{background:#735f3e;color:#fff2d4}.dialogue{align-self:flex-end;width:90%;padding:18px 26px}.dialogue p{min-height:2.5em;margin:8px 0}.comic-image{position:absolute;width:100%;height:100%;object-fit:contain;image-rendering:pixelated}.comic-box{position:absolute;bottom:16px;left:5%;width:90%;padding:14px 22px;background:#040912e8;border-top:1px solid #8e7957}.comic-box p{margin:7px 0;font-size:17px}.comic-box .actions{margin-top:8px}.stars{position:relative;height:215px;border:1px solid #61728b;background:radial-gradient(ellipse at 30% 60%,#182f48,#050c17 70%);overflow:hidden}.stars:before{content:'';position:absolute;inset:0;background-image:radial-gradient(#859ab8 1px,transparent 1px);background-size:37px 31px;opacity:.35}.star{position:absolute;transform:translate(-50%,-50%);border:1px solid transparent;background:none;padding:8px;color:#ceddff;font-size:20px;backdrop-filter:none}.star.selected{border:1px solid #e6cb91;border-radius:50%;box-shadow:0 0 20px #d7bb7233}.readout{min-height:50px;color:#bcd1e5;font-size:13px;margin-top:12px}.meter{position:relative;height:44px;background:#07111d;border:1px solid #5d6e82;margin:24px 0 14px}.target-band{position:absolute;left:62%;width:12%;top:0;bottom:0;background:#719a6755;border-inline:1px solid #9eb785}.needle{position:absolute;top:-5px;width:3px;height:52px;background:#f2d59b}input[type=range]{width:100%;accent-color:#d4b47a}.launch-bar{height:5px;background:#203449;margin-top:25px}.launch-bar span{display:block;height:100%;background:#c8b180}.muted{color:#a2afbd;font-size:12px}.feedback{color:#efd59f;min-height:24px}.ending .panel{text-align:center;background:none;border:0}.ending blockquote{font-size:20px;line-height:2}button{touch-action:manipulation}dialog{z-index:20}@media(max-width:900px),(max-height:550px){#overlay{padding:12px}.panel{padding:15px}.panel h1{font-size:25px;margin:6px 0 10px}.panel h2{font-size:17px;margin:3px 0 8px}.panel p{font-size:13px;line-height:1.65;margin:8px 0}.actions{margin-top:10px;gap:6px}.actions button{padding:5px 9px;font-size:12px}.stars{height:135px}.comic-box{bottom:8px;padding:8px 14px}.comic-box p{font-size:14px}.eyebrow{font-size:10px}#objective{left:125px;top:12px;font-size:10px;padding:4px 7px;max-width:40%}.dialogue{width:96%}.readout{font-size:11px;min-height:30px}.meter{margin:13px 0 8px;height:28px}.needle{height:36px}.ending blockquote{font-size:16px}}@media(max-width:500px){#objective{left:88px;top:7px;max-width:40%;font-size:8px}.panel{padding:10px;width:98%}.panel h1{font-size:21px}.panel p{font-size:11px}.stars{height:85px}.comic-box p{font-size:11px}.comic-box{bottom:4px;padding:5px 10px}.eyebrow{letter-spacing:1px;font-size:8px}.actions{margin-top:5px}.actions button{font-size:10px;padding:3px 7px}.readout{font-size:9px}.feedback{font-size:10px;min-height:15px}}
+
+.comic-effects{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated}.comic-box{z-index:1}
+
+/* Conversation is a compact HUD, never a full-screen dimming layer. */
+#overlay.dialogue-layer{background:transparent;padding:8px 18px;align-items:flex-end}
+#overlay.dialogue-layer .dialogue{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;width:min(740px,90%);max-height:26%;padding:10px 16px;background:#101c26f5;box-shadow:none;border-radius:6px;align-self:flex-end;overflow:auto}
+#overlay.dialogue-layer .eyebrow{grid-column:1;letter-spacing:1px}
+#overlay.dialogue-layer p{grid-column:1;min-height:0;margin:3px 0 0;line-height:1.6;font-size:14px}
+#overlay.dialogue-layer .actions{grid-column:2;grid-row:1 / span 2;align-self:center;margin:0}
+#overlay.dialogue-layer .actions button{white-space:nowrap}
+body:has(#overlay.dialogue-layer:not([hidden])) .status{visibility:hidden}
+@media(max-width:900px),(max-height:550px){#overlay.dialogue-layer{padding:5px 12px}#overlay.dialogue-layer .dialogue{width:92%;padding:6px 10px;column-gap:10px}#overlay.dialogue-layer p{font-size:12px;line-height:1.5}}
+@media(max-width:500px){#overlay.dialogue-layer{padding:3px 6px}#overlay.dialogue-layer .dialogue{width:98%;padding:4px 7px;column-gap:6px}#overlay.dialogue-layer p{font-size:10px;line-height:1.4}#overlay.dialogue-layer .eyebrow{font-size:8px}}
+
+/* Inset portrait with matte pixel-style wood framing. */
+#app{container-type:inline-size}
+#overlay.dialogue-layer{padding:0 0 clamp(6px,1.4cqw,18px);overflow:visible}
+#overlay.dialogue-layer .dialogue{--portrait:clamp(48px,7.4cqw,94px);--inset:clamp(10px,2cqw,26px);position:relative;display:block;width:min(80%,820px);max-height:none;min-height:clamp(76px,10cqw,126px);padding:clamp(9px,1.3cqw,17px) var(--inset) clamp(30px,3cqw,38px);overflow:visible;border:2px solid #655c4d;border-radius:0;color:#eee2c9;background:repeating-linear-gradient(0deg,#ac957004 0 2px,transparent 2px 6px),#22241ff5;box-shadow:inset 0 0 0 2px #35372e,3px 3px 0 #0c110f66}
+#overlay.dialogue-layer .dialogue::before,#overlay.dialogue-layer .dialogue::after{content:none}
+#overlay.dialogue-layer .dialogue::before{left:7px;border-left:2px solid #b69b64}
+#overlay.dialogue-layer .dialogue::after{right:7px;border-right:2px solid #b69b64}
+.portrait-frame{position:absolute;left:var(--inset);top:calc(var(--portrait)*-.39);width:var(--portrait);height:var(--portrait);padding:5px;background:#403c31;border:2px solid #796d58;border-radius:0;box-shadow:inset 0 0 0 2px #282c25,3px 3px 0 #0c110f66}
+.portrait{width:100%;height:100%;background-image:url('assets/dialogue-portraits-v1.png');background-size:300% 100%;background-repeat:no-repeat;background-color:#15212a;border:1px solid #403e32;image-rendering:auto}
+.portrait-luoji{background-position:0% 0}.portrait-zhuangyan{background-position:50% 0}.portrait-shiqiang{background-position:100% 0}
+#overlay.dialogue-layer .has-portrait.dialogue-left{padding-left:calc(var(--portrait) + var(--inset) + 16px)}
+#overlay.dialogue-layer .has-portrait.dialogue-right{padding-right:calc(var(--portrait) + var(--inset) + 16px)}
+.dialogue-right .portrait-frame{left:auto;right:var(--inset)}
+#overlay.dialogue-layer .eyebrow{font:500 clamp(12px,1.4cqw,18px)/1.3 'SimSun',serif;letter-spacing:2px;color:#c7b69a;margin-bottom:clamp(5px,.65cqw,9px)}
+#overlay.dialogue-layer .dialogue-right .eyebrow{text-align:right}
+#overlay.dialogue-layer p{font-size:clamp(14px,1.9cqw,24px);line-height:1.65;margin:0;min-height:0;letter-spacing:.5px}
+#overlay.dialogue-layer .actions{position:absolute;right:var(--inset);bottom:8px;margin:0;display:flex}
+#overlay.dialogue-layer .actions button{padding:2px 12px;font-size:clamp(10px,1cqw,12px);letter-spacing:1px;border:0;border-top:1px solid #82786555;border-radius:0;background:transparent;color:#bbae96;box-shadow:none;backdrop-filter:none}
+#overlay.dialogue-layer .actions button::after{content:' ▸';margin-left:7px;color:#cbbda1}
+#overlay.dialogue-layer .actions button:hover{color:#eee2c9;background:#9e927612}
+
+/* Comic sequence stays cinematic, including choice and response beats. */
+#overlay.comic{background:#000}
+#overlay.comic{cursor:pointer;outline:none;touch-action:manipulation;user-select:none}
+#overlay.comic .comic-image{inset:0;width:100%;height:100%;object-fit:cover}
+#overlay.thought{background:transparent;padding:0;display:block}
+#overlay.thought .thought-bubble{position:absolute;display:block;width:min(370px,65%);margin:0;padding:0;text-align:center;will-change:transform,opacity}
+#overlay.thought .thought-bubble span{display:block;width:100%;margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none;color:#fff;font:500 clamp(13px,1.6cqw,21px)/1.7 'Microsoft YaHei',sans-serif;letter-spacing:.04em;white-space:normal;text-wrap:balance;-webkit-text-stroke:3px #101212;paint-order:stroke fill;text-shadow:0 2px 1px #000,1px 0 #000,-1px 0 #000}
+#overlay.thought .thought-bubble span:hover{color:#fff;border:0;background:none}
+body:has(#overlay.thought:not([hidden])) .status{visibility:hidden}
+
+@media(max-width:500px){#overlay.thought .thought-bubble{width:70%}#overlay.thought .thought-bubble span{font-size:12px;line-height:1.55;-webkit-text-stroke:2px #101212}}
+#overlay.journey{background:transparent;padding:0;pointer-events:auto}
+.journey-fade{position:absolute;inset:0;background:#000;opacity:0}
+#overlay.dialogue-layer.dialogue-upper{align-items:flex-start;padding-top:clamp(54px,8cqw,100px);padding-bottom:0}
+#overlay.dialogue-layer.dialogue-upper .dialogue{align-self:flex-start}
+body:has(#overlay.journey:not([hidden])) header,body:has(#overlay.journey:not([hidden])) #map-panel{visibility:hidden}
+#overlay.comic .comic-box{left:0;bottom:3%;width:100%;min-height:0;padding:clamp(10px,1.5cqw,22px) 7%;background:transparent;border:0;border-radius:0;box-shadow:none;text-align:center}
+#overlay.comic .comic-box p{margin:0 auto;max-width:1100px;color:#fff;font-family:'Microsoft YaHei',system-ui,sans-serif;font-size:clamp(14px,2.15cqw,30px);font-weight:500;line-height:1.65;letter-spacing:.06em;text-wrap:balance}
+#overlay.comic .comic-box p{-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 2px 3px #000,1px 0 #000,-1px 0 #000}
+#overlay.comic:not(.comic-choosing) .comic-box .actions{display:none}
+#overlay.comic.comic-choosing{cursor:default}
+#overlay.comic.comic-choosing .comic-box .actions button{text-shadow:0 1px 3px #000,-1px -1px #000,1px 1px #000}
+#overlay.comic .comic-box .actions{position:absolute;right:3%;bottom:7px;margin:0;gap:12px}
+#overlay.comic .comic-box .actions button{color:#c4c4c4;background:transparent;border:0;border-radius:0;padding:2px 8px;font-size:clamp(10px,1cqw,13px);box-shadow:none;backdrop-filter:none;letter-spacing:1px}
+#overlay.comic .comic-box .actions button:hover,#overlay.comic .comic-box .actions button:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:5px}
+#overlay.comic.comic-choosing .comic-box .actions{position:static;justify-content:center;flex-wrap:wrap;margin-top:10px}
+#overlay.comic.comic-choosing .comic-box{padding-bottom:12px}
+#overlay.comic.comic-choosing .comic-box .actions button{font-size:clamp(11px,1.3cqw,17px);border-bottom:1px solid #626262;padding:5px 10px}
+body:has(#overlay.comic:not([hidden])) header .sigil,body:has(#overlay.comic:not([hidden])) #help{display:none}
+body:has(#overlay.comic:not([hidden])) #pause{background:#0005;border-color:transparent;color:#bbb;font-size:11px;padding:4px 7px}
+@media(max-width:500px){#overlay.comic .comic-box{padding:7px 5% 22px}#overlay.comic .comic-box p{font-size:13px;line-height:1.5;letter-spacing:0}#overlay.comic .comic-box .actions{bottom:3px}#overlay.comic.comic-choosing .comic-box .actions{gap:6px;margin-top:5px}#overlay.comic.comic-choosing .comic-box .actions button{padding:3px;font-size:10px}}
+@media(max-width:500px){#overlay.dialogue-layer .dialogue{width:91%;--inset:10px;padding-top:8px;padding-bottom:25px}#overlay.dialogue-layer .has-portrait.dialogue-left{padding-left:calc(var(--portrait) + 19px)}#overlay.dialogue-layer .has-portrait.dialogue-right{padding-right:calc(var(--portrait) + 19px)}.portrait-frame{padding:3px}#overlay.dialogue-layer .actions{bottom:5px}#overlay.dialogue-layer p{line-height:1.45;letter-spacing:0}}
+
+#overlay.dialogue-layer,#overlay.thought{cursor:pointer;outline:none;touch-action:manipulation}
+
+/* Keep the controls anchored and visible throughout story overlays. */
+footer{z-index:8}
+#joystick,#interact{visibility:visible}
+body:has(#overlay:not([hidden])) .status{visibility:hidden}
+#overlay.dialogue-layer .dialogue{width:min(820px,calc(100% - 320px))}
+#overlay.comic .comic-box{padding-left:170px;padding-right:170px}
+@media(max-width:900px),(max-height:550px){#overlay.dialogue-layer .dialogue{width:calc(100% - 240px)}#overlay.comic .comic-box{padding-left:120px;padding-right:120px}}
+@media(max-width:500px){#overlay.dialogue-layer .dialogue{width:calc(100% - 166px)}#overlay.comic .comic-box{padding-left:80px;padding-right:80px}}
+
+/* Place choices in the open space between the two civilizations. */
+#overlay.comic .comic-options{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:clamp(8px,1.3cqw,18px);width:clamp(132px,21cqw,270px);margin:0;padding:0}
+#overlay.comic .comic-options button{width:100%;min-height:clamp(30px,4cqw,50px);padding:clamp(5px,.8cqw,11px) 8px;background:transparent;backdrop-filter:none;border:1px solid #d8e1e56b;border-radius:3px;box-shadow:none;color:#f3f1e8;font-size:clamp(12px,1.4cqw,20px);line-height:1.4;letter-spacing:.1em;text-shadow:0 1px 3px #000,1px 0 #000,-1px 0 #000;touch-action:manipulation}
+#overlay.comic .comic-options button:hover,#overlay.comic .comic-options button:focus-visible{background:transparent;border-color:#f1dfad;color:#fff1c9;outline:1px solid #f1dfad;outline-offset:3px}
+
+#arrival-speech{position:absolute;z-index:5;transform:translate(-50%,-100%);pointer-events:none;color:#fff;font:500 clamp(13px,1.6cqw,21px)/1.7 "Microsoft YaHei",sans-serif;white-space:nowrap;-webkit-text-stroke:3px #101212;paint-order:stroke fill;text-shadow:0 2px 1px #000}
+
+#objective{z-index:7}
+
+/* The notebook uses a matte wood frame with a warm paper inset. */
+#overlay.notebook{background:#160c064f}
+#overlay.notebook .panel{width:min(720px,88%);padding:clamp(24px,4cqw,48px) clamp(28px,4.5cqw,54px);border:0;border-radius:2px;background:#eddbb4 url('assets/notebook-wood-frame.png') center/100% 100% no-repeat;color:#44301f;box-shadow:0 12px 40px #10080370}
+#overlay.notebook .eyebrow{color:#85613e;font-size:clamp(10px,1cqw,13px);letter-spacing:.18em}
+#overlay.notebook h2{color:#51351e;font:600 clamp(19px,2.3cqw,29px)/1.4 'SimSun',serif;margin:10px 0 20px}
+#overlay.notebook .panel p{font-size:clamp(13px,1.5cqw,19px);line-height:1.9;margin:0 0 26px;color:#59432d}
+#overlay.notebook .actions{gap:14px;margin:0}
+#overlay.notebook .actions button{border:1px solid #99734d;border-radius:2px;background:#a77d3e12;color:#674b30;padding:9px 18px;backdrop-filter:none;box-shadow:inset 0 1px #fff3;font-size:clamp(12px,1.25cqw,16px)}
+#overlay.notebook .actions .primary{background:linear-gradient(#825732,#644024);color:#fff0d2;border-color:#58381e;box-shadow:inset 0 1px #bc8c5866,0 2px 0 #472e1b}
+#overlay.notebook .actions button:hover{border-color:#613d20;background:#bb8b4230}
+#overlay.notebook .actions .primary:hover{background:#80532e}
+@media(max-width:900px),(max-height:550px){#overlay.notebook .panel{padding:24px 32px}#overlay.notebook h2{margin:5px 0 10px}#overlay.notebook .panel p{margin-bottom:16px}#overlay.notebook .actions button{padding:6px 12px}}
+@media(max-width:500px){#overlay.notebook .panel{width:calc(100% - 142px);max-height:calc(100% - 4px);padding:14px 17px}#overlay.notebook .eyebrow{font-size:8px;letter-spacing:1px}#overlay.notebook h2{font-size:17px;margin:3px 0 7px}#overlay.notebook .panel p{font-size:11px;line-height:1.6;margin-bottom:10px}#overlay.notebook .actions{gap:8px;justify-content:center}#overlay.notebook .actions button{font-size:11px;padding:5px 7px}}
+
+/* Center Luo Ji's speech within the text area beside his right portrait. */
+#overlay.dialogue-layer .dialogue-right p{text-align:center;text-wrap:pretty}
+
+/* Hide controls only while a comic shot or its choices are on screen. */
+body:has(#overlay.comic:not([hidden])) #joystick,body:has(#overlay.comic:not([hidden])) #interact{visibility:hidden}
+
+
+.status:has(#prompt:empty){display:none}
+
+/* Observatory instruments: midnight glass, blue graticules and copper corner fittings. */
+#overlay:is(.telescope,.chart,.calibration,.confirm,.launch){background:#030b1638;padding:48px 20px 24px}
+#overlay .instrument-panel{position:relative;width:min(760px,calc(100% - 220px));max-height:100%;padding:28px 32px 24px;border:1px solid #4e738b;border-radius:5px;background:linear-gradient(120deg,#27445a33,transparent 40%),repeating-linear-gradient(0deg,#8acbf503 0 1px,transparent 1px 4px),linear-gradient(145deg,#122739fa,#081521fc 65%,#122333fc);box-shadow:0 0 0 4px #07111de6,0 0 0 5px #54677888,inset 0 0 0 5px #21384a55,0 18px 65px #0009;color:#dce9ee;scrollbar-width:thin;scrollbar-color:#466276 #0d1b28}
+#overlay .instrument-panel::before{content:'';position:absolute;inset:8px;pointer-events:none;background:linear-gradient(#b69c70,#b69c70) left top/22px 2px,linear-gradient(#b69c70,#b69c70) left top/2px 16px,linear-gradient(#b69c70,#b69c70) right top/22px 2px,linear-gradient(#b69c70,#b69c70) right top/2px 16px,linear-gradient(#b69c7077,#b69c7077) left bottom/22px 2px,linear-gradient(#b69c7077,#b69c7077) left bottom/2px 16px,linear-gradient(#b69c7077,#b69c7077) right bottom/22px 2px,linear-gradient(#b69c7077,#b69c7077) right bottom/2px 16px;background-repeat:no-repeat}
+#overlay .instrument-panel>.eyebrow{display:flex;align-items:center;gap:9px;color:#93b6c9;font-size:10px;letter-spacing:3px;margin-bottom:8px}
+#overlay .instrument-panel>.eyebrow::before{content:'';width:5px;height:5px;background:#a4d4df;box-shadow:0 0 8px #7bc6e080}
+#overlay .instrument-panel h2{font:500 clamp(19px,2cqw,27px)/1.4 'Microsoft YaHei',sans-serif;letter-spacing:3px;margin:0 0 13px;padding-bottom:13px;border-bottom:1px solid #66869c40;color:#ebf1ed}
+#overlay .instrument-panel p.muted{color:#97afbd;font-size:clamp(11px,1.05cqw,14px);line-height:1.7;margin:0 0 16px}
+#overlay .instrument-panel .stars{height:clamp(115px,17cqw,220px);border:1px solid #54788f;border-radius:2px;box-shadow:inset 0 0 40px #0009,0 0 0 3px #060f18;isolation:isolate;background:radial-gradient(ellipse at 38% 70%,#244a6344,transparent 65%),linear-gradient(#081625,#030b15)}
+#overlay .instrument-panel .stars::before{opacity:.35;background:linear-gradient(#7cabc914 1px,transparent 1px),linear-gradient(90deg,#7cabc914 1px,transparent 1px),radial-gradient(circle at 12% 68%,#c6dce9 0 1px,transparent 1.5px),radial-gradient(circle at 68% 14%,#a3b7cc 0 1px,transparent 1.5px),radial-gradient(circle at 53% 78%,#abc4dd 0 1px,transparent 1.5px),radial-gradient(circle at 90% 43%,#a3b7cc 0 1px,transparent 1.5px);background-size:48px 48px,48px 48px,173px 113px,227px 137px,157px 167px,199px 101px;pointer-events:none}
+#overlay .instrument-panel .stars::after{content:'观测视野';position:absolute;top:9px;left:12px;font:9px monospace;letter-spacing:3px;color:#7195ae;pointer-events:none}
+#overlay .instrument-panel .star{display:flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;min-width:0;min-height:0;border:1px solid transparent;border-radius:50%;background:transparent;color:#dbecff;text-shadow:0 0 9px #80bcff;line-height:1;font-size:24px;box-shadow:none;backdrop-filter:none;z-index:1}
+#overlay .instrument-panel .star::after{content:attr(data-index);position:absolute;left:100%;top:50%;margin:0 0 0 5px;font:9px monospace;letter-spacing:1px;color:#7696ae;text-shadow:none}
+#overlay .instrument-panel .star.selected{border-color:#b7deed;background:#3d829a18;box-shadow:0 0 0 5px #7bc6e00b,0 0 16px #7bc6e030}
+#overlay .instrument-panel .star.selected::before{content:'';position:absolute;inset:-5px;border:1px dashed #8fc6d86b;border-radius:50%;pointer-events:none}
+#overlay .instrument-panel .star.selected::after{color:#d2b98c}
+#overlay .instrument-panel .readout{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:0;margin:14px 0 0;min-height:0;border:1px solid #3b586a;background:#06121d8c}
+#overlay .instrument-panel .readout>div{padding:10px 14px;border-right:1px solid #3b586a66;min-width:0}
+#overlay .instrument-panel .readout>div:last-child{border:0}
+#overlay .instrument-panel .readout span{display:block;font-size:10px;color:#7f9cab;letter-spacing:2px;margin-bottom:4px}
+#overlay .instrument-panel .readout strong{font:500 clamp(12px,1.35cqw,18px)/1.4 'Consolas','Microsoft YaHei',monospace;letter-spacing:1px;color:#d9e9ef}
+#overlay .instrument-panel .readout small{color:#9db5c0;font-size:10px;letter-spacing:0}
+#overlay .instrument-panel .readout .readout-state{color:#91c6be;font-size:clamp(11px,1.1cqw,14px)}
+#overlay .instrument-panel .feedback{min-height:20px;margin:8px 0 0;color:#d4b887;font-size:12px}
+#overlay .instrument-panel .actions{margin-top:12px;padding-top:14px;border-top:1px solid #66869c30;gap:12px}
+#overlay .instrument-panel .actions button{border:1px solid #526c7e;border-radius:3px;background:#0b1b28;color:#a9c0cd;box-shadow:inset 0 1px #a9cce00b;backdrop-filter:none;padding:9px 18px;font-size:13px;letter-spacing:1px}
+#overlay .instrument-panel .actions .primary{color:#e2f3f6;border-color:#7bafc5;background:linear-gradient(#24475c,#173246);box-shadow:inset 0 1px #a9d5e333,0 0 14px #528aa812}
+#overlay .instrument-panel .actions button:hover{border-color:#b8d9e7;color:#fff;background:#28485c}
+#overlay .instrument-panel .meter{border-color:#537b8c;background:repeating-linear-gradient(90deg,transparent 0 9%,#8ab5c329 9% 10%),#071421;box-shadow:inset 0 0 18px #0008}
+#overlay .instrument-panel .target-band{background:#5f9f8844;border-color:#8ec1aa}
+#overlay .instrument-panel input[type=range]{accent-color:#8ebccf}
+#overlay .instrument-panel .launch-bar{background:#0b1b28;border:1px solid #3b586a;height:9px}
+#overlay .instrument-panel .launch-bar span{background:#92c3d4;box-shadow:0 0 12px #7cc6e080}
+@media(max-width:900px),(max-height:550px){#overlay:is(.telescope,.chart,.calibration,.confirm,.launch){padding:42px 14px 14px}#overlay .instrument-panel{width:calc(100% - 210px);padding:18px 22px 16px}#overlay .instrument-panel>.eyebrow{font-size:8px;margin-bottom:4px}#overlay .instrument-panel h2{font-size:19px;margin-bottom:8px;padding-bottom:8px}#overlay .instrument-panel p.muted{font-size:11px;margin-bottom:10px}#overlay .instrument-panel .stars{height:115px}#overlay .instrument-panel .readout{margin-top:10px}#overlay .instrument-panel .readout>div{padding:6px 8px}#overlay .instrument-panel .actions{margin-top:7px;padding-top:8px}#overlay .instrument-panel .actions button{padding:6px 10px;font-size:11px}#overlay .instrument-panel .feedback{font-size:10px;min-height:16px;margin-top:4px}}
+@media(max-width:500px){#overlay:is(.telescope,.chart,.calibration,.confirm,.launch){padding:34px 4px 8px}#overlay .instrument-panel{width:calc(100% - 150px);padding:14px 12px}#overlay .instrument-panel>.eyebrow{letter-spacing:1px;font-size:7px}#overlay .instrument-panel h2{font-size:15px;letter-spacing:1px}#overlay .instrument-panel p.muted{font-size:10px}#overlay .instrument-panel .stars{height:100px}#overlay .instrument-panel .readout{grid-template-columns:1fr 1fr}#overlay .instrument-panel .readout>div:last-child{grid-column:1 / -1;border-top:1px solid #3b586a66}#overlay .instrument-panel .readout span{font-size:8px;letter-spacing:0}#overlay .instrument-panel .readout strong{font-size:11px}#overlay .instrument-panel .actions{position:sticky;bottom:-14px;background:#0c1c29;padding:8px 0 4px;justify-content:center;gap:6px}#overlay .instrument-panel .actions button{padding:5px 6px;font-size:9px;letter-spacing:0}}
+
+@media(max-width:500px){
+ #overlay:is(.telescope,.chart) .instrument-panel{padding:9px 10px}
+ #overlay:is(.telescope,.chart) .instrument-panel>.eyebrow,#overlay:is(.telescope,.chart) .instrument-panel>p.muted{display:none}
+ #overlay:is(.telescope,.chart) .instrument-panel h2{font-size:13px;line-height:1.2;margin:0 0 5px;padding:0;border:0}
+ #overlay:is(.telescope,.chart) .instrument-panel h2::after{content:'星表候选：187J3X1 · 49.5 光年';display:block;margin-top:3px;font:8px/1.3 'Microsoft YaHei',sans-serif;letter-spacing:0;color:#93b6c9}
+ #overlay:is(.telescope,.chart) .instrument-panel .stars{height:60px}
+ #overlay:is(.telescope,.chart) .instrument-panel .stars::after{display:none}
+ #overlay:is(.telescope,.chart) .instrument-panel .star{width:22px;height:22px;font-size:18px}
+ #overlay:is(.telescope,.chart) .instrument-panel .star::after{font-size:7px;margin-left:2px}
+ #overlay:is(.telescope,.chart) .instrument-panel .readout{grid-template-columns:1.2fr 1fr 1fr;margin-top:5px}
+ #overlay:is(.telescope,.chart) .instrument-panel .readout>div{padding:3px 4px}
+ #overlay:is(.telescope,.chart) .instrument-panel .readout>div:last-child{grid-column:auto;border-top:0}
+ #overlay:is(.telescope,.chart) .instrument-panel .readout span{display:none}
+ #overlay:is(.telescope,.chart) .instrument-panel .readout strong,#overlay:is(.telescope,.chart) .instrument-panel .readout .readout-state{font-size:9px;letter-spacing:0}
+ #overlay:is(.telescope,.chart) .instrument-panel .readout small{font-size:7px}
+ #overlay:is(.telescope,.chart) .instrument-panel .feedback:empty{display:none}
+ #overlay:is(.telescope,.chart) .instrument-panel .actions{position:static;margin-top:5px;padding:5px 0 0}
+ #overlay:is(.telescope,.chart) .instrument-panel .actions button{padding:4px 5px}
+}

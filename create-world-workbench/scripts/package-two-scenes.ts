@@ -1,0 +1,22 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {verifyBuild} from '../packages/compiler/index.js';
+const project=fileURLToPath(new URL('../../outputs/first-room-new/two-scenes/',import.meta.url));
+const out=(await fs.readFile(path.join(project,'latest-build.txt'),'utf8')).trim();
+const acceptance=JSON.parse(await fs.readFile(path.join(project,'acceptance.json'),'utf8'));
+if(!acceptance.passed)throw Error('Real input acceptance failed');
+const design=JSON.parse(await fs.readFile(path.join(project,'design.json'),'utf8'));
+design.validation={realInput:'acceptance.json',geometry:'collision-report.json',visual:'review.json',unverified:['人物逐帧连续视觉审查','音频主观试听','真人时长偏好','庭院及后续剧情']};
+await fs.writeFile(path.join(project,'design.json'),JSON.stringify(design,null,2));
+for(const name of ['README.md','design.json','source.json','asset-production.md','collision.json','collision-report.json','review.json','acceptance.json','room.png','corridor.png','mobile-corridor.png','completed.png'])await fs.copyFile(path.join(project,name),path.join(out,name));
+await fs.mkdir(path.join(out,'source'),{recursive:true});
+for(const name of ['build-two-scenes.ts','accept-two-scenes.ts','package-two-scenes.ts'])await fs.copyFile(fileURLToPath(new URL('./'+name,import.meta.url)),path.join(out,'source',name));
+await fs.copyFile(path.join(project,'../game.json'),path.join(out,'source/first-room-base.json'));
+async function files(dir:string):Promise<string[]>{return(await Promise.all((await fs.readdir(dir,{withFileTypes:true})).map(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]))).flat();}
+const manifest=JSON.parse(await fs.readFile(path.join(out,'manifest.json'),'utf8'));
+manifest.files=await Promise.all((await files(out)).filter(f=>path.basename(f)!=='manifest.json').sort().map(async f=>{const b=await fs.readFile(f);return{path:path.relative(out,f).split(path.sep).join('/'),sha256:createHash('sha256').update(b).digest('hex'),bytes:b.length};}));
+await fs.writeFile(path.join(out,'manifest.json'),JSON.stringify(manifest,null,2));
+const result=await verifyBuild(out);if(!result.valid)throw Error(result.errors.join('\n'));
+console.log(JSON.stringify({out,verified:true}));

@@ -1,0 +1,122 @@
+{
+  "asset_type": "static-npc-only",
+  "character_id": "brand",
+  "generation_mode": "balanced",
+  "image_generation_calls": 2,
+  "full_walk_pack_passed": false,
+  "rejected_motion_directions": [
+    "right"
+  ],
+  "static_frames_passed": true,
+  "static_checks": {
+    "down": {
+      "dimensions": [
+        48,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 63,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            9,
+            3,
+            39,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    },
+    "left": {
+      "dimensions": [
+        48,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 61,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            10,
+            3,
+            38,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    },
+    "right": {
+      "dimensions": [
+        48,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 61,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            10,
+            3,
+            38,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    },
+    "up": {
+      "dimensions": [
+        48,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 59,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            9,
+            3,
+            39,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    }
+  },
+  "limitation": "Only original generated neutral poses are integrated. Failed walk cycles remain in staging, not gameplay."
+}

@@ -1,0 +1,24 @@
+.DS_Store
+**/node_modules/
+**/__pycache__/
+**/.pytest_cache/
+**/data/
+**/projects/
+**/fixtures/runtime-acceptance/
+**/.env
+**/.env.*
+*.log
+/output/
+/tmp/
+/outputs/skill-validation-env/
+
+# Local game production, evidence, and release archives stay outside source PRs.
+/outputs/
+/releases/
+
+/beyond-the-walls/
+
+# ---- Create World showcase ----
+site/
+*.log
+.DS_Store

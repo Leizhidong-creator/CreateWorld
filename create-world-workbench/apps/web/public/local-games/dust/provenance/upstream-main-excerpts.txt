@@ -1,0 +1,530 @@
+// ORIGINAL main.js L1646-L1718
+const AchievementSystem = {
+  storageKey: ACHIEVEMENT_STORAGE_KEY,
+  unlocked: Object.create(null),
+  unlockedCount: 0,
+  images: Object.create(null),
+  toast: null,
+  toastTimer: 0,
+
+  init() {
+    try {
+      const stored = JSON.parse(window.localStorage.getItem(this.storageKey) || "{}") || {};
+      this.unlocked = Object.create(null);
+      AchievementDefinitions.forEach((definition) => {
+        if (stored[definition.id]) {
+          this.unlocked[definition.id] = stored[definition.id];
+        }
+      });
+    } catch (error) {
+      reportNonFatalError("读取成就存档失败，已使用空成就记录", error);
+      this.unlocked = Object.create(null);
+    }
+    this.unlockedCount = Object.keys(this.unlocked).length;
+
+    AchievementDefinitions.forEach((definition) => {
+      const image = new Image();
+      image.decoding = "async";
+      image.src = "../assets/main/images/achievements/" + definition.icon;
+      this.images[definition.id] = image;
+    });
+  },
+
+  unlock(id) {
+    if (this.unlocked[id]) {
+      return false;
+    }
+    const definition = AchievementDefinitionsById[id];
+    if (!definition) {
+      return false;
+    }
+
+    this.unlocked[id] = { unlockedAt: Date.now() };
+    this.unlockedCount += 1;
+    try {
+      window.localStorage.setItem(this.storageKey, JSON.stringify(this.unlocked));
+    } catch (error) {
+      reportNonFatalError("非致命操作失败", error);
+    }
+    this.toast = definition;
+    this.toastTimer = 10;
+    return true;
+  },
+
+  update(dt) {
+    if (this.toastTimer <= 0) {
+      return;
+    }
+    this.toastTimer = Math.max(0, this.toastTimer - dt);
+    if (this.toastTimer === 0) {
+      this.toast = null;
+    }
+  },
+
+  getUnlockedCount() {
+    return this.unlockedCount;
+  },
+
+  isUnlocked(id) {
+    return Boolean(this.unlocked[id]);
+  },
+
+  openPanel() {
+    GameState.achievementPanelOpen = true;
+    GameState.achievementDetailId = null;
+
+// ORIGINAL main.js L2712-L2746
+const InputSystem = {
+  keys: Object.create(null),
+  externalKeys: Object.create(null),
+  pressed: Object.create(null),
+  movementSource: null,
+  externalActionHeld: false,
+  domControlsEnabled: false,
+  pointerPressed: false,
+  pointerJustPressed: false,
+  pointerX: 0,
+  pointerY: 0,
+  joystick: {
+    active: false,
+    pointerId: null,
+    baseX: 122,
+    baseY: 598,
+    knobX: 122,
+    knobY: 598,
+    radius: 72,
+    vectorX: 0,
+    vectorY: 0
+  },
+  actionButton: {
+    x: 1154,
+    y: 602,
+    radius: 50,
+    held: false,
+    justPressed: false
+  },
+  startButton: {
+    x: 490,
+    y: 410,
+    w: 300,
+    h: 74
+  },
+
+// ORIGINAL main.js L3035-L3092
+    }
+    this.externalActionHeld = nextDown;
+    if (nextDown) {
+      requestGameBgmStart();
+    }
+  },
+
+  getMoveVector() {
+    let x = 0;
+    let y = 0;
+
+    if (this.movementSource === "joystick") {
+      if (this.hasCanvasJoystickMovement()) {
+        x = this.joystick.vectorX;
+        y = this.joystick.vectorY;
+      } else {
+        if (this.externalKeys.a) x -= 1;
+        if (this.externalKeys.d) x += 1;
+        if (this.externalKeys.w) y -= 1;
+        if (this.externalKeys.s) y += 1;
+      }
+    } else if (this.movementSource === "keyboard") {
+      if (this.keys.a) x -= 1;
+      if (this.keys.d) x += 1;
+      if (this.keys.w) y -= 1;
+      if (this.keys.s) y += 1;
+    }
+
+    const len = Math.hypot(x, y);
+    if (len > 1) {
+      x /= len;
+      y /= len;
+    }
+
+    return { x, y };
+  },
+
+  actionPressed(name) {
+    if (name === "continueDialogue") return this.isPressed(" ") || this.pointerJustPressed || this.actionButton.justPressed;
+    if (name === "interact") return this.isPressed(" ") || this.actionButton.justPressed;
+    if (name === "selectEnding") return this.pointerJustPressed || this.isPressed(" ");
+    if (name === "navigationMap") return this.isPressed("m");
+    if (name === "pause") return this.isPressed("escape") || this.isPressed("p");
+    return false;
+  },
+
+  actionDown(name) {
+    if (name === "interact" || name === "continueDialogue") return this.isDown(" ") || this.actionButton.held;
+    return false;
+  },
+
+  pointerInRect(rect) {
+    return this.pointerX >= rect.x &&
+      this.pointerX <= rect.x + rect.w &&
+      this.pointerY >= rect.y &&
+      this.pointerY <= rect.y + rect.h;
+  }
+};
+
+// ORIGINAL main.js L3877-L3891
+function createBaseScene(name, config) {
+  const sceneConfig = config || {};
+  return {
+    enter: sceneConfig.enter || function enterScene() {},
+    update: sceneConfig.update || function updateScene() {},
+    render: sceneConfig.render || function renderScene(ctx) {
+      renderPlaceholderScene(ctx, name);
+    },
+    handleInput: sceneConfig.handleInput || function handleSceneInput() {
+      handlePauseInput();
+    },
+    exit: sceneConfig.exit || function exitScene() {}
+  };
+}
+
+
+// ORIGINAL main.js L5814-L5875
+const DialogueSystem = {
+  active: false,
+  lines: [],
+  index: 0,
+  justStarted: false,
+  displayMode: "auto",
+
+  start(lines, displayMode) {
+    OverheadThoughtSystem.reset();
+    this.active = true;
+    this.lines = lines.slice();
+    this.index = 0;
+    this.justStarted = true;
+    this.displayMode = displayMode || "auto";
+  },
+
+  update() {
+    if (!this.active) {
+      return;
+    }
+
+    if (this.justStarted) {
+      this.justStarted = false;
+      return;
+    }
+
+    if (InputSystem.actionPressed("continueDialogue")) {
+      this.index += 1;
+      if (this.index >= this.lines.length) {
+        this.active = false;
+        this.lines = [];
+        this.index = 0;
+        this.justStarted = false;
+        this.displayMode = "auto";
+      }
+    }
+  },
+
+  render(ctx) {
+    if (!this.active) {
+      return;
+    }
+
+    const line = this.lines[this.index] || "";
+    if (this.displayMode === "prop") {
+      renderPropInteractionBox(ctx, line);
+      return;
+    }
+    if (this.displayMode === "dialogue") {
+      renderDialogueBox(ctx, line);
+      return;
+    }
+    if (this.displayMode === "narrative" || !isConversationLine(line)) {
+      renderNarrativeBox(ctx, line);
+      return;
+    }
+    renderDialogueBox(ctx, line);
+  }
+};
+
+// 在获得关键信息后，先保留确认提示，再按指定呈现方式进入后续文字。
+// 这样“获得证据”不会被新内容遮住，也不会在玩家移动时突然打断操作。
+
+// ORIGINAL main.js L8198-L8363
+const YardNavigationMapSystem = {
+  enterYard() {
+    loadYardNavigationMapProgress();
+    const mapState = GameState.yardNavigationMap;
+    if (!mapState.availableThisRun) {
+      const leftCellAfterFirstWake = GameState.previousScene === "cell" ||
+        (GameState.previousScene === "cellCorridor" && GameState.corridor.originScene === "cell");
+      const resumedBeyondFirstCell = !["CP_START", "CP_AFTER_WHITE_LIGHT", "CP_CELL_WAKE"].includes(GameState.currentCheckpoint);
+      if (!leftCellAfterFirstWake && !resumedBeyondFirstCell) {
+        return;
+      }
+      if (leftCellAfterFirstWake && !GameState.mapTutorialCompleted) {
+        mapState.firstWalkIntroPending = true;
+        GameState.currentQuest = "";
+        return;
+      }
+    }
+    this.activateForCurrentYard();
+    if (GameState.mapTutorialCompleted && !GameState.yardRedIntroCompleted) {
+      this.startPostTutorialThoughts();
+    }
+  },
+
+  activateForCurrentYard() {
+    const mapState = GameState.yardNavigationMap;
+    mapState.firstWalkIntroPending = false;
+    mapState.availableThisRun = true;
+    if (!mapState.unlocked) {
+      mapState.unlocked = true;
+      mapState.dirty = true;
+    }
+
+    const previousLandmarks = {
+      cell: "cellDoor",
+      cellCorridor: "cellDoor",
+      library: "library",
+      office: "wardenOffice"
+    };
+    const previousLandmark = previousLandmarks[GameState.previousScene];
+    if (previousLandmark) {
+      markYardNavigationLandmark(previousLandmark);
+    }
+    revealYardNavigationMapAtPlayer();
+    TutorialSystem.maybeStartMapTutorial();
+  },
+
+  leaveYard() {
+    GameState.yardNavigationMap.expanded = false;
+    AchievementSystem.closePanel();
+    persistYardNavigationMapProgress(true);
+  },
+
+  update(dt) {
+    const mapState = GameState.yardNavigationMap;
+    if (mapState.firstWalkIntroPending) {
+      if (GameState.scene === "yard" && GameState.player.isMoving) {
+        this.activateForCurrentYard();
+      }
+      return;
+    }
+    if (mapState.postTutorialThoughtActive) {
+      if (!mapState.expanded && !DialogueSystem.active && !TutorialSystem.isActive()) {
+        mapState.postTutorialThoughtTimer += dt;
+        if (mapState.postTutorialThoughtTimer >= YARD_MAP_POST_TUTORIAL_THOUGHT_SECONDS) {
+          mapState.postTutorialThoughtIndex += 1;
+          mapState.postTutorialThoughtTimer = 0;
+          if (mapState.postTutorialThoughtIndex >= YardMapPostTutorialThoughtLines.length) {
+            mapState.postTutorialThoughtActive = false;
+            mapState.postTutorialThoughtIndex = 0;
+            GameState.yardRedIntroCompleted = true;
+            if (!GameState.currentQuest) {
+              GameState.currentQuest = "quest_yard_red";
+            }
+            saveCheckpoint(GameState.currentCheckpoint);
+          }
+        }
+      }
+    }
+    if (GameState.scene !== "yard" || !mapState.availableThisRun || !mapState.unlocked || mapState.expanded) {
+      return;
+    }
+
+    revealYardNavigationMapAtPlayer();
+    discoverCurrentYardNavigationLandmark();
+
+    if (mapState.dirty) {
+      mapState.persistTimer += dt;
+      if (mapState.persistTimer >= YARD_MAP_PERSIST_INTERVAL_SECONDS) {
+        persistYardNavigationMapProgress(false);
+      }
+    }
+  },
+
+  handleInput() {
+    const mapState = GameState.yardNavigationMap;
+    if (GameState.scene !== "yard" || !mapState.availableThisRun || !mapState.unlocked) {
+      return false;
+    }
+
+    const mapKeyPressed = InputSystem.actionPressed("navigationMap");
+    if (mapState.expanded) {
+      if (GameState.achievementPanelOpen) {
+        AchievementSystem.handlePanelInput();
+        return true;
+      }
+      const clickedAchievement = InputSystem.pointerJustPressed &&
+        InputSystem.pointerInRect(YardNavigationMapLayout.expandedAchievementButton);
+      if (clickedAchievement) {
+        AchievementSystem.openPanel();
+        return true;
+      }
+      const clickedClose = InputSystem.pointerJustPressed &&
+        InputSystem.pointerInRect(YardNavigationMapLayout.expandedCloseButton);
+      if (mapKeyPressed || clickedClose) {
+        mapState.expanded = false;
+      }
+      return mapKeyPressed || InputSystem.pointerJustPressed;
+    }
+
+    const compactClicked = InputSystem.pointerJustPressed &&
+      InputSystem.pointerInRect(YardNavigationMapLayout.compactFrame);
+    const modalActive = DialogueSystem.active || NarrativeCueSystem.isActive() ||
+      GameState.posterChoiceActive || GameState.radioRepairActive ||
+      isPosterPickupAnimationActive() || isEvidenceViewerOpen();
+    if ((mapKeyPressed || compactClicked) && !modalActive) {
+      mapState.expanded = true;
+      recordPlaystyleMapOpen("yard");
+      return true;
+    }
+    return compactClicked;
+  },
+
+  isWorldPaused() {
+    return GameState.scene === "yard" && GameState.yardNavigationMap.expanded;
+  },
+
+  render(ctx) {
+    const mapState = GameState.yardNavigationMap;
+    if (GameState.scene !== "yard" || !mapState.availableThisRun || !mapState.unlocked ||
+      GameState.posterChoiceActive || GameState.radioRepairActive || isEvidenceViewerOpen()) {
+      return;
+    }
+    if (mapState.expanded) {
+      if (GameState.achievementPanelOpen) {
+        AchievementSystem.renderPanel(ctx);
+        return;
+      }
+      renderExpandedYardNavigationMap(ctx);
+      return;
+    }
+    renderCompactYardNavigationMap(ctx);
+  },
+
+  startPostTutorialThoughts() {
+    if (GameState.scene !== "yard" || GameState.currentCheckpoint !== "CP_CELL_WAKE" ||
+      GameState.hasHammer || GameState.yardRedIntroCompleted) {
+      return;
+    }
+    const mapState = GameState.yardNavigationMap;
+    mapState.postTutorialThoughtActive = true;
+    mapState.postTutorialThoughtIndex = 0;
+    mapState.postTutorialThoughtTimer = 0;
+    GameState.currentQuest = "";
+  }
+};
+
+
+// ORIGINAL main.js L8851-L8910
+const YardNavigationQuestTargetOverrides = Object.freeze({
+  quest_yard_return_cell_to_hang_poster: "cellDoor",
+  quest_yard_red_after_montage_done: "cellDoor",
+  quest_cell_map_obtained: "wardenOffice",
+  quest_yard_soil_done: "cellDoor"
+});
+
+function getYardNavigationQuestTarget() {
+  const quest = GameState.currentQuest || "";
+  const overrideLandmarkId = YardNavigationQuestTargetOverrides[quest];
+  if (overrideLandmarkId) {
+    return getYardNavigationLandmark(overrideLandmarkId);
+  }
+  if (quest.includes("office")) {
+    return getYardNavigationLandmark("wardenOffice");
+  }
+  if (quest.includes("library") || quest.includes("bible")) {
+    return getYardNavigationLandmark("library");
+  }
+  if (quest.includes("soil")) {
+    return getYardNavigationLandmark("soil");
+  }
+  if (quest.includes("gate") || quest === "quest_yard_first_walk") {
+    return getYardNavigationLandmark("prisonGate");
+  }
+  if (quest.includes("red") || quest.includes("poster")) {
+    return GameState.redNpc;
+  }
+  if (quest.includes("brooks")) {
+    return GameState.brooksNpc;
+  }
+  if (quest.includes("cell") || quest.includes("wall") || quest.includes("dig")) {
+    return getYardNavigationLandmark("cellDoor");
+  }
+  return null;
+}
+
+function getYardNavigationLandmark(id) {
+  return YardNavigationMapLandmarks.find((landmark) => landmark.id === id) || null;
+}
+
+function mapYardImagePointToNavigationRect(point, rect) {
+  return {
+    x: rect.x + point.x / YardLayout.imageWidth * rect.w,
+    y: rect.y + point.y / YardLayout.imageHeight * rect.h
+  };
+}
+
+function renderCompactYardNavigationMap(ctx) {
+  const plot = YardNavigationMapLayout.compactPlot;
+  ctx.save();
+  renderYardNavigationMapPlot(ctx, plot, false);
+  ctx.restore();
+}
+
+function renderExpandedYardNavigationMap(ctx) {
+  const frame = YardNavigationMapLayout.expandedFrame;
+  const plot = YardNavigationMapLayout.expandedPlot;
+  const closeButton = YardNavigationMapLayout.expandedCloseButton;
+  const achievementButton = YardNavigationMapLayout.expandedAchievementButton;
+
+// ORIGINAL main.js L14968-L15013
+function updatePlayer(dt) {
+  let move = InputSystem.getMoveVector();
+  if (isOpeningYardArrival()) {
+    move = applyOpeningYardGateApproachSlowdown(move);
+  }
+  const player = GameState.player;
+  const movementSpeed = player.speed;
+  updatePlayerFacing(move);
+
+  if (player.lyingInBed) {
+    if (Math.abs(move.x) > 0.05 || Math.abs(move.y) > 0.05) {
+      standUpFromBed();
+    } else {
+      player.isMoving = false;
+      player.walkAnimTime = 0;
+      return;
+    }
+  }
+
+  const targetVx = move.x * movementSpeed;
+  const targetVy = move.y * movementSpeed;
+  const hasMovementInput = Math.abs(move.x) > 0.05 || Math.abs(move.y) > 0.05;
+  if (hasMovementInput) {
+    const blend = 1 - Math.pow(0.001, dt);
+    player.vx += (targetVx - player.vx) * blend;
+    player.vy += (targetVy - player.vy) * blend;
+  } else {
+    // 移动是直接操控：一旦松开就立即停止，不保留上一帧的滑行速度。
+    player.vx = 0;
+    player.vy = 0;
+  }
+
+  if (Math.abs(player.vx) < 0.5) player.vx = 0;
+  if (Math.abs(player.vy) < 0.5) player.vy = 0;
+
+  if (!movePlayerBy(player.vx * dt, 0)) {
+    player.vx = 0;
+  }
+  if (!movePlayerBy(0, player.vy * dt)) {
+    player.vy = 0;
+  }
+
+  player.isMoving = Math.abs(player.vx) > ANDY_MOVING_THRESHOLD || Math.abs(player.vy) > ANDY_MOVING_THRESHOLD;
+  if (player.isMoving) {
+    player.walkAnimTime += dt;
+  } else {

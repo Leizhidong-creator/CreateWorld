@@ -1,0 +1,1169 @@
+{
+  "schemaVersion": 1,
+  "library": "gameplay-design/references/minigame-library.zh-CN.md",
+  "usage": "先读索引选题，再按 id 读正文六段（玩法/判定/入戏/落地/界面/验收）。一部作品最多 2 条，且不得同类重复。",
+  "categories": [
+    {
+      "code": "A",
+      "name": "观察与发现",
+      "label": "观察",
+      "question": "我到底看见了什么？"
+    },
+    {
+      "code": "B",
+      "name": "逻辑与推理",
+      "label": "推理",
+      "question": "这些说法里，哪个是真的？"
+    },
+    {
+      "code": "C",
+      "name": "记忆与序列",
+      "label": "记忆",
+      "question": "你还记得吗？"
+    },
+    {
+      "code": "D",
+      "name": "空间与导航",
+      "label": "空间",
+      "question": "我怎么过去？"
+    },
+    {
+      "code": "E",
+      "name": "构造与拼装",
+      "label": "构造",
+      "question": "怎么把它修好？"
+    },
+    {
+      "code": "F",
+      "name": "物理与节奏",
+      "label": "物理",
+      "question": "你的手稳不稳？"
+    },
+    {
+      "code": "G",
+      "name": "资源与管理",
+      "label": "管理",
+      "question": "东西不够，怎么分？"
+    },
+    {
+      "code": "H",
+      "name": "社会与对话",
+      "label": "社会",
+      "question": "我该怎么说？"
+    },
+    {
+      "code": "I",
+      "name": "密码与文字",
+      "label": "密码",
+      "question": "这写的是什么？"
+    },
+    {
+      "code": "J",
+      "name": "情境与氛围",
+      "label": "情境",
+      "question": "这一刻，你是什么感觉？"
+    }
+  ],
+  "entries": [
+    {
+      "id": "A01",
+      "name": "找不同（双图比对）",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### A01"
+    },
+    {
+      "id": "A02",
+      "name": "隐藏物搜寻",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–90s",
+      "anchor": "### A02"
+    },
+    {
+      "id": "A03",
+      "name": "痕迹追踪",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### A03"
+    },
+    {
+      "id": "A04",
+      "name": "光影辨认",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "45–75s",
+      "anchor": "### A04"
+    },
+    {
+      "id": "A05",
+      "name": "镜面折光",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### A05"
+    },
+    {
+      "id": "A06",
+      "name": "缝隙窥视",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### A06"
+    },
+    {
+      "id": "A07",
+      "name": "声源定位",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### A07"
+    },
+    {
+      "id": "A08",
+      "name": "状态推断时序",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### A08"
+    },
+    {
+      "id": "A09",
+      "name": "异常巡查",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### A09"
+    },
+    {
+      "id": "A10",
+      "name": "地图对照标点",
+      "code": "A",
+      "category": "观察",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### A10"
+    },
+    {
+      "id": "B01",
+      "name": "证词矛盾",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### B01"
+    },
+    {
+      "id": "B02",
+      "name": "排除法",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### B02"
+    },
+    {
+      "id": "B03",
+      "name": "因果链排序",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### B03"
+    },
+    {
+      "id": "B04",
+      "name": "身份推理",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### B04"
+    },
+    {
+      "id": "B05",
+      "name": "时间线对齐",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### B05"
+    },
+    {
+      "id": "B06",
+      "name": "规则演绎",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–120s",
+      "anchor": "### B06"
+    },
+    {
+      "id": "B07",
+      "name": "机关按键",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "按键"
+      ],
+      "duration": "45–75s",
+      "anchor": "### B07"
+    },
+    {
+      "id": "B08",
+      "name": "多源密码锁",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–90s",
+      "anchor": "### B08"
+    },
+    {
+      "id": "B09",
+      "name": "类比对应",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### B09"
+    },
+    {
+      "id": "B10",
+      "name": "约束排序",
+      "code": "B",
+      "category": "推理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–120s",
+      "anchor": "### B10"
+    },
+    {
+      "id": "C01",
+      "name": "灯序复现",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### C01"
+    },
+    {
+      "id": "C02",
+      "name": "按键序列",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "按键"
+      ],
+      "duration": "30–60s",
+      "anchor": "### C02"
+    },
+    {
+      "id": "C03",
+      "name": "节拍跟打",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "按键"
+      ],
+      "duration": "30–60s",
+      "anchor": "### C03"
+    },
+    {
+      "id": "C04",
+      "name": "转述失真",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### C04"
+    },
+    {
+      "id": "C05",
+      "name": "路线记忆",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### C05"
+    },
+    {
+      "id": "C06",
+      "name": "点阵临摹",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### C06"
+    },
+    {
+      "id": "C07",
+      "name": "倒序复述",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### C07"
+    },
+    {
+      "id": "C08",
+      "name": "干扰记忆",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### C08"
+    },
+    {
+      "id": "C09",
+      "name": "翻牌配对",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### C09"
+    },
+    {
+      "id": "C10",
+      "name": "旋律辨认",
+      "code": "C",
+      "category": "记忆",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### C10"
+    },
+    {
+      "id": "D01",
+      "name": "限时迷宫",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### D01"
+    },
+    {
+      "id": "D02",
+      "name": "推箱",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "60–120s",
+      "anchor": "### D02"
+    },
+    {
+      "id": "D03",
+      "name": "惯性滑行",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### D03"
+    },
+    {
+      "id": "D04",
+      "name": "成对传送门",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### D04"
+    },
+    {
+      "id": "D05",
+      "name": "绳索通路",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### D05"
+    },
+    {
+      "id": "D06",
+      "name": "浮岛跳跃",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### D06"
+    },
+    {
+      "id": "D07",
+      "name": "旋转房间",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### D07"
+    },
+    {
+      "id": "D08",
+      "name": "上下层切换",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### D08"
+    },
+    {
+      "id": "D09",
+      "name": "潜行避视野",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### D09"
+    },
+    {
+      "id": "D10",
+      "name": "限时追捕",
+      "code": "D",
+      "category": "空间",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "30–60s",
+      "anchor": "### D10"
+    },
+    {
+      "id": "E01",
+      "name": "碎片拼图",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–120s",
+      "anchor": "### E01"
+    },
+    {
+      "id": "E02",
+      "name": "管道连接",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–90s",
+      "anchor": "### E02"
+    },
+    {
+      "id": "E03",
+      "name": "电路接线",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### E03"
+    },
+    {
+      "id": "E04",
+      "name": "齿轮传动",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### E04"
+    },
+    {
+      "id": "E05",
+      "name": "积木搭建",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### E05"
+    },
+    {
+      "id": "E06",
+      "name": "绳结解扣",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### E06"
+    },
+    {
+      "id": "E07",
+      "name": "分步折纸",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### E07"
+    },
+    {
+      "id": "E08",
+      "name": "零件装配",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### E08"
+    },
+    {
+      "id": "E09",
+      "name": "架桥过沟",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### E09"
+    },
+    {
+      "id": "E10",
+      "name": "字块组词",
+      "code": "E",
+      "category": "构造",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "45–75s",
+      "anchor": "### E10"
+    },
+    {
+      "id": "F01",
+      "name": "天平配重",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### F01"
+    },
+    {
+      "id": "F02",
+      "name": "摆动时机",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "按键"
+      ],
+      "duration": "20–45s",
+      "anchor": "### F02"
+    },
+    {
+      "id": "F03",
+      "name": "抛物线投准",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "30–60s",
+      "anchor": "### F03"
+    },
+    {
+      "id": "F04",
+      "name": "蓄力释放",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "按键"
+      ],
+      "duration": "30–60s",
+      "anchor": "### F04"
+    },
+    {
+      "id": "F05",
+      "name": "节奏连击",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "按键"
+      ],
+      "duration": "30–60s",
+      "anchor": "### F05"
+    },
+    {
+      "id": "F06",
+      "name": "躲避落物",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "30–60s",
+      "anchor": "### F06"
+    },
+    {
+      "id": "F07",
+      "name": "快速点选",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "15–40s",
+      "anchor": "### F07"
+    },
+    {
+      "id": "F08",
+      "name": "调帆借风",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### F08"
+    },
+    {
+      "id": "F09",
+      "name": "引水开渠",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### F09"
+    },
+    {
+      "id": "F10",
+      "name": "重力翻转",
+      "code": "F",
+      "category": "物理",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "45–75s",
+      "anchor": "### F10"
+    },
+    {
+      "id": "G01",
+      "name": "配给分配",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### G01"
+    },
+    {
+      "id": "G02",
+      "name": "库存调度",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### G02"
+    },
+    {
+      "id": "G03",
+      "name": "排班",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### G03"
+    },
+    {
+      "id": "G04",
+      "name": "预算平衡",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### G04"
+    },
+    {
+      "id": "G05",
+      "name": "温压维持",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### G05"
+    },
+    {
+      "id": "G06",
+      "name": "电力分配",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–90s",
+      "anchor": "### G06"
+    },
+    {
+      "id": "G07",
+      "name": "讨价还价",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### G07"
+    },
+    {
+      "id": "G08",
+      "name": "押注概率",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### G08"
+    },
+    {
+      "id": "G09",
+      "name": "竞价",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### G09"
+    },
+    {
+      "id": "G10",
+      "name": "借贷偿还",
+      "code": "G",
+      "category": "管理",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### G10"
+    },
+    {
+      "id": "H01",
+      "name": "审讯破绽",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### H01"
+    },
+    {
+      "id": "H02",
+      "name": "谈判让步",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### H02"
+    },
+    {
+      "id": "H03",
+      "name": "论据说服",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–90s",
+      "anchor": "### H03"
+    },
+    {
+      "id": "H04",
+      "name": "谎言识别",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### H04"
+    },
+    {
+      "id": "H05",
+      "name": "承诺兑现",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### H05"
+    },
+    {
+      "id": "H06",
+      "name": "三方调解",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### H06"
+    },
+    {
+      "id": "H07",
+      "name": "人情往来",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### H07"
+    },
+    {
+      "id": "H08",
+      "name": "选边结盟",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### H08"
+    },
+    {
+      "id": "H09",
+      "name": "信任博弈",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### H09"
+    },
+    {
+      "id": "H10",
+      "name": "暗号对接",
+      "code": "H",
+      "category": "社会",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### H10"
+    },
+    {
+      "id": "I01",
+      "name": "位移密码",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### I01"
+    },
+    {
+      "id": "I02",
+      "name": "符号替换表",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### I02"
+    },
+    {
+      "id": "I03",
+      "name": "藏头字",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### I03"
+    },
+    {
+      "id": "I04",
+      "name": "图形字典",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### I04"
+    },
+    {
+      "id": "I05",
+      "name": "谐音双关",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### I05"
+    },
+    {
+      "id": "I06",
+      "name": "方言对照",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### I06"
+    },
+    {
+      "id": "I07",
+      "name": "残缺文本补全",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### I07"
+    },
+    {
+      "id": "I08",
+      "name": "点划信号",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "按键"
+      ],
+      "duration": "45–90s",
+      "anchor": "### I08"
+    },
+    {
+      "id": "I09",
+      "name": "坐标查字",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### I09"
+    },
+    {
+      "id": "I10",
+      "name": "年代排序",
+      "code": "I",
+      "category": "密码",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### I10"
+    },
+    {
+      "id": "J01",
+      "name": "守夜巡查",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–120s",
+      "anchor": "### J01"
+    },
+    {
+      "id": "J02",
+      "name": "等待时机",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–90s",
+      "anchor": "### J02"
+    },
+    {
+      "id": "J03",
+      "name": "屏息静默",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "按键"
+      ],
+      "duration": "20–45s",
+      "anchor": "### J03"
+    },
+    {
+      "id": "J04",
+      "name": "仪式步序",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–90s",
+      "anchor": "### J04"
+    },
+    {
+      "id": "J05",
+      "name": "供奉取舍",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "45–75s",
+      "anchor": "### J05"
+    },
+    {
+      "id": "J06",
+      "name": "梦境规则",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "60–90s",
+      "anchor": "### J06"
+    },
+    {
+      "id": "J07",
+      "name": "闪回拼合",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "60–90s",
+      "anchor": "### J07"
+    },
+    {
+      "id": "J08",
+      "name": "遗物修复",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "拖动"
+      ],
+      "duration": "45–90s",
+      "anchor": "### J08"
+    },
+    {
+      "id": "J09",
+      "name": "送别节奏",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "移动"
+      ],
+      "duration": "45–75s",
+      "anchor": "### J09"
+    },
+    {
+      "id": "J10",
+      "name": "告白时机",
+      "code": "J",
+      "category": "情境",
+      "inputs": [
+        "点击"
+      ],
+      "duration": "30–60s",
+      "anchor": "### J10"
+    }
+  ]
+}

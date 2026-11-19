@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-16",
+  "archive": "output/redesign-v2/create-world-workbench-v2.zip",
+  "isolatedInstall": true,
+  "freshData": true,
+  "projectCreateAndRead": true,
+  "uiServed": true,
+  "checks": "Fresh npm ci, skills:sync, typecheck, 99 tests and Vite build passed",
+  "scope": "Tool packaging/startup; no AI game acceptance"
+}

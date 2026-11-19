@@ -1,0 +1,4077 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "buildHash": "7505574a2d77cf5081e46c4e145dc88a4d537a2a86613c35c6eb9712d0209e8c",
+  "startedAt": "2026-10-15T15:08:55.274Z",
+  "checks": {
+    "mapPauses": true,
+    "pauseResume": true,
+    "midRunReload": true,
+    "ending:done": true,
+    "storageReload": true,
+    "noBrowserErrors": true,
+    "realInput": true
+  },
+  "journeys": [
+    {
+      "id": "five-scene-complete",
+      "endingId": "done",
+      "status": "passed",
+      "actions": [
+        {
+          "action": "walk",
+          "target": "collect",
+          "points": 2,
+          "position": {
+            "x": 273.5537789342953,
+            "y": 183.33199906879926,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "interact",
+          "id": "collect"
+        },
+        {
+          "action": "walk",
+          "target": "next0",
+          "points": 2,
+          "position": {
+            "x": 535.6707227198995,
+            "y": 183.33199906879926,
+            "facing": "left",
+            "moving": false
+          }
+        },
+        {
+          "action": "exit",
+          "id": "next0"
+        },
+        {
+          "action": "walk",
+          "target": "power",
+          "points": 2,
+          "position": {
+            "x": 267.9719999999996,
+            "y": 183.99999888211204,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "interact",
+          "id": "power"
+        },
+        {
+          "action": "reload"
+        },
+        {
+          "action": "walk",
+          "target": "next1",
+          "points": 2,
+          "position": {
+            "x": 530.4302164767735,
+            "y": 183.99999888211204,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "exit",
+          "id": "next1"
+        },
+        {
+          "action": "walk",
+          "target": "operate",
+          "points": 2,
+          "position": {
+            "x": 269.98800000000045,
+            "y": 182.67199925325082,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "interact",
+          "id": "operate"
+        },
+        {
+          "action": "minigame",
+          "inputs": [
+            {
+              "type": "cancel"
+            }
+          ],
+          "minigameId": "pump"
+        },
+        {
+          "action": "assert",
+          "condition": {
+            "not": {
+              "flag": "water"
+            }
+          }
+        },
+        {
+          "action": "walk",
+          "target": "operate",
+          "points": 1,
+          "position": {
+            "x": 269.98800000000045,
+            "y": 182.67199925325082,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "interact",
+          "id": "operate"
+        },
+        {
+          "action": "minigame",
+          "inputs": [
+            {
+              "type": "click",
+              "label": "验证输出"
+            }
+          ],
+          "minigameId": "pump"
+        },
+        {
+          "action": "assert",
+          "condition": {
+            "flag": "failed"
+          }
+        },
+        {
+          "action": "assert",
+          "condition": {
+            "not": {
+              "flag": "water"
+            }
+          }
+        },
+        {
+          "action": "walk",
+          "target": "operate",
+          "points": 1,
+          "position": {
+            "x": 269.98800000000045,
+            "y": 182.67199925325082,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "interact",
+          "id": "operate"
+        },
+        {
+          "action": "minigame",
+          "inputs": [
+            {
+              "type": "click",
+              "label": "切换进水"
+            },
+            {
+              "type": "click",
+              "label": "切换旁通"
+            },
+            {
+              "type": "click",
+              "label": "验证输出"
+            }
+          ],
+          "minigameId": "pump"
+        },
+        {
+          "action": "assert",
+          "condition": {
+            "flag": "water"
+          }
+        },
+        {
+          "action": "walk",
+          "target": "next2",
+          "points": 2,
+          "position": {
+            "x": 532.6626655244168,
+            "y": 182.67199925325082,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "exit",
+          "id": "next2"
+        },
+        {
+          "action": "walk",
+          "target": "observe",
+          "points": 2,
+          "position": {
+            "x": 269.99999969481667,
+            "y": 183.33199906879926,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "interact",
+          "id": "observe"
+        },
+        {
+          "action": "reload"
+        },
+        {
+          "action": "walk",
+          "target": "back3",
+          "points": 2,
+          "position": {
+            "x": 57.328000241463315,
+            "y": 183.33199906879926,
+            "facing": "left",
+            "moving": false
+          }
+        },
+        {
+          "action": "exit",
+          "id": "back3"
+        },
+        {
+          "action": "assert",
+          "condition": {
+            "flag": "water"
+          }
+        },
+        {
+          "action": "walk",
+          "target": "next2",
+          "points": 2,
+          "position": {
+            "x": 532.4413345130309,
+            "y": 182.6639992554866,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "exit",
+          "id": "next2"
+        },
+        {
+          "action": "walk",
+          "target": "next3",
+          "points": 2,
+          "position": {
+            "x": 536.6719936782024,
+            "y": 182.66799925436868,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "exit",
+          "id": "next3"
+        },
+        {
+          "action": "walk",
+          "target": "finish",
+          "points": 2,
+          "position": {
+            "x": 267.3360002286079,
+            "y": 182.66799925436868,
+            "facing": "right",
+            "moving": false
+          }
+        },
+        {
+          "action": "interact",
+          "id": "finish"
+        }
+      ],
+      "observations": [
+        {
+          "after": "collect",
+          "state": {
+            "run": {
+              "scene": "s0",
+              "player": {
+                "x": 273.5537789342953,
+                "y": 183.33199906879926,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {},
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect"
+              ],
+              "visits": {
+                "s0": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1
+              },
+              "elapsed": 3.4664999999999973,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": {
+              "id": "collect",
+              "label": "操作"
+            },
+            "revision": 3,
+            "trace": [
+              {
+                "revision": 2,
+                "onceId": "enter:s0",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": "interaction:collect",
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "collect"
+                  },
+                  {
+                    "type": "give",
+                    "id": "fuse"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "next0",
+          "state": {
+            "run": {
+              "scene": "s1",
+              "player": {
+                "x": 90,
+                "y": 180,
+                "facing": "left",
+                "moving": false
+              },
+              "flags": {},
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1
+              },
+              "elapsed": 8.283100000000031,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": null,
+            "revision": 5,
+            "trace": [
+              {
+                "revision": 2,
+                "onceId": "enter:s0",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": "interaction:collect",
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "collect"
+                  },
+                  {
+                    "type": "give",
+                    "id": "fuse"
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next0"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s1",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 5,
+                "onceId": "enter:s1",
+                "actions": []
+              }
+            ]
+          }
+        },
+        {
+          "after": "power",
+          "state": {
+            "run": {
+              "scene": "s1",
+              "player": {
+                "x": 267.9719999999996,
+                "y": 183.99999888211204,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1
+              },
+              "elapsed": 11.199599999999979,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": {
+              "id": "power",
+              "label": "操作"
+            },
+            "revision": 6,
+            "trace": [
+              {
+                "revision": 2,
+                "onceId": "enter:s0",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": "interaction:collect",
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "collect"
+                  },
+                  {
+                    "type": "give",
+                    "id": "fuse"
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next0"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s1",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 5,
+                "onceId": "enter:s1",
+                "actions": []
+              },
+              {
+                "revision": 6,
+                "onceId": "interaction:power",
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "power"
+                  },
+                  {
+                    "type": "flag",
+                    "id": "power"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "next1",
+          "state": {
+            "run": {
+              "scene": "s2",
+              "player": {
+                "x": 90,
+                "y": 180,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1
+              },
+              "elapsed": 15.482700000000031,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": null,
+            "revision": 2,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              }
+            ]
+          }
+        },
+        {
+          "after": "operate",
+          "state": {
+            "run": {
+              "scene": "s2",
+              "player": {
+                "x": 269.98800000000045,
+                "y": 182.67199925325082,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 1
+              },
+              "elapsed": 17.766000000000062,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": [
+                {
+                  "type": "minigame",
+                  "id": "pump",
+                  "onSuccess": [
+                    {
+                      "type": "flag",
+                      "id": "water"
+                    }
+                  ],
+                  "onFailure": [
+                    {
+                      "type": "flag",
+                      "id": "failed"
+                    }
+                  ]
+                }
+              ]
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": "minigame",
+              "minigameId": "pump"
+            },
+            "target": {
+              "id": "operate",
+              "label": "操作"
+            },
+            "revision": 3,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "minigame",
+          "state": {
+            "run": {
+              "scene": "s2",
+              "player": {
+                "x": 269.98800000000045,
+                "y": 182.67199925325082,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 1
+              },
+              "elapsed": 17.866000000000064,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": {
+              "id": "operate",
+              "label": "操作"
+            },
+            "revision": 3,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "operate",
+          "state": {
+            "run": {
+              "scene": "s2",
+              "player": {
+                "x": 269.98800000000045,
+                "y": 182.67199925325082,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 2
+              },
+              "elapsed": 18.28270000000007,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": [
+                {
+                  "type": "minigame",
+                  "id": "pump",
+                  "onSuccess": [
+                    {
+                      "type": "flag",
+                      "id": "water"
+                    }
+                  ],
+                  "onFailure": [
+                    {
+                      "type": "flag",
+                      "id": "failed"
+                    }
+                  ]
+                }
+              ]
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": "minigame",
+              "minigameId": "pump"
+            },
+            "target": {
+              "id": "operate",
+              "label": "操作"
+            },
+            "revision": 4,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "minigame",
+          "state": {
+            "run": {
+              "scene": "s2",
+              "player": {
+                "x": 269.98800000000045,
+                "y": 182.67199925325082,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 2
+              },
+              "elapsed": 18.382700000000067,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": {
+              "id": "operate",
+              "label": "操作"
+            },
+            "revision": 5,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 5,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "flag",
+                    "id": "failed"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "operate",
+          "state": {
+            "run": {
+              "scene": "s2",
+              "player": {
+                "x": 269.98800000000045,
+                "y": 182.67199925325082,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 3
+              },
+              "elapsed": 18.79940000000007,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": [
+                {
+                  "type": "minigame",
+                  "id": "pump",
+                  "onSuccess": [
+                    {
+                      "type": "flag",
+                      "id": "water"
+                    }
+                  ],
+                  "onFailure": [
+                    {
+                      "type": "flag",
+                      "id": "failed"
+                    }
+                  ]
+                }
+              ]
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": "minigame",
+              "minigameId": "pump"
+            },
+            "target": {
+              "id": "operate",
+              "label": "操作"
+            },
+            "revision": 6,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 5,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "flag",
+                    "id": "failed"
+                  }
+                ]
+              },
+              {
+                "revision": 6,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "minigame",
+          "state": {
+            "run": {
+              "scene": "s2",
+              "player": {
+                "x": 269.98800000000045,
+                "y": 182.67199925325082,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true,
+                "water": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 3
+              },
+              "elapsed": 18.89940000000007,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": {
+              "id": "operate",
+              "label": "操作"
+            },
+            "revision": 7,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 5,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "flag",
+                    "id": "failed"
+                  }
+                ]
+              },
+              {
+                "revision": 6,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 7,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "flag",
+                    "id": "water"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "next2",
+          "state": {
+            "run": {
+              "scene": "s3",
+              "player": {
+                "x": 90,
+                "y": 180,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true,
+                "water": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2",
+                "enter:s3"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1,
+                "s3": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s3": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 3,
+                "next2": 1
+              },
+              "elapsed": 23.565900000000052,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": null,
+            "revision": 9,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 5,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "flag",
+                    "id": "failed"
+                  }
+                ]
+              },
+              {
+                "revision": 6,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 7,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "flag",
+                    "id": "water"
+                  }
+                ]
+              },
+              {
+                "revision": 8,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next2"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s3",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 9,
+                "onceId": "enter:s3",
+                "actions": []
+              }
+            ]
+          }
+        },
+        {
+          "after": "observe",
+          "state": {
+            "run": {
+              "scene": "s3",
+              "player": {
+                "x": 269.99999969481667,
+                "y": 183.33199906879926,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true,
+                "water": true,
+                "verified": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2",
+                "enter:s3",
+                "interaction:observe"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 1,
+                "s3": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s3": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 3,
+                "next2": 1,
+                "observe": 1
+              },
+              "elapsed": 26.365800000000053,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": {
+              "id": "observe",
+              "label": "操作"
+            },
+            "revision": 10,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next1"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": "enter:s2",
+                "actions": []
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 5,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "flag",
+                    "id": "failed"
+                  }
+                ]
+              },
+              {
+                "revision": 6,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "operate"
+                  },
+                  {
+                    "type": "minigame",
+                    "id": "pump",
+                    "onSuccess": [
+                      {
+                        "type": "flag",
+                        "id": "water"
+                      }
+                    ],
+                    "onFailure": [
+                      {
+                        "type": "flag",
+                        "id": "failed"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "revision": 7,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "flag",
+                    "id": "water"
+                  }
+                ]
+              },
+              {
+                "revision": 8,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next2"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s3",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 9,
+                "onceId": "enter:s3",
+                "actions": []
+              },
+              {
+                "revision": 10,
+                "onceId": "interaction:observe",
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "observe"
+                  },
+                  {
+                    "type": "flag",
+                    "id": "verified"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "back3",
+          "state": {
+            "run": {
+              "scene": "s2",
+              "player": {
+                "x": 520,
+                "y": 180,
+                "facing": "left",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true,
+                "water": true,
+                "verified": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2",
+                "enter:s3",
+                "interaction:observe"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 2,
+                "s3": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s3": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "-1,1",
+                  "-1,2",
+                  "-1,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 3,
+                "next2": 1,
+                "observe": 1,
+                "back3": 1
+              },
+              "elapsed": 30.082200000000096,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": {
+              "id": "next2",
+              "label": "进入"
+            },
+            "revision": 1,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "back3"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 520,
+                      "y": 180
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "next2",
+          "state": {
+            "run": {
+              "scene": "s3",
+              "player": {
+                "x": 90,
+                "y": 180,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true,
+                "water": true,
+                "verified": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2",
+                "enter:s3",
+                "interaction:observe"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 2,
+                "s3": 2
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s3": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "-1,1",
+                  "-1,2",
+                  "-1,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 3,
+                "next2": 2,
+                "observe": 1,
+                "back3": 1
+              },
+              "elapsed": 31.598800000000118,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": null,
+            "revision": 2,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "back3"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 520,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next2"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s3",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "after": "next3",
+          "state": {
+            "run": {
+              "scene": "s4",
+              "player": {
+                "x": 90,
+                "y": 180,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true,
+                "water": true,
+                "verified": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2",
+                "enter:s3",
+                "interaction:observe",
+                "enter:s4"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 2,
+                "s3": 2,
+                "s4": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s3": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "-1,1",
+                  "-1,2",
+                  "-1,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s4": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 3,
+                "next2": 2,
+                "observe": 1,
+                "back3": 1,
+                "next3": 1
+              },
+              "elapsed": 38.13189999999974,
+              "ending": null,
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": null,
+              "minigameId": null
+            },
+            "target": null,
+            "revision": 4,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "back3"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 520,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next2"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s3",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next3"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s4",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": "enter:s4",
+                "actions": []
+              }
+            ]
+          }
+        },
+        {
+          "after": "finish",
+          "state": {
+            "run": {
+              "scene": "s4",
+              "player": {
+                "x": 267.3360002286079,
+                "y": 182.66799925436868,
+                "facing": "right",
+                "moving": false
+              },
+              "flags": {
+                "power": true,
+                "failed": true,
+                "water": true,
+                "verified": true
+              },
+              "items": {
+                "fuse": 1
+              },
+              "clues": [],
+              "quests": {},
+              "once": [
+                "enter:s0",
+                "interaction:collect",
+                "enter:s1",
+                "interaction:power",
+                "enter:s2",
+                "enter:s3",
+                "interaction:observe",
+                "enter:s4"
+              ],
+              "visits": {
+                "s0": 1,
+                "s1": 1,
+                "s2": 2,
+                "s3": 2,
+                "s4": 1
+              },
+              "explored": {
+                "s0": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s1": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s2": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s3": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3",
+                  "-1,1",
+                  "-1,2",
+                  "-1,3",
+                  "6,1",
+                  "6,2",
+                  "6,3",
+                  "7,1",
+                  "7,2",
+                  "7,3",
+                  "8,1",
+                  "8,2",
+                  "8,3",
+                  "9,1",
+                  "9,2",
+                  "9,3"
+                ],
+                "s4": [
+                  "0,1",
+                  "1,1",
+                  "2,1",
+                  "0,2",
+                  "1,2",
+                  "2,2",
+                  "0,3",
+                  "1,3",
+                  "2,3",
+                  "3,1",
+                  "3,2",
+                  "3,3",
+                  "4,1",
+                  "4,2",
+                  "4,3",
+                  "5,1",
+                  "5,2",
+                  "5,3"
+                ]
+              },
+              "discovered": [],
+              "counters": {
+                "collect": 1,
+                "next0": 1,
+                "power": 1,
+                "next1": 1,
+                "operate": 3,
+                "next2": 2,
+                "observe": 1,
+                "back3": 1,
+                "next3": 1,
+                "finish": 1
+              },
+              "elapsed": 40.59849999999957,
+              "ending": "done",
+              "tutorialSeen": false,
+              "pendingCommands": []
+            },
+            "profile": {
+              "achievements": {},
+              "endings": [
+                "done"
+              ],
+              "settings": {
+                "music": 0.25,
+                "sound": 0.45
+              }
+            },
+            "ui": {
+              "kind": "ending",
+              "minigameId": null
+            },
+            "target": {
+              "id": "finish",
+              "label": "操作"
+            },
+            "revision": 5,
+            "trace": [
+              {
+                "revision": 1,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "back3"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s2",
+                    "position": {
+                      "x": 520,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 2,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next2"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s3",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 3,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "next3"
+                  },
+                  {
+                    "type": "scene",
+                    "id": "s4",
+                    "position": {
+                      "x": 90,
+                      "y": 180
+                    }
+                  }
+                ]
+              },
+              {
+                "revision": 4,
+                "onceId": "enter:s4",
+                "actions": []
+              },
+              {
+                "revision": 5,
+                "onceId": null,
+                "actions": [
+                  {
+                    "type": "count",
+                    "id": "finish"
+                  },
+                  {
+                    "type": "ending",
+                    "id": "done"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "startedAt": "2026-10-15T15:08:58.282Z",
+      "finishedAt": "2026-10-15T15:09:43.062Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "five-scene-complete-start.png",
+      "label": "start",
+      "sha256": "01dbe319f91aa08171cefafaf542bef289e07e77ed2ed4c1081be2ced47c6f5a"
+    },
+    {
+      "path": "five-scene-complete-scene-s0.png",
+      "label": "scene-s0",
+      "sha256": "01dbe319f91aa08171cefafaf542bef289e07e77ed2ed4c1081be2ced47c6f5a"
+    },
+    {
+      "path": "five-scene-complete-scene-s1.png",
+      "label": "scene-s1",
+      "sha256": "c24341cf295fb27cf1480d7c73da8598e565a70b33324624140cde0a0f096950"
+    },
+    {
+      "path": "five-scene-complete-scene-s2.png",
+      "label": "scene-s2",
+      "sha256": "9cd0f95b72caef2571635a7fd1601e3f4c0123c581b79a6c3a5284c5ba892216"
+    },
+    {
+      "path": "five-scene-complete-mechanism-11.png",
+      "label": "mechanism-11",
+      "sha256": "a0ef4d9fb416f31deb17d8cf0cc3228310ccd3427f4a9de88242f151a255558e"
+    },
+    {
+      "path": "five-scene-complete-mechanism-15.png",
+      "label": "mechanism-15",
+      "sha256": "a0ef4d9fb416f31deb17d8cf0cc3228310ccd3427f4a9de88242f151a255558e"
+    },
+    {
+      "path": "five-scene-complete-mechanism-20.png",
+      "label": "mechanism-20",
+      "sha256": "174c05f565f897aea56a2e358dbc847323897a0eab61d81a263dcdca9a95ee9d"
+    },
+    {
+      "path": "five-scene-complete-scene-s3.png",
+      "label": "scene-s3",
+      "sha256": "f5c9122d272ae098f74ff685c84873b9bb4fa377451a911663c07d59bd2023f8"
+    },
+    {
+      "path": "five-scene-complete-scene-s4.png",
+      "label": "scene-s4",
+      "sha256": "fcb658645ebefe6744c4ca2b1b7f816b2473f590b25d856ac345970cece8bbc9"
+    },
+    {
+      "path": "five-scene-complete-ending.png",
+      "label": "ending",
+      "sha256": "2716295d2b999f80fd0b6c5f7a3861ea5daeec4be7833bdd9bd2646f1637ae1a"
+    }
+  ],
+  "errors": [],
+  "executor": "host-owned-playwright",
+  "coverage": [
+    "real-touch-joystick",
+    "real-touch-tap",
+    "read-only-observer",
+    "pause",
+    "map",
+    "reload",
+    "all-declared-endings"
+  ],
+  "finishedAt": "2026-10-15T15:09:44.380Z",
+  "durationMs": 49106
+}

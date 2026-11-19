@@ -1,0 +1,6 @@
+interface:
+  display_name: "剧情驱动的核心玩法"
+  short_description: "根据每部故事的目标、阻碍和行动设计实际可操作的核心玩法与简单机制，而不是固定模板换皮。"
+  default_prompt: "使用 $gameplay-design 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

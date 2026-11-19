@@ -1,0 +1,72 @@
+[
+  {
+    "skill": "narrative-branch",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "game-state",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "game-assembly",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "main-flow",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "gameplay-design",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "scene-generation",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "interaction-generation",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "character-generation",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "game-adaptation",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "easter-egg",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "game-reviewer",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "content-understanding",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "art-direction",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  },
+  {
+    "skill": "narrative-npc-dialogue",
+    "passed": true,
+    "result": "Skill is valid!\n"
+  }
+]

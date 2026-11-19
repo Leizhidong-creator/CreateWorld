@@ -1,0 +1,6 @@
+interface:
+  display_name: "可选分支与汇合"
+  short_description: "按作品需要设计选择、后果和汇合；保留固定原作结局，不为调用技能强加支线。"
+  default_prompt: "使用 $narrative-branch 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

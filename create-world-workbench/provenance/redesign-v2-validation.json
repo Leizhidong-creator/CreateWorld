@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-16",
+  "scope": "v2 redesign verification; not final AI game acceptance",
+  "unitTests": {
+    "passed": 99,
+    "failed": 0,
+    "node": "24.19.0",
+    "log": "data/latest-check.txt"
+  },
+  "codex": {
+    "persistentThreadAndDynamicTools": "passed",
+    "evidence": "data/autonomous-probe/evidence.json"
+  },
+  "technicalRegression": {
+    "keyboard": "data/five-scene-1792069001547/evidence/evidence.json",
+    "touch": "data/five-scene-1792076935099/evidence/evidence.json",
+    "scope": "authored fixture; exported and extracted before real input tests"
+  },
+  "generatedGame": {
+    "projectId": "project_e0f52fdc42a84fb0aca8",
+    "runId": "run_e9faab6a9b4942c3b967",
+    "revisionId": "rev_a0587b2795084007a900",
+    "grayboxStatus": "passed",
+    "journeys": [
+      {
+        "id": "normal-main",
+        "status": "passed"
+      },
+      {
+        "id": "early-errors-main",
+        "status": "passed"
+      }
+    ],
+    "formalAcceptance": "not yet passed",
+    "note": "Previous run stopped on usageLimitExceeded. Same run resumed on 2026-10-16 after current usage status allowed ordinary usage; formal acceptance remains pending.",
+    "touchGrayboxStatus": "passed",
+    "touchEvidence": "provenance/redesign-v2/generated-graybox-touch.json"
+  },
+  "limits": [
+    "No claim of stable production success across stories",
+    "Special action native generation quality not yet verified",
+    "Ten minute human play duration not measured",
+    "Touch automation is not mobile device certification"
+  ]
+}

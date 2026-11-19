@@ -1,0 +1,1273 @@
+{
+  "id": "orbital-echo-demo",
+  "saveVersion": 1,
+  "title": "轨道余声",
+  "subtitle": "ECHOES OF THE ORBITAL STATION",
+  "description": "废弃中继站发来最后一条讯息。寻找值守员，取回记录，并决定把这段声音交给谁。",
+  "theme": {
+    "accent": "#8bcfc9",
+    "world": {
+      "floor": "#35434f",
+      "floorAlt": "#3b4955",
+      "seam": "#26333f",
+      "detail": "#617580",
+      "wall": "#304044",
+      "wallTop": "#64716a",
+      "shadow": "#17292b",
+      "wood": "#526571",
+      "woodLight": "#8aa9af",
+      "woodDark": "#344650",
+      "cloth": "#426e70",
+      "trim": "#91d0cb",
+      "water": "#101c36",
+      "wave": "#697ca5",
+      "leaf": "#3e6170",
+      "leafLight": "#649595",
+      "roof": "#465762",
+      "roofLight": "#61737a"
+    }
+  },
+  "player": {
+    "character": "traveler",
+    "speed": 120,
+    "radius": 7
+  },
+  "start": {
+    "scene": "cottage",
+    "position": {
+      "x": 320,
+      "y": 250
+    }
+  },
+  "features": {
+    "map": true,
+    "fog": true,
+    "tutorial": true,
+    "clueNotebook": true
+  },
+  "music": "ambient",
+  "sounds": {
+    "notice": "notice",
+    "achievement": "success",
+    "interact": "tap"
+  },
+  "assets": [
+    {
+      "id": "traveler",
+      "type": "image",
+      "src": "traveler.svg"
+    },
+    {
+      "id": "keeper",
+      "type": "image",
+      "src": "keeper.svg"
+    },
+    {
+      "id": "archivist",
+      "type": "image",
+      "src": "archivist.svg"
+    },
+    {
+      "id": "ambient",
+      "type": "audio",
+      "src": "ambient.wav"
+    },
+    {
+      "id": "notice",
+      "type": "audio",
+      "src": "notice.wav"
+    },
+    {
+      "id": "success",
+      "type": "audio",
+      "src": "success.wav"
+    },
+    {
+      "id": "tap",
+      "type": "audio",
+      "src": "tap.wav"
+    }
+  ],
+  "characters": [
+    {
+      "id": "traveler",
+      "asset": "traveler",
+      "frameWidth": 16,
+      "frameHeight": 24,
+      "width": 26,
+      "height": 39
+    },
+    {
+      "id": "keeper",
+      "asset": "keeper",
+      "frameWidth": 16,
+      "frameHeight": 24,
+      "width": 26,
+      "height": 39
+    },
+    {
+      "id": "archivist",
+      "asset": "archivist",
+      "frameWidth": 16,
+      "frameHeight": 24,
+      "width": 26,
+      "height": 39
+    }
+  ],
+  "scenes": [
+    {
+      "id": "cottage",
+      "name": "值守员的休息舱",
+      "width": 640,
+      "height": 360,
+      "palette": {
+        "floor": "#35434f",
+        "floorAlt": "#3b4955",
+        "seam": "#26333f",
+        "detail": "#617580",
+        "wall": "#333f41",
+        "wallTop": "#707a6e",
+        "shadow": "#17292b",
+        "wood": "#526571",
+        "woodLight": "#8aa9af",
+        "woodDark": "#344650",
+        "cloth": "#426e70",
+        "trim": "#91d0cb",
+        "water": "#101c36",
+        "wave": "#697ca5",
+        "leaf": "#3e6170",
+        "leafLight": "#649595",
+        "roof": "#465762",
+        "roofLight": "#61737a"
+      },
+      "spawn": {
+        "x": 320,
+        "y": 290
+      },
+      "collisions": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 30
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 360
+        },
+        {
+          "x": 616,
+          "y": 0,
+          "w": 24,
+          "h": 360
+        },
+        {
+          "x": 0,
+          "y": 336,
+          "w": 280,
+          "h": 24
+        },
+        {
+          "x": 360,
+          "y": 336,
+          "w": 280,
+          "h": 24
+        }
+      ],
+      "objects": [
+        {
+          "id": "cottage-rug",
+          "kind": "rug",
+          "layer": "floor",
+          "x": 220,
+          "y": 170,
+          "w": 200,
+          "h": 120
+        },
+        {
+          "id": "cot",
+          "kind": "bed",
+          "x": 60,
+          "y": 72,
+          "w": 64,
+          "h": 100,
+          "solid": {
+            "x": 60,
+            "y": 90,
+            "w": 64,
+            "h": 82
+          }
+        },
+        {
+          "id": "cottage-desk",
+          "kind": "desk",
+          "x": 430,
+          "y": 90,
+          "w": 100,
+          "h": 48,
+          "solid": {
+            "x": 430,
+            "y": 95,
+            "w": 100,
+            "h": 43
+          }
+        },
+        {
+          "id": "cottage-shelf",
+          "kind": "shelf",
+          "x": 180,
+          "y": 38,
+          "w": 130,
+          "h": 52,
+          "solid": {
+            "x": 180,
+            "y": 38,
+            "w": 130,
+            "h": 52
+          }
+        },
+        {
+          "id": "cottage-lamp",
+          "kind": "lamp",
+          "x": 550,
+          "y": 75,
+          "w": 20,
+          "h": 70
+        }
+      ],
+      "npcs": [],
+      "regions": [
+        {
+          "id": "cottage-room",
+          "x": 24,
+          "y": 30,
+          "w": 592,
+          "h": 306
+        }
+      ],
+      "landmarks": [
+        {
+          "x": 320,
+          "y": 322,
+          "label": "通往空间站"
+        }
+      ],
+      "interactions": [
+        {
+          "id": "cottage-note",
+          "rect": {
+            "x": 430,
+            "y": 90,
+            "w": 100,
+            "h": 48
+          },
+          "label": "阅读",
+          "name": "桌上的便笺",
+          "once": true,
+          "actions": [
+            {
+              "type": "dialogue",
+              "id": "note"
+            }
+          ]
+        }
+      ],
+      "exits": [
+        {
+          "id": "leave-cottage",
+          "rect": {
+            "x": 280,
+            "y": 321,
+            "w": 80,
+            "h": 30
+          },
+          "label": "中继站中央平台",
+          "to": "harbor",
+          "spawn": {
+            "x": 440,
+            "y": 530
+          }
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "id": "harbor",
+      "name": "中继站 · 停靠平台",
+      "width": 960,
+      "height": 640,
+      "palette": {
+        "floor": "#35434f",
+        "floorAlt": "#3b4955",
+        "seam": "#26333f",
+        "detail": "#617580",
+        "wall": "#304044",
+        "wallTop": "#64716a",
+        "shadow": "#17292b",
+        "wood": "#526571",
+        "woodLight": "#8aa9af",
+        "woodDark": "#344650",
+        "cloth": "#426e70",
+        "trim": "#91d0cb",
+        "water": "#101c36",
+        "wave": "#697ca5",
+        "leaf": "#3e6170",
+        "leafLight": "#649595",
+        "roof": "#465762",
+        "roofLight": "#61737a"
+      },
+      "spawn": {
+        "x": 440,
+        "y": 530
+      },
+      "collisions": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 960,
+          "h": 24
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 640
+        },
+        {
+          "x": 936,
+          "y": 0,
+          "w": 24,
+          "h": 640
+        },
+        {
+          "x": 0,
+          "y": 616,
+          "w": 960,
+          "h": 24
+        },
+        {
+          "x": 744,
+          "y": 24,
+          "w": 192,
+          "h": 260
+        }
+      ],
+      "objects": [
+        {
+          "id": "harbor-water",
+          "kind": "water",
+          "layer": "floor",
+          "x": 744,
+          "y": 24,
+          "w": 192,
+          "h": 260
+        },
+        {
+          "id": "archive-building",
+          "kind": "building",
+          "x": 100,
+          "y": 100,
+          "w": 192,
+          "h": 128,
+          "solid": {
+            "x": 100,
+            "y": 100,
+            "w": 192,
+            "h": 128
+          }
+        },
+        {
+          "id": "cottage-building",
+          "kind": "building",
+          "x": 360,
+          "y": 380,
+          "w": 160,
+          "h": 120,
+          "solid": {
+            "x": 360,
+            "y": 380,
+            "w": 160,
+            "h": 120
+          }
+        },
+        {
+          "id": "harbor-tree-a",
+          "kind": "tree",
+          "x": 44,
+          "y": 320,
+          "w": 80,
+          "h": 100,
+          "solid": {
+            "x": 73,
+            "y": 380,
+            "w": 22,
+            "h": 40
+          }
+        },
+        {
+          "id": "harbor-tree-b",
+          "kind": "tree",
+          "x": 830,
+          "y": 450,
+          "w": 80,
+          "h": 100,
+          "solid": {
+            "x": 858,
+            "y": 510,
+            "w": 24,
+            "h": 40
+          }
+        },
+        {
+          "id": "harbor-crates",
+          "kind": "crate",
+          "x": 310,
+          "y": 140,
+          "w": 64,
+          "h": 40,
+          "solid": {
+            "x": 310,
+            "y": 140,
+            "w": 64,
+            "h": 40
+          }
+        },
+        {
+          "id": "beacon",
+          "kind": "lamp",
+          "x": 660,
+          "y": 80,
+          "w": 32,
+          "h": 84
+        },
+        {
+          "id": "harbor-lamp",
+          "kind": "lamp",
+          "x": 570,
+          "y": 460,
+          "w": 24,
+          "h": 62
+        },
+        {
+          "id": "harbor-sign",
+          "kind": "sign",
+          "x": 510,
+          "y": 250,
+          "w": 54,
+          "h": 28,
+          "solid": {
+            "x": 510,
+            "y": 260,
+            "w": 54,
+            "h": 18
+          }
+        }
+      ],
+      "npcs": [
+        {
+          "id": "npc-keeper",
+          "character": "keeper",
+          "x": 640,
+          "y": 420,
+          "facing": "left"
+        }
+      ],
+      "regions": [
+        {
+          "id": "keeper-area",
+          "x": 570,
+          "y": 350,
+          "w": 160,
+          "h": 160
+        },
+        {
+          "id": "archive-area",
+          "x": 70,
+          "y": 70,
+          "w": 270,
+          "h": 220
+        },
+        {
+          "id": "beacon-area",
+          "x": 580,
+          "y": 40,
+          "w": 150,
+          "h": 170
+        }
+      ],
+      "landmarks": [
+        {
+          "x": 196,
+          "y": 250,
+          "label": "记录室"
+        },
+        {
+          "x": 440,
+          "y": 530,
+          "label": "休息舱"
+        },
+        {
+          "x": 670,
+          "y": 180,
+          "label": "中继信标"
+        }
+      ],
+      "interactions": [
+        {
+          "id": "talk-keeper",
+          "rect": {
+            "x": 628,
+            "y": 397,
+            "w": 24,
+            "h": 28
+          },
+          "range": 42,
+          "label": "交谈",
+          "name": "值守员",
+          "branches": [
+            {
+              "when": {
+                "flag": "delivered"
+              },
+              "actions": [
+                {
+                  "type": "dialogue",
+                  "id": "thanks"
+                }
+              ]
+            },
+            {
+              "when": {
+                "flag": "signal"
+              },
+              "actions": [
+                {
+                  "type": "dialogue",
+                  "id": "deliver"
+                }
+              ]
+            },
+            {
+              "when": {
+                "flag": "met"
+              },
+              "actions": [
+                {
+                  "type": "dialogue",
+                  "id": "reminder"
+                }
+              ]
+            },
+            {
+              "actions": [
+                {
+                  "type": "dialogue",
+                  "id": "meet"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "light-beacon",
+          "rect": {
+            "x": 650,
+            "y": 140,
+            "w": 52,
+            "h": 30
+          },
+          "range": 35,
+          "label": "点亮",
+          "name": "中继站中继信标",
+          "branches": [
+            {
+              "when": {
+                "flag": "signal"
+              },
+              "actions": [
+                {
+                  "type": "notice",
+                  "text": "灯光已经照向星海。"
+                }
+              ]
+            },
+            {
+              "when": {
+                "item": "letter"
+              },
+              "actions": [
+                {
+                  "type": "dialogue",
+                  "id": "signal"
+                }
+              ]
+            },
+            {
+              "actions": [
+                {
+                  "type": "notice",
+                  "text": "灯座上刻着一句话：先找到留下的讯息。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "old-sign",
+          "rect": {
+            "x": 510,
+            "y": 250,
+            "w": 54,
+            "h": 28
+          },
+          "label": "调查",
+          "name": "旧路牌",
+          "branches": [
+            {
+              "when": {
+                "counter": "old-sign",
+                "atLeast": 2
+              },
+              "actions": [
+                {
+                  "type": "dialogue",
+                  "id": "secret"
+                }
+              ]
+            },
+            {
+              "actions": [
+                {
+                  "type": "notice",
+                  "text": "字迹被潮气侵蚀了。也许再仔细看看。"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exits": [
+        {
+          "id": "enter-cottage",
+          "rect": {
+            "x": 422,
+            "y": 490,
+            "w": 36,
+            "h": 28
+          },
+          "label": "值守员的休息舱",
+          "to": "cottage",
+          "spawn": {
+            "x": 320,
+            "y": 290
+          }
+        },
+        {
+          "id": "enter-archive",
+          "rect": {
+            "x": 178,
+            "y": 218,
+            "w": 36,
+            "h": 28
+          },
+          "label": "中继站记录室",
+          "to": "archive",
+          "spawn": {
+            "x": 320,
+            "y": 290
+          },
+          "when": {
+            "item": "key"
+          },
+          "lockedText": "门锁着。可以问问中央平台里的值守员。"
+        }
+      ],
+      "triggers": [
+        {
+          "id": "harbor-overlook",
+          "rect": {
+            "x": 700,
+            "y": 290,
+            "w": 210,
+            "h": 70
+          },
+          "wait": 3,
+          "actions": [
+            {
+              "type": "discover",
+              "id": "overlook"
+            },
+            {
+              "type": "notice",
+              "text": "低频嗡鸣缓慢地拍打石岸。你在这里停留了一会。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "name": "中继站记录室",
+      "width": 640,
+      "height": 360,
+      "palette": {
+        "floor": "#35434f",
+        "floorAlt": "#3b4955",
+        "seam": "#26333f",
+        "detail": "#617580",
+        "wall": "#333f41",
+        "wallTop": "#707a6e",
+        "shadow": "#17292b",
+        "wood": "#526571",
+        "woodLight": "#8aa9af",
+        "woodDark": "#344650",
+        "cloth": "#426e70",
+        "trim": "#91d0cb",
+        "water": "#101c36",
+        "wave": "#697ca5",
+        "leaf": "#3e6170",
+        "leafLight": "#649595",
+        "roof": "#465762",
+        "roofLight": "#61737a"
+      },
+      "spawn": {
+        "x": 320,
+        "y": 290
+      },
+      "collisions": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 30
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 360
+        },
+        {
+          "x": 616,
+          "y": 0,
+          "w": 24,
+          "h": 360
+        },
+        {
+          "x": 0,
+          "y": 336,
+          "w": 280,
+          "h": 24
+        },
+        {
+          "x": 360,
+          "y": 336,
+          "w": 280,
+          "h": 24
+        }
+      ],
+      "objects": [
+        {
+          "id": "archive-rug",
+          "kind": "rug",
+          "layer": "floor",
+          "x": 200,
+          "y": 170,
+          "w": 240,
+          "h": 140
+        },
+        {
+          "id": "archive-shelf-left",
+          "kind": "shelf",
+          "x": 50,
+          "y": 55,
+          "w": 130,
+          "h": 96,
+          "solid": {
+            "x": 50,
+            "y": 55,
+            "w": 130,
+            "h": 96
+          }
+        },
+        {
+          "id": "archive-shelf-right",
+          "kind": "shelf",
+          "x": 460,
+          "y": 55,
+          "w": 130,
+          "h": 96,
+          "solid": {
+            "x": 460,
+            "y": 55,
+            "w": 130,
+            "h": 96
+          }
+        },
+        {
+          "id": "archive-desk",
+          "kind": "desk",
+          "x": 270,
+          "y": 75,
+          "w": 100,
+          "h": 48,
+          "solid": {
+            "x": 270,
+            "y": 75,
+            "w": 100,
+            "h": 48
+          }
+        },
+        {
+          "id": "archive-lamp",
+          "kind": "lamp",
+          "x": 400,
+          "y": 50,
+          "w": 24,
+          "h": 70
+        }
+      ],
+      "npcs": [
+        {
+          "id": "npc-archivist",
+          "character": "archivist",
+          "x": 130,
+          "y": 225,
+          "facing": "right"
+        }
+      ],
+      "regions": [
+        {
+          "id": "archive-interior",
+          "x": 24,
+          "y": 30,
+          "w": 592,
+          "h": 306
+        }
+      ],
+      "landmarks": [
+        {
+          "x": 320,
+          "y": 322,
+          "label": "返回空间站"
+        }
+      ],
+      "interactions": [
+        {
+          "id": "read-letter",
+          "rect": {
+            "x": 270,
+            "y": 75,
+            "w": 100,
+            "h": 48
+          },
+          "label": "查看",
+          "name": "未发送的记录",
+          "branches": [
+            {
+              "when": {
+                "item": "letter"
+              },
+              "actions": [
+                {
+                  "type": "dialogue",
+                  "id": "letter-again"
+                }
+              ]
+            },
+            {
+              "actions": [
+                {
+                  "type": "dialogue",
+                  "id": "letter"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "talk-archivist",
+          "rect": {
+            "x": 118,
+            "y": 202,
+            "w": 24,
+            "h": 28
+          },
+          "label": "交谈",
+          "name": "记录员",
+          "actions": [
+            {
+              "type": "dialogue",
+              "id": "archivist"
+            }
+          ]
+        }
+      ],
+      "exits": [
+        {
+          "id": "leave-archive",
+          "rect": {
+            "x": 280,
+            "y": 321,
+            "w": 80,
+            "h": 30
+          },
+          "label": "中继站中央平台",
+          "to": "harbor",
+          "spawn": {
+            "x": 196,
+            "y": 265
+          }
+        }
+      ],
+      "triggers": []
+    }
+  ],
+  "items": [
+    {
+      "id": "key",
+      "name": "通行卡",
+      "icon": "⚿",
+      "description": "值守员交给你的旧通行卡。",
+      "content": "它能打开中央平台西北角的记录室。"
+    },
+    {
+      "id": "letter",
+      "name": "未发送的记录",
+      "icon": "▤",
+      "description": "一封写给后来者的信。",
+      "content": "如果接收到这段记录，请重新启动中继信标。有人还在等待返航的坐标。"
+    }
+  ],
+  "clues": [
+    {
+      "id": "tide",
+      "name": "轨道记录",
+      "description": "空间站的灯不是为了飞船，也是为了那些迟迟未归的人。"
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "note",
+      "lines": [
+        {
+          "speaker": "便笺",
+          "text": "我去了中央平台。如果你醒了，来找我。钥匙还在老地方。——值守员"
+        }
+      ]
+    },
+    {
+      "id": "meet",
+      "once": true,
+      "lines": [
+        {
+          "speaker": "值守员",
+          "text": "你接到了最后的讯息？记录室仍然封着，通行卡在我这里。"
+        },
+        {
+          "speaker": "值守员",
+          "text": "取回那份记录，然后重启东北侧的中继信标。让地面知道我们还在。"
+        }
+      ],
+      "onComplete": [
+        {
+          "type": "flag",
+          "id": "met"
+        },
+        {
+          "type": "give",
+          "id": "key"
+        }
+      ]
+    },
+    {
+      "id": "reminder",
+      "lines": [
+        {
+          "speaker": "值守员",
+          "text": "先去记录室找那封信。看过之后，你会知道该怎么做。"
+        }
+      ]
+    },
+    {
+      "id": "letter",
+      "once": true,
+      "lines": [
+        {
+          "speaker": "未发送的记录",
+          "text": "“请重新点亮中继站的灯。不是为了挽留谁，是为了让回来的人，看得见路。”"
+        },
+        {
+          "speaker": "你",
+          "text": "纸上的折痕很深。有人读过很多次。"
+        }
+      ],
+      "onComplete": [
+        {
+          "type": "give",
+          "id": "letter"
+        }
+      ]
+    },
+    {
+      "id": "letter-again",
+      "lines": [
+        {
+          "speaker": "你",
+          "text": "信已经收好了。中继站东北边的灯还没有亮。"
+        }
+      ]
+    },
+    {
+      "id": "archivist",
+      "once": true,
+      "lines": [
+        {
+          "speaker": "记录员",
+          "text": "人们总以为档案只记录过去。其实，有些纸是在等未来的人。"
+        }
+      ],
+      "onComplete": [
+        {
+          "type": "clue",
+          "id": "tide"
+        }
+      ]
+    },
+    {
+      "id": "signal",
+      "once": true,
+      "lines": [
+        {
+          "speaker": "你",
+          "text": "我拨动灯座上的开关。一束光慢慢越过星海。"
+        },
+        {
+          "speaker": "你",
+          "text": "回去告诉值守员吧。"
+        }
+      ],
+      "onComplete": [
+        {
+          "type": "flag",
+          "id": "signal"
+        }
+      ]
+    },
+    {
+      "id": "deliver",
+      "once": true,
+      "lines": [
+        {
+          "speaker": "值守员",
+          "text": "我看见灯亮了。你找到那封信了，是吗？"
+        }
+      ],
+      "choices": [
+        {
+          "label": "把信交给他，让他读一读",
+          "actions": [
+            {
+              "type": "take",
+              "id": "letter"
+            },
+            {
+              "type": "flag",
+              "id": "shared"
+            },
+            {
+              "type": "flag",
+              "id": "delivered"
+            },
+            {
+              "type": "ending",
+              "id": "together"
+            }
+          ]
+        },
+        {
+          "label": "把信留在身边，告诉他灯亮了",
+          "actions": [
+            {
+              "type": "flag",
+              "id": "delivered"
+            },
+            {
+              "type": "ending",
+              "id": "depart"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thanks",
+      "lines": [
+        {
+          "speaker": "值守员",
+          "text": "灯亮着，就总有一条回家的路。"
+        }
+      ]
+    },
+    {
+      "id": "secret",
+      "once": true,
+      "lines": [
+        {
+          "speaker": "路牌背面",
+          "text": "“给每个愿意多看一眼的人：别忘了，你也可以成为别人的灯。”"
+        }
+      ],
+      "onComplete": [
+        {
+          "type": "discover",
+          "id": "sign-secret"
+        }
+      ]
+    }
+  ],
+  "quests": [
+    {
+      "id": "meet",
+      "initial": true,
+      "title": "到停靠平台找值守员",
+      "target": {
+        "scene": "harbor",
+        "region": "keeper-area"
+      },
+      "complete": {
+        "flag": "met"
+      }
+    },
+    {
+      "id": "letter",
+      "title": "去记录室寻找未发送的记录",
+      "target": {
+        "scene": "archive",
+        "region": "archive-interior"
+      },
+      "unlock": {
+        "quest": "meet"
+      },
+      "complete": {
+        "item": "letter"
+      }
+    },
+    {
+      "id": "signal",
+      "title": "前往中继站东北，点亮中继信标",
+      "target": {
+        "scene": "harbor",
+        "region": "beacon-area"
+      },
+      "unlock": {
+        "quest": "letter"
+      },
+      "complete": {
+        "flag": "signal"
+      }
+    },
+    {
+      "id": "return",
+      "title": "回到中央平台，与值守员交谈",
+      "target": {
+        "scene": "harbor",
+        "region": "keeper-area"
+      },
+      "unlock": {
+        "quest": "signal"
+      },
+      "complete": {
+        "flag": "delivered"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "careful",
+      "title": "多看一眼",
+      "icon": "✧",
+      "description": "读到了路牌背面的留言。",
+      "when": {
+        "discovered": "sign-secret"
+      }
+    },
+    {
+      "id": "listener",
+      "title": "听潮的人",
+      "icon": "≈",
+      "description": "在平台边停留片刻。",
+      "when": {
+        "discovered": "overlook"
+      }
+    },
+    {
+      "id": "memory",
+      "title": "纸上的未来",
+      "icon": "▤",
+      "description": "听记录员说起空间站。",
+      "when": {
+        "clue": "tide"
+      }
+    },
+    {
+      "id": "light",
+      "title": "灯火可亲",
+      "icon": "✦",
+      "description": "重新点亮中继站的灯。",
+      "when": {
+        "flag": "signal"
+      }
+    }
+  ],
+  "endings": [
+    {
+      "id": "together",
+      "title": "灯下的来信",
+      "when": {
+        "flag": "shared"
+      },
+      "pages": [
+        {
+          "title": "灯下的来信",
+          "text": "值守员没有立刻说话。他把信展开，对着远处的灯，慢慢读完。"
+        },
+        {
+          "title": "有人会回来",
+          "text": "星尘没有散尽。可你们知道，从今晚起，回来的人会看得见路。"
+        }
+      ]
+    },
+    {
+      "id": "depart",
+      "title": "带着灯光出发",
+      "when": {
+        "all": [
+          {
+            "flag": "delivered"
+          },
+          {
+            "not": {
+              "flag": "shared"
+            }
+          }
+        ]
+      },
+      "pages": [
+        {
+          "title": "带着灯光出发",
+          "text": "你把信折好，留在衣袋里。有些话适合留下，有些话适合随身携带。"
+        },
+        {
+          "title": "下一段旅程",
+          "text": "离开空间站时，你回头看了一眼。灯还亮着。"
+        }
+      ]
+    }
+  ],
+  "minigames": [],
+  "durationMinutes": 5,
+  "developmentStage": "prototype"
+}

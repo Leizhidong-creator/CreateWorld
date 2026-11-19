@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "threadId": "01a13f20-9407-78c2-bf5d-9e3e2d4e6bc9",
+  "model": "gpt-6-astra",
+  "calls": [
+    {
+      "note": "Bounded integration probe: request host nonce for proof.txt."
+    },
+    {
+      "note": "resumed"
+    }
+  ],
+  "proof": "HOST_NONCE_51742\n\nRESUMED",
+  "scope": "actual dynamic tool + persistent thread resume, not game completion"
+}

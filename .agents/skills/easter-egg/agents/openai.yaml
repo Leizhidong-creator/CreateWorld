@@ -1,0 +1,6 @@
+interface:
+  display_name: "可选彩蛋"
+  short_description: "按需设计可跳过的隐藏互动和奖励，不阻断主线，不制造必需收集或重复领奖。"
+  default_prompt: "使用 $easter-egg 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

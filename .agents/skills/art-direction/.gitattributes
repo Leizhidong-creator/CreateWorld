@@ -1,0 +1,3 @@
+# Hash-bound fixture bytes must survive Windows checkout unchanged.
+tests/fixtures/visual-decision/candidates/*.svg -text
+tests/fixtures/prototype/*.svg -text

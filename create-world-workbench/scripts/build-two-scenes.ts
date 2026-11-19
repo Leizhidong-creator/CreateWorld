@@ -1,0 +1,57 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import YAML from 'yaml';
+import {compileGame,verifyBuild} from '../packages/compiler/index.js';
+
+const root=fileURLToPath(new URL('../',import.meta.url));
+const base=path.resolve(root,'../outputs/first-room-new');
+const project=path.join(base,'two-scenes');
+const prior=(await fs.readFile(path.join(base,'latest-build.txt'),'utf8')).trim();
+const config=JSON.parse(await fs.readFile(path.join(base,'game.json'),'utf8'));
+const source=await fs.readFile(path.join(root,'content-spec/high-wall-beyond.game.yaml'),'utf8');
+const doc=YAML.parse(source);
+for(const id of ['S_CELL','S_CORRIDOR'])if(!doc.场景.some((s:any)=>s.id===id))throw Error('Unknown scene '+id);
+const flag=(id:string)=>({flag:id}),set=(id:string)=>({type:'flag',id,value:true});
+const go=(id:string,x:number,y:number)=>({type:'scene',id,position:{x,y}});
+Object.assign(config,{id:'high-wall-two-scenes',saveVersion:1,subtitle:'第一幕 → 第二幕 · 房间与走廊',description:'从房间醒来，调查桌面，再亲自穿过房门。走廊的尽头，是通往庭院的铁门。',durationLabel:'双场景联动试玩'});
+config.assets.push({id:'corridor',type:'image',src:'corridor.png'});
+config.state.variables.push(...['CORRIDOR_ENTERED','AT_YARD_GATE'].map(id=>({id,type:'bool',initial:false})));
+config.state.invariants.push({id:'corridor-order',if:flag('CORRIDOR_ENTERED'),then:flag('P08_STARTED')},{id:'gate-order',if:flag('AT_YARD_GATE'),then:flag('CORRIDOR_ENTERED')});
+const room=config.scenes[0];
+const door=room.interactions.find((i:any)=>i.id==='door');
+door.branches=[{when:flag('P08_STARTED'),actions:[go('S_CORRIDOR',90,180)]},{when:flag('P07'),actions:[{type:'dialogue',id:'leave'}]},{actions:[{type:'dialogue',id:'wait'}]}];
+const leave=config.dialogues.find((d:any)=>d.id==='leave');
+leave.onComplete=[set('P08_STARTED'),go('S_CORRIDOR',90,180)];
+const locked=(id:string,name:string,x:number,w:number)=>({id,name,label:'查看',rect:{x,y:116,w,h:12},range:30,sourceRefs:['S_CORRIDOR','P08'],actions:[{type:'notice',text:'挂锁纹丝不动。这不是通往庭院的门，沿走廊继续向右。'}]});
+config.scenes.push({id:'S_CORRIDOR',name:'房间走廊',width:640,height:360,background:'corridor',sourceSize:{width:640,height:360},camera:{mode:'fixed'},spawn:{x:90,y:180},walkPolygon:[{x:30,y:128},{x:612,y:128},{x:612,y:330},{x:30,y:330}],collisions:[],objects:[],npcs:[],exits:[],regions:[],landmarks:[],sourceRefs:['S_CORRIDOR','P08'],onEnter:[set('CORRIDOR_ENTERED'),{type:'dialogue',id:'corridor-intro'}],
+ interactions:[{id:'return-room',name:'安迪的房间',label:'回房',rect:{x:62,y:116,w:56,h:12},range:30,actions:[go('S_CELL',550,165)]},locked('locked-west','上锁的房门',264,68),locked('locked-east','上锁的房门',395,61),{id:'yard-gate',name:'通往庭院的铁门',label:'推门',rect:{x:520,y:116,w:65,h:12},range:32,branches:[{when:{all:[flag('P07'),flag('CORRIDOR_ENTERED')]},actions:[set('AT_YARD_GATE'),{type:'ending',id:'TWO_SCENE_END'}]}],sourceRefs:['S_CORRIDOR','P08']}]});
+config.dialogues.push({id:'corridor-intro',sourceRefs:['S_CORRIDOR','P08'],once:true,lines:[{speaker:'安迪 · 内心',text:'走廊里很安静。旁边的门都挂着锁，右边尽头却透进了日光。先沿着走廊去院门。'}],onComplete:[]});
+config.quests.push({id:'corridor',title:'沿走廊向右 · 找到通往庭院的铁门',unlock:flag('CORRIDOR_ENTERED'),complete:flag('AT_YARD_GATE')});
+config.endings=[{id:'TWO_SCENE_END',when:flag('AT_YARD_GATE'),title:'院门前的日光',sourceRefs:['P08'],pages:[{title:'房间 → 走廊 · 联动完成',text:'你亲自走出了房间，穿过走廊，来到了院门前。\n\n本次试玩到这里结束。庭院、地图实操和寻找瑞德将在后续继续。'}]}];
+const design=JSON.parse(await fs.readFile(path.join(project,'design.json'),'utf8'));
+design.corridorPlan={viewport:[640,360],floor:[[30,128],[612,128],[612,330],[30,330]],roomDoor:[62,116,56,12],lockedDoors:[[264,116,68,12],[395,116,61,12]],yardGate:[520,116,65,12],spawn:[90,180],returnSpawn:[550,165],stations:{return:[90,150],locked:[295,150],yard:[552,150]},camera:'fixed'};
+await fs.writeFile(path.join(project,'design.json'),JSON.stringify(design,null,2));
+const attribution={source:'../../../create-world-workbench/content-spec/high-wall-beyond.game.yaml',sha256:createHash('sha256').update(source).digest('hex'),scenes:['S_CELL','S_CORRIDOR'],implemented:['P06','P07'],partial:{id:'P08',implemented:['房门交互','走廊实走','院门抵达'],notCompleted:true,excluded:['庭院场景','地图开关教学']},agentDesign:['走廊精确布局','独白改写','试玩边界页'],base:'../game.json',savePolicy:'独立游戏ID保留旧版旧档，不静默清空'};
+await fs.writeFile(path.join(project,'source.json'),JSON.stringify(attribution,null,2));
+await fs.writeFile(path.join(project,'game.json'),JSON.stringify(config,null,2));
+const collision={version:1,coordinate_space:{width:640,height:360},collision_model:'footpoint',player_footprint:{width:12,height:12,foot_inset:0},metadata:{scene_id:'S_CORRIDOR',generation_mode:'balanced',input_type:'reference-image',image_generation_calls:1,art_direction_id:'cell-pixel-v1'},walkable:[{id:'floor',points:design.corridorPlan.floor}],obstacles:[],anchors:[{id:'spawn',kind:'spawn',x:90,y:180},{id:'return-room',kind:'exit',x:90,y:150},{id:'locked-door',kind:'interaction',x:295,y:150},{id:'yard-gate',kind:'exit',x:552,y:150}]};
+await fs.writeFile(path.join(project,'collision.json'),JSON.stringify(collision,null,2));
+const out=path.join(project,'play-'+Date.now());
+await compileGame({config,assetDir:path.join(project,'assets'),outDir:out,revisionId:'two-scenes'});
+// Reuse the already accepted World Kit integration and responsive theme.
+for(const file of ['controls.js','styles.css','ui.js'])await fs.copyFile(path.join(prior,'runtime',file),path.join(out,'runtime',file));
+await fs.cp(path.join(prior,'world-kit'),path.join(out,'world-kit'),{recursive:true});
+let ui=await fs.readFile(path.join(out,'runtime/ui.js'),'utf8');
+await fs.writeFile(path.join(out,'runtime/ui.js'),ui.replace("'第一幕 · 醒来'","'房间 → 走廊'"));
+for(const name of ['design.json','source.json','collision.json'])await fs.copyFile(path.join(project,name),path.join(out,name));
+await fs.writeFile(path.join(out,'启动说明.txt'),'高墙之外 · 房间与走廊联动\n在本目录运行 python -m http.server 8800 --bind 127.0.0.1，然后打开 http://127.0.0.1:8800/\nWASD/方向键/摇杆移动；E/空格/情境键交互；Esc 暂停、保存。\n调查桌面后才能出门；走廊可返回房间。推院门结束本次试玩。尚未制作庭院和地图教学。\n本版使用独立存档；原单场景版和旧档保留。\n');
+async function files(dir:string):Promise<string[]>{return(await Promise.all((await fs.readdir(dir,{withFileTypes:true})).map(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]))).flat();}
+const manifest=JSON.parse(await fs.readFile(path.join(out,'manifest.json'),'utf8'));
+manifest.files=await Promise.all((await files(out)).filter(f=>path.basename(f)!=='manifest.json').sort().map(async f=>{const b=await fs.readFile(f);return{path:path.relative(out,f).split(path.sep).join('/'),bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')};}));
+await fs.writeFile(path.join(out,'manifest.json'),JSON.stringify(manifest,null,2));
+const verification=await verifyBuild(out);if(!verification.valid)throw Error(verification.errors.join('\n'));
+await fs.writeFile(path.join(project,'latest-build.txt'),out);
+await fs.writeFile(path.join(project,'index.html'),`<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=./${path.basename(out)}/"><a href="./${path.basename(out)}/">双场景联动试玩</a>`);
+console.log(JSON.stringify({out,verified:true}));

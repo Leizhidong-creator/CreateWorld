@@ -1,0 +1,8 @@
+.cw-source-surface { position:relative; width:100%; aspect-ratio:16 / 9; overflow:hidden; }
+.cw-source-controls { position:absolute; inset:0; z-index:20; pointer-events:none; user-select:none; touch-action:none; }
+.cw-source-joystick, .cw-source-interaction-key { position:absolute; pointer-events:auto; touch-action:none; -webkit-tap-highlight-color:transparent; }
+.cw-source-joystick { left:var(--cw-joystick-left); top:var(--cw-joystick-top); width:var(--cw-joystick-size); aspect-ratio:1; border:0; border-radius:50%; background:var(--cw-joystick-base) center/100% 100% no-repeat; opacity:.8; }
+.cw-source-joystick-knob { position:absolute; left:50%; top:50%; width:46%; height:46%; background:var(--cw-joystick-knob) center/100% 100% no-repeat; transform:translate(-50%,-50%); pointer-events:none; }
+.cw-source-interaction-key { left:var(--cw-action-left); top:var(--cw-action-top); width:var(--cw-action-size); aspect-ratio:1; border:2px solid #a99b72; border-radius:50%; background:#182e33d9; color:#dbcb9f; font-size:clamp(13px,1.5vw,18px); font-weight:600; box-shadow:inset 0 0 0 5px #13242b99; }
+.cw-source-interaction-key.is-highlighted { border-color:var(--accent,#dbb877); color:#f4e1a8; background:#466153e6; box-shadow:0 0 24px #dbb87722,inset 0 0 0 5px #13242b66; }
+.cw-source-interaction-key.is-held { transform:scale(.96); }

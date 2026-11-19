@@ -1,0 +1,6 @@
+interface:
+  display_name: "故事改编定位"
+  short_description: "确定故事游戏的玩家身份、改编范围和应由玩家亲自经历的过程；不预设所有故事使用同一玩法。"
+  default_prompt: "使用 $game-adaptation 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "profile": "canvas-room-v1",
+  "briefingNpcId": "officer",
+  "speakers": [
+    "Officer",
+    "Navigator",
+    "Mechanic",
+    "Terminal"
+  ],
+  "maxLineChars": 80,
+  "facts": [
+    {
+      "id": "power-fixed",
+      "source": "Original fixture rule: power completion sets powerReady.",
+      "knowledge": {
+        "Navigator": {
+          "when": {
+            "powerReady": true
+          },
+          "certainty": "observed"
+        }
+      }
+    }
+  ],
+  "lineClaims": [
+    {
+      "dialogueId": "officer-talk",
+      "branchId": "brief",
+      "lineIndex": 0,
+      "claims": []
+    },
+    {
+      "dialogueId": "officer-talk",
+      "branchId": "brief",
+      "lineIndex": 1,
+      "claims": []
+    },
+    {
+      "dialogueId": "officer-talk",
+      "branchId": "again",
+      "lineIndex": 0,
+      "claims": []
+    },
+    {
+      "dialogueId": "nav-talk",
+      "branchId": "powered",
+      "lineIndex": 0,
+      "claims": [
+        {
+          "factId": "power-fixed",
+          "certainty": "observed"
+        }
+      ]
+    },
+    {
+      "dialogueId": "nav-talk",
+      "branchId": "waiting",
+      "lineIndex": 0,
+      "claims": []
+    },
+    {
+      "dialogueId": "tech-talk",
+      "branchId": "only",
+      "lineIndex": 0,
+      "claims": []
+    },
+    {
+      "dialogueId": "joke-talk",
+      "branchId": "only",
+      "lineIndex": 0,
+      "claims": []
+    },
+    {
+      "dialogueId": "memory-talk",
+      "branchId": "only",
+      "lineIndex": 0,
+      "claims": []
+    }
+  ]
+}

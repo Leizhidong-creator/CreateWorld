@@ -1,0 +1,6 @@
+interface:
+  display_name: "可操作交互实现"
+  short_description: "将剧情机制落实为实际对象、输入、状态效果和反馈，覆盖失败、取消、重复及输入生命周期。"
+  default_prompt: "使用 $interaction-generation 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

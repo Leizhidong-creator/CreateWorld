@@ -1,0 +1,6 @@
+interface:
+  display_name: "固定界面风格统一"
+  short_description: "复用游戏美术规范，实际适配摇杆、地图、对话、背包、存档及暂停等固定界面。"
+  default_prompt: "使用 $game-ui-styling，沿用目标游戏已确定的美术规范，实际接入固定界面样式与必要素材，保留原有操作、玩法和存档逻辑。"
+policy:
+  allow_implicit_invocation: true

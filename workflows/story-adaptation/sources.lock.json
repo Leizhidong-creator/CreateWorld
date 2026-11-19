@@ -1,0 +1,73 @@
+{
+  "method_version": "1.1.1",
+  "upstream_commit": "9dddcd2dfdf02d46da23b1050aa7e45dfac3fae9",
+  "authorities": [
+    {
+      "path": "D:\\高墙之外_体验提示词包\\结构化版本\\2D像素剧情游戏内容规范.md",
+      "repoPath": "create-world-workbench/content-spec/2D-pixel-story-content-spec.md",
+      "sha256": "0ff70f1db80b91535de12b1800b16ef84d58896c82585bd81a16b5cd618f1046",
+      "role": "authority",
+      "version": "1.0"
+    },
+    {
+      "path": "D:\\高墙之外_体验提示词包\\结构化版本\\游戏YAML生成执行标准.md",
+      "repoPath": "create-world-workbench/content-spec/游戏YAML生成执行标准.md",
+      "sha256": "643a740ef40185cae140067afe6fa04f4de9c2b2871c2c2f9825c55e3adaab3f",
+      "role": "authority",
+      "version": "1.0"
+    },
+    {
+      "path": "D:\\高墙之外_体验提示词包\\结构化版本\\高墙之外_游戏内容.yaml",
+      "sha256": "3bfc9f3be50689ec1637d9ae715ae3515c8096b5ee8ffc1df138b55efa37fa08",
+      "role": "example-only",
+      "version": "1.0"
+    }
+  ],
+  "snapshots": [
+    {
+      "upstream_path": "LICENSE",
+      "local_path": "third_party/novel-to-game/LICENSE",
+      "sha256": "8624846d707ae75855b7ac2a18e65d11d29738caeb0a4c4c5cedf88066f2f5b1"
+    },
+    {
+      "upstream_path": "skills/novel-to-game/SKILL.md",
+      "local_path": "third_party/novel-to-game/novel-to-game.source.txt",
+      "sha256": "62b35309ba32c01f006deb4a7156e304839f57d77cc5264d3a7b9a697588dd61"
+    },
+    {
+      "upstream_path": "skills/novel-game-analyze/SKILL.md",
+      "local_path": "third_party/novel-to-game/novel-game-analyze.source.txt",
+      "sha256": "4595ec966ee2cbcf46ca75daa534a790beb29c669d348b09e16254e30893894a"
+    },
+    {
+      "upstream_path": "skills/novel-game-analyze/references/gameability-protocol.md",
+      "local_path": "third_party/novel-to-game/gameability-protocol.source.txt",
+      "sha256": "dd1a2bfd560e21af69bcd9f3783db64295f4bffb1a05a872024d60f6e8f78b39"
+    },
+    {
+      "upstream_path": "skills/game-concept/SKILL.md",
+      "local_path": "third_party/novel-to-game/game-concept.source.txt",
+      "sha256": "d5cadc51bee106ca94a521e928595eababadbb676e39925a0b6966cd5de63425"
+    },
+    {
+      "upstream_path": "skills/game-concept/references/concept-method.md",
+      "local_path": "third_party/novel-to-game/concept-method.source.txt",
+      "sha256": "c34c47b3920740957dbf4b8e64c7258e1b584604eff671ca2718baf340bc9538"
+    },
+    {
+      "upstream_path": "skills/game-world-design/SKILL.md",
+      "local_path": "third_party/novel-to-game/game-world-design.source.txt",
+      "sha256": "c72856e53a0ec22e0c33c2f9fb593e426cdf014d319aecd949c0be25518c693c"
+    },
+    {
+      "upstream_path": "skills/game-world-design/references/world-design-method.md",
+      "local_path": "third_party/novel-to-game/world-design-method.source.txt",
+      "sha256": "ecbb27b68ff8cf11996c7d4220579437e69fa31c7fa8eb939dee263fd1ce07ff"
+    },
+    {
+      "upstream_path": "skills/game-world-design/references/narrative-design-method.md",
+      "local_path": "third_party/novel-to-game/narrative-design-method.source.txt",
+      "sha256": "7e11b018e3b9d59bbd7102b4329aecc7c1e1c7c13616475129a8028f0313071d"
+    }
+  ]
+}

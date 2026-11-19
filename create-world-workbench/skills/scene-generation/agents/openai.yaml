@@ -1,0 +1,6 @@
+interface:
+  display_name: "可玩场景生成"
+  short_description: "依据上游固定场景清单与玩法约束，制作统一风格的像素场景、布局和碰撞。"
+  default_prompt: "使用 $scene-generation 按上游完整需求包和固定资产清单制作，只补全视觉与制作细节，不增删资产或改写玩法。"
+policy:
+  allow_implicit_invocation: true

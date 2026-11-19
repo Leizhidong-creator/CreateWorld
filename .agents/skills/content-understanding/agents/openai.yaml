@@ -1,0 +1,6 @@
+interface:
+  display_name: "原作理解与证据"
+  short_description: "拆解小说、剧本、字幕等故事材料，提取人物动机、事件因果和可定位来源，为完整游戏改编提供依据。"
+  default_prompt: "使用 $content-understanding 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

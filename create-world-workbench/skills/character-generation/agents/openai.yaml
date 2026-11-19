@@ -1,0 +1,6 @@
+interface:
+  display_name: "角色基础与特殊动作"
+  short_description: "依据上游固定角色、形态与动作清单，制作一致的三视图、移动和特殊动作。"
+  default_prompt: "使用 $character-generation 按上游完整需求包和固定资产清单制作，只补全视觉与制作细节，不增删资产或改写玩法。"
+policy:
+  allow_implicit_invocation: true

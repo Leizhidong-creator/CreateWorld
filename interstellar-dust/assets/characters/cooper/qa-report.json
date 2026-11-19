@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "character_id": "cooper",
+  "passed": true,
+  "master_preprocessing": {
+    "production_sheet": {
+      "method": "rgb-light-neutral-flood",
+      "confidence": 0.989745,
+      "border_background_fraction": 1.0,
+      "removed_fraction": 0.596721,
+      "source_size": [
+        1086,
+        1448
+      ]
+    }
+  },
+  "production_grid": {
+    "method": "alpha-projection",
+    "source_size": [
+      1086,
+      1448
+    ],
+    "row_bands": [
+      [
+        53,
+        438
+      ],
+      [
+        498,
+        883
+      ],
+      [
+        946,
+        1353
+      ]
+    ],
+    "valid_directions": [
+      "down",
+      "right",
+      "up"
+    ],
+    "errors": {}
+  },
+  "input_segmentation": {
+    "down": {
+      "method": "alpha-projection/alpha-projection",
+      "source_size": [
+        1086,
+        1448
+      ],
+      "subject_bboxes": [
+        [
+          54,
+          53,
+          224,
+          438
+        ],
+        [
+          322,
+          53,
+          498,
+          438
+        ],
+        [
+          591,
+          53,
+          758,
+          438
+        ],
+        [
+          852,
+          53,
+          1030,
+          438
+        ]
+      ]
+    },
+    "up": {
+      "method": "alpha-projection/alpha-projection",
+      "source_size": [
+        1086,
+        1448
+      ],
+      "subject_bboxes": [
+        [
+          54,
+          498,
+          224,
+          883
+        ],
+        [
+          315,
+          498,
+          493,
+          883
+        ],
+        [
+          591,
+          498,
+          758,
+          883
+        ],
+        [
+          855,
+          498,
+          1034,
+          883
+        ]
+      ]
+    },
+    "right": {
+      "method": "alpha-projection/alpha-projection",
+      "source_size": [
+        1086,
+        1448
+      ],
+      "subject_bboxes": [
+        [
+          52,
+          946,
+          222,
+          1353
+        ],
+        [
+          320,
+          946,
+          501,
+          1353
+        ],
+        [
+          587,
+          946,
+          756,
+          1353
+        ],
+        [
+          848,
+          946,
+          1038,
+          1353
+        ]
+      ]
+    },
+    "views": {
+      "method": "production-neutral-frames",
+      "source_size": [
+        1086,
+        1448
+      ],
+      "subject_bboxes": [
+        [
+          54,
+          53,
+          224,
+          438
+        ],
+        [
+          54,
+          498,
+          224,
+          883
+        ],
+        [
+          52,
+          946,
+          222,
+          1353
+        ]
+      ]
+    }
+  },
+  "artifacts": {
+    "views": {
+      "dimensions": [
+        144,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 62,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            11,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 1,
+          "bbox": [
+            11,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 2,
+          "bbox": [
+            12,
+            3,
+            36,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    },
+    "down": {
+      "dimensions": [
+        192,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 61,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            11,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 1,
+          "bbox": [
+            11,
+            3,
+            38,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 2,
+          "bbox": [
+            11,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 3,
+          "bbox": [
+            11,
+            3,
+            38,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    },
+    "up": {
+      "dimensions": [
+        192,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 60,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            11,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 1,
+          "bbox": [
+            11,
+            3,
+            38,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 2,
+          "bbox": [
+            11,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 3,
+          "bbox": [
+            11,
+            3,
+            38,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    },
+    "right": {
+      "dimensions": [
+        192,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 61,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            12,
+            3,
+            36,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 1,
+          "bbox": [
+            11,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 2,
+          "bbox": [
+            12,
+            3,
+            36,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 3,
+          "bbox": [
+            11,
+            3,
+            38,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    },
+    "left": {
+      "dimensions": [
+        192,
+        64
+      ],
+      "dimensions_ok": true,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_color_count": 61,
+      "palette_limit": 64,
+      "frames": [
+        {
+          "index": 0,
+          "bbox": [
+            12,
+            3,
+            36,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 1,
+          "bbox": [
+            11,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 2,
+          "bbox": [
+            12,
+            3,
+            36,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        },
+        {
+          "index": 3,
+          "bbox": [
+            10,
+            3,
+            37,
+            61
+          ],
+          "baseline_aligned": true,
+          "clipped": false
+        }
+      ],
+      "passed": true
+    }
+  },
+  "animations": {
+    "down": {
+      "frames": 4,
+      "size": [
+        48,
+        64
+      ],
+      "passed": true
+    },
+    "up": {
+      "frames": 4,
+      "size": [
+        48,
+        64
+      ],
+      "passed": true
+    },
+    "right": {
+      "frames": 4,
+      "size": [
+        48,
+        64
+      ],
+      "passed": true
+    },
+    "left": {
+      "frames": 4,
+      "size": [
+        48,
+        64
+      ],
+      "passed": true
+    },
+    "overview": {
+      "frames": 4,
+      "size": [
+        384,
+        512
+      ],
+      "passed": true
+    }
+  },
+  "motion": {
+    "down": {
+      "neutral_repeat_difference": 0.0,
+      "first_step_difference": 0.773354,
+      "second_step_difference": 0.749619,
+      "alternating_step_difference": 0.726708,
+      "basic_motion_passed": true,
+      "leg_phase_method": "bottom-18-percent-dominant-foot-offset",
+      "dominant_foot_offsets": [
+        0.0,
+        0.076762,
+        0.0,
+        -0.070019
+      ],
+      "minimum_absolute_offset": 0.015,
+      "expected_action_frame_sides": [
+        "screen-right",
+        "screen-left"
+      ],
+      "leg_alternation_passed": true,
+      "passed": true
+    },
+    "up": {
+      "neutral_repeat_difference": 0.0,
+      "first_step_difference": 0.748315,
+      "second_step_difference": 0.66433,
+      "alternating_step_difference": 0.730388,
+      "basic_motion_passed": true,
+      "leg_phase_method": "bottom-18-percent-dominant-foot-offset",
+      "dominant_foot_offsets": [
+        0.0,
+        0.077485,
+        0.0,
+        -0.065926
+      ],
+      "minimum_absolute_offset": 0.015,
+      "expected_action_frame_sides": [
+        "screen-right",
+        "screen-left"
+      ],
+      "leg_alternation_passed": true,
+      "passed": true
+    },
+    "right": {
+      "neutral_repeat_difference": 0.0,
+      "first_step_difference": 0.846957,
+      "second_step_difference": 0.885204,
+      "alternating_step_difference": 0.915896,
+      "basic_motion_passed": true,
+      "leg_phase_method": "right-profile-24x24-alpha-luminance-template",
+      "side_phase_classifications": [
+        {
+          "classified_as": "A",
+          "confidence_margin": 0.063006,
+          "distance_to_a": 0.343332,
+          "distance_to_b": 0.366419
+        },
+        {
+          "classified_as": "A",
+          "confidence_margin": 0.286505,
+          "distance_to_a": 0.203535,
+          "distance_to_b": 0.285265
+        },
+        {
+          "classified_as": "A",
+          "confidence_margin": 0.063006,
+          "distance_to_a": 0.343332,
+          "distance_to_b": 0.366419
+        },
+        {
+          "classified_as": "B",
+          "confidence_margin": 0.306819,
+          "distance_to_a": 0.270635,
+          "distance_to_b": 0.187599
+        }
+      ],
+      "expected_action_frame_phases": [
+        "A",
+        "B"
+      ],
+      "minimum_confidence_margin": 0.05,
+      "leg_alternation_passed": true,
+      "passed": true
+    }
+  }
+}

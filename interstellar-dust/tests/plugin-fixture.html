@@ -1,0 +1,8 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小游戏容器验证夹具</title><style>body{background:#15262d;color:#e9dfc4;font:18px system-ui;padding:30px}button{padding:12px;margin:5px}#host{border:1px solid #8a9270;min-height:120px;padding:20px}#result{white-space:pre-wrap}</style><h1>小游戏容器验证夹具</h1><p>只用于生命周期测试，不是具体游戏内容。</p><button id="open">打开测试组件</button><button id="cancel">取消</button><button id="broken">测试加载失败</button><section id="host"></section><pre id="result" aria-live="polite">等待测试</pre><script type="module">
+import {MiniGameHost} from '../src/minigames.js';
+const box=document.querySelector('#host'),output=document.querySelector('#result');let destroyed=0;
+const host=new MiniGameHost(box,result=>output.textContent=JSON.stringify({...result,destroyed},null,2));
+host.register('fixture',async()=>({mount(node,c){for(const [label,action] of [['成功',()=>c.complete({score:1})],['失败',()=>c.fail({reason:'test'})]]){const b=document.createElement('button');b.textContent=label;b.addEventListener('click',action,{signal:c.signal});node.append(b);}return {destroy(){destroyed++;}};}}));
+host.register('broken',async()=>{throw new Error('预期的测试错误');});
+document.querySelector('#open').onclick=()=>host.open('fixture');document.querySelector('#cancel').onclick=()=>host.cancel();document.querySelector('#broken').onclick=()=>host.open('broken');
+</script></html>

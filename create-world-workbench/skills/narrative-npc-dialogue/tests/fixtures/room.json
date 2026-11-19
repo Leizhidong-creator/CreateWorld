@@ -1,0 +1,174 @@
+{
+  "npcs": [
+    {
+      "id": "officer",
+      "name": "Officer",
+      "dialogueId": "officer-talk"
+    },
+    {
+      "id": "navigator",
+      "name": "Navigator",
+      "dialogueId": "nav-talk"
+    },
+    {
+      "id": "mechanic",
+      "name": "Mechanic",
+      "dialogueId": "tech-talk"
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "power",
+      "kind": "power",
+      "requires": [
+        "briefed"
+      ]
+    },
+    {
+      "id": "guidance",
+      "kind": "guidance",
+      "requires": [
+        "briefed"
+      ]
+    },
+    {
+      "id": "joke",
+      "kind": "egg",
+      "requires": [],
+      "dialogueId": "joke-talk",
+      "eggFlag": "eggHumor"
+    },
+    {
+      "id": "memory",
+      "kind": "egg",
+      "requires": [
+        "briefed"
+      ],
+      "dialogueId": "memory-talk",
+      "eggFlag": "eggRain"
+    },
+    {
+      "id": "exit",
+      "kind": "exit",
+      "requires": [
+        "briefed",
+        "powerReady",
+        "guidanceReady"
+      ]
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "officer-talk",
+      "branches": [
+        {
+          "id": "brief",
+          "when": {
+            "briefed": false
+          },
+          "lines": [
+            {
+              "speaker": "Officer",
+              "text": "Check the switchboard, then the guidance controls."
+            },
+            {
+              "speaker": "Officer",
+              "text": "Take your time. Both stations are still in training mode."
+            }
+          ],
+          "setFlags": [
+            "briefed"
+          ]
+        },
+        {
+          "id": "again",
+          "when": {},
+          "lines": [
+            {
+              "speaker": "Officer",
+              "text": "I will wait here."
+            }
+          ],
+          "setFlags": []
+        }
+      ]
+    },
+    {
+      "id": "nav-talk",
+      "branches": [
+        {
+          "id": "powered",
+          "when": {
+            "powerReady": true
+          },
+          "lines": [
+            {
+              "speaker": "Navigator",
+              "text": "The power indicator is steady now."
+            }
+          ],
+          "setFlags": []
+        },
+        {
+          "id": "waiting",
+          "when": {},
+          "lines": [
+            {
+              "speaker": "Navigator",
+              "text": "I would rather check twice than guess once."
+            }
+          ],
+          "setFlags": []
+        }
+      ]
+    },
+    {
+      "id": "tech-talk",
+      "branches": [
+        {
+          "id": "only",
+          "when": {},
+          "lines": [
+            {
+              "speaker": "Mechanic",
+              "text": "The old seat still squeaks. Some things never change."
+            }
+          ],
+          "setFlags": []
+        }
+      ]
+    },
+    {
+      "id": "joke-talk",
+      "branches": [
+        {
+          "id": "only",
+          "when": {},
+          "lines": [
+            {
+              "speaker": "Terminal",
+              "text": "Maintenance note: the chair has lodged a complaint."
+            }
+          ],
+          "setFlags": []
+        }
+      ]
+    },
+    {
+      "id": "memory-talk",
+      "branches": [
+        {
+          "id": "only",
+          "when": {},
+          "lines": [
+            {
+              "speaker": "Terminal",
+              "text": "An old recording of rain remains in the archive."
+            }
+          ],
+          "setFlags": []
+        }
+      ]
+    }
+  ]
+}

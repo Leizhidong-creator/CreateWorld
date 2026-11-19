@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "character_id": "cooper",
+  "style_profile": "create-world-bright-chibi-v1",
+  "cell": {
+    "width": 48,
+    "height": 64
+  },
+  "frame_count": 4,
+  "frame_order": [
+    "neutral",
+    "left-step",
+    "neutral",
+    "right-step"
+  ],
+  "frame_duration_ms": 170,
+  "foot_anchor": {
+    "x": 24,
+    "y": 61
+  },
+  "turnaround": {
+    "view_order": [
+      "front",
+      "back",
+      "right"
+    ],
+    "master_png": "masters/cooper_turnaround.png",
+    "sheet_png": "sprites/png/cooper_views.png",
+    "sheet_webp": "sprites/webp/cooper_views.webp"
+  },
+  "directions": {
+    "down": {
+      "sheet_png": "sprites/png/cooper_walk_down_sheet.png",
+      "sheet_webp": "sprites/webp/cooper_walk_down_sheet.webp",
+      "animation_apng": "animations/cooper_walk_down.apng"
+    },
+    "up": {
+      "sheet_png": "sprites/png/cooper_walk_up_sheet.png",
+      "sheet_webp": "sprites/webp/cooper_walk_up_sheet.webp",
+      "animation_apng": "animations/cooper_walk_up.apng"
+    },
+    "right": {
+      "sheet_png": "sprites/png/cooper_walk_right_sheet.png",
+      "sheet_webp": "sprites/webp/cooper_walk_right_sheet.webp",
+      "animation_apng": "animations/cooper_walk_right.apng"
+    },
+    "left": {
+      "sheet_png": "sprites/png/cooper_walk_left_sheet.png",
+      "sheet_webp": "sprites/webp/cooper_walk_left_sheet.webp",
+      "animation_apng": "animations/cooper_walk_left.apng",
+      "derived_from": "right",
+      "transform": "mirror-x-per-frame"
+    }
+  },
+  "masters": {
+    "down": "masters/cooper_walk_down_master.png",
+    "up": "masters/cooper_walk_up_master.png",
+    "right": "masters/cooper_walk_right_master.png"
+  },
+  "overview_gif": "animations/cooper_walk_overview.gif"
+}

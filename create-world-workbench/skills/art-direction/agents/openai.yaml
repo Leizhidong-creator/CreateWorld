@@ -1,0 +1,6 @@
+interface:
+  display_name: "像素美术生产规范"
+  short_description: "接收完整剧情玩法与资产需求，制定指定场景、角色、道具共用的像素美术规范。"
+  default_prompt: "使用 $art-direction 按上游完整需求包和固定资产清单制作，只补全视觉与制作细节，不增删资产或改写玩法。"
+policy:
+  allow_implicit_invocation: true

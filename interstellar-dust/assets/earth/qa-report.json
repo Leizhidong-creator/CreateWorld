@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "metadata": {
+    "scene_id": "earth",
+    "generation_mode": "fast",
+    "input_type": "description",
+    "image_generation_calls": 1
+  },
+  "generation": {
+    "mode": "fast",
+    "input_type": "description",
+    "image_generation_calls": 1,
+    "art_direction_used": false,
+    "art_direction_id": null
+  },
+  "coordinate_space": {
+    "width": 1672,
+    "height": 941
+  },
+  "counts": {
+    "walkable": 1,
+    "obstacles": 5,
+    "anchors": 6
+  },
+  "spec": "interstellar-dust/assets/earth/collision.json",
+  "scene": "interstellar-dust/assets/earth/scene.png",
+  "output": "interstellar-dust/assets/earth/collision-overlay.png",
+  "alignment": {
+    "checked": true,
+    "dimensions": {
+      "scene": {
+        "width": 1672,
+        "height": 941
+      },
+      "collision_overlay": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    "same_dimensions": true,
+    "only_red_added": true,
+    "non_red_pixels_preserved": true,
+    "changed_pixels": 40168,
+    "passed": true
+  }
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "游戏实现与实际验收"
+  short_description: "审查整部游戏是否实现剧情机制和完整流程，区分规则、真实操作、视觉与内容证据。"
+  default_prompt: "使用 $game-reviewer 完成当前任务，按实际需要读取参考与调用工具。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,5 @@
+# These authority/reference files have pinned byte hashes. Do not translate EOLs.
+create-world-workbench/content-spec/*.md -text
+create-world-workbench/content-spec/*.yaml -text
+create-world-workbench/content-spec/*.yml -text
+workflows/story-adaptation/third_party/** -text

@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>游戏候选</title><link rel="stylesheet" href="style.css"><script defer src="game-data.js"></script><script defer src="runtime.js"></script></head>
+<body><header><span class="eyebrow">可玩灰盒 · 离线候选</span><h1 id="game-title"></h1><p>选择行动推进故事。条件未满足时，行动会给出反馈并保留当前进度。</p></header>
+<main id="game" aria-live="polite"><section class="scene"><span id="screen-kind" class="eyebrow"></span><h2 id="screen-title"></h2><div id="scene-media"></div><p id="scene-description"></p><div id="actions" class="actions"></div></section><aside><h2>旅程状态</h2><dl id="state-values"></dl></aside></main>
+<p id="feedback" role="status">准备就绪。</p><nav aria-label="旅程控制"><button id="pause-game">暂停</button><button id="resume-game" hidden>继续旅程</button><button id="restart-game">重新开始</button></nav>
+<details id="save-panel"><summary>保存与恢复旅程</summary><label for="save-data">存档代码</label><textarea id="save-data" rows="5" spellcheck="false"></textarea><div class="actions"><button id="export-save">生成存档</button><button id="import-save">载入存档</button></div></details>
+<footer>此包验证有限状态和界面闭环。美术品质、动作玩法和叙事体验需另行评估。</footer></body></html>

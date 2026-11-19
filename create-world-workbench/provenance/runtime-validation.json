@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-15",
+  "status": "passed",
+  "scope": "framework/runtime/compiler-regression",
+  "unitTests": {
+    "passed": 51,
+    "failed": 0,
+    "command": "node --import tsx --test tests/runtime*.test.ts"
+  },
+  "typecheck": "npx tsc --noEmit passed",
+  "edgeCases": {
+    "evidence": "fixtures/runtime-acceptance/2026-10-15T07-33-01.831Z/evidence.json",
+    "sha256": "a82caf25bccf45a4052512fbc7348776b5876c2776ab94858bb76c63f941c031",
+    "checks": {
+      "cdpTwoIndependentTouches": true,
+      "modalNoInputLeak": true,
+      "realTabFocusLossClearsMovement": true,
+      "dialogueReloadResumesOnceReward": true,
+      "saveRestoreAndRestartProfile": true,
+      "rejectedRewardKeepsPendingCommand": true,
+      "plugin:success": true,
+      "plugin:cancel": true,
+      "plugin:failure": true,
+      "plugin:loaderror": true
+    }
+  },
+  "journeys": {
+    "evidence": "fixtures/runtime-acceptance/2026-10-15T07-33-39.757Z-final-journeys/evidence/evidence.json",
+    "sha256": "49e525f85ccbfa8cffde3725536ac6622c255a109bd7386205b0fd0cccb871cf",
+    "checks": {
+      "mapPauses": true,
+      "pauseResume": true,
+      "ending:together": true,
+      "storageReload": true,
+      "ending:depart": true,
+      "noBrowserErrors": true,
+      "realInput": true
+    }
+  },
+  "builds": [
+    {
+      "build": "fixtures/runtime-acceptance/2026-10-15T07-33-01.831Z/touch",
+      "manifestSha256": "b8d6ecf3546e5482fa8b1ae8b207f6408bc978bb1ddbb65f125076acf4dec2b8",
+      "configHash": "d03e4ddc3b5bcdfa4ce312f8c000bfacd70293be9409cf9f4b401a74dd4900b4",
+      "files": 27,
+      "matchesCurrentRuntime": true
+    },
+    {
+      "build": "fixtures/runtime-acceptance/2026-10-15T07-33-01.831Z/dialogue",
+      "manifestSha256": "28c796b976b029d3ce95929c581a50e7448dd045d0782e41f9548831d4800d69",
+      "configHash": "1d8d89b1bbb12c0d39fd9d6ad492093a2178908ef8708caca53404d3feb89b6e",
+      "files": 27,
+      "matchesCurrentRuntime": true
+    },
+    {
+      "build": "fixtures/runtime-acceptance/2026-10-15T07-33-01.831Z/rejected",
+      "manifestSha256": "15fbe9a742f332eaa9a07a0ef6230f85ef4410963b83918e52a27ef3ab07f671",
+      "configHash": "4c6f2a01cee806dc848721cee813cb63b8b41e0e0099835ad9a358d6faea2021",
+      "files": 27,
+      "matchesCurrentRuntime": true
+    },
+    {
+      "build": "fixtures/runtime-acceptance/2026-10-15T07-33-01.831Z/success",
+      "manifestSha256": "6faed7d0a3d7d8a77ae75fd5f56c4cfb14e84fbdd4e09d77dd0cfcce9dd1a4c7",
+      "configHash": "73d44a8ddba8e01094414ff8efbe9d9302af18d5b4a94441f186b54b0f03d9ad",
+      "files": 28,
+      "matchesCurrentRuntime": true
+    },
+    {
+      "build": "fixtures/runtime-acceptance/2026-10-15T07-33-01.831Z/cancel",
+      "manifestSha256": "d0b33444f6a999d1af7447326035f56f302230d0d3ccc7cf2cf759808cab5370",
+      "configHash": "8aab590fbed619d2686e090555d509e4ce7570077ec5329071f58ad4256c7aa5",
+      "files": 28,
+      "matchesCurrentRuntime": true
+    },
+    {
+      "build": "fixtures/runtime-acceptance/2026-10-15T07-33-01.831Z/failure",
+      "manifestSha256": "6163f8b4fef613ad890f32a9592d5ee3b48e2b40f86faa7a92964b5138634c03",
+      "configHash": "46b7159c581e83fef0b2e39537a4529423b492944252dff498e34a4b5b81e3d4",
+      "files": 28,
+      "matchesCurrentRuntime": true
+    },
+    {
+      "build": "fixtures/runtime-acceptance/2026-10-15T07-33-01.831Z/loaderror",
+      "manifestSha256": "f485ba5cb79624a59d3e4923ace9869c39a748511eaa4d7c8f3795d3e2ac7555",
+      "configHash": "384ebe3e168e5922f06a3cdfb655e644b53e5f316d96a705ce8f1d4a5bd3ee96",
+      "files": 28,
+      "matchesCurrentRuntime": true
+    },
+    {
+      "build": "fixtures/runtime-acceptance/2026-10-15T07-33-39.757Z-final-journeys/harbor",
+      "manifestSha256": "89b64a9affa09d2e4f30156e7c2898b9d128767ed47e240517a08da279e312cd",
+      "configHash": "91d95d0c9521bbfb5adf07f5a514be52eb81bc8f781ef4f66f82d58fe18580e1",
+      "files": 27,
+      "matchesCurrentRuntime": true
+    }
+  ],
+  "limitations": [
+    "触屏为Chrome CDP真实双指事件，不是物理手机验收",
+    "harbor/station是约5分钟原型示例；本轮最终完整浏览器回归为harbor两结局",
+    "原ZIP仅启动至livingRoom，不声明原作主线回归",
+    "新机制和具体生成故事须单独经过工作台宿主验收"
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "美术资产生成"
+  short_description: "按完整剧情玩法与资产需求，统一制作像素场景、角色、道具及固定界面风格。"
+  default_prompt: "使用 $visual-asset-production 接收上游完整需求包，按固定清单统一制作美术资产，不增删资产或改写玩法。"
+policy:
+  allow_implicit_invocation: true

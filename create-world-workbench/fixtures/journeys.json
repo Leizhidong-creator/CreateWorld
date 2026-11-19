@@ -1,0 +1,174 @@
+[
+  {
+    "id": "harbor-main",
+    "config": "harbor.json",
+    "endingId": "together",
+    "steps": [
+      {
+        "action": "exit",
+        "id": "leave-cottage"
+      },
+      {
+        "action": "interact",
+        "id": "talk-keeper"
+      },
+      {
+        "action": "exit",
+        "id": "enter-archive"
+      },
+      {
+        "action": "interact",
+        "id": "read-letter"
+      },
+      {
+        "action": "interact",
+        "id": "talk-archivist"
+      },
+      {
+        "action": "exit",
+        "id": "leave-archive"
+      },
+      {
+        "action": "interact",
+        "id": "light-beacon"
+      },
+      {
+        "action": "interact",
+        "id": "talk-keeper"
+      },
+      {
+        "action": "choice",
+        "label": "把信交给他，让他读一读"
+      }
+    ]
+  },
+  {
+    "id": "harbor-depart",
+    "config": "harbor.json",
+    "endingId": "depart",
+    "steps": [
+      {
+        "action": "exit",
+        "id": "leave-cottage"
+      },
+      {
+        "action": "interact",
+        "id": "talk-keeper"
+      },
+      {
+        "action": "exit",
+        "id": "enter-archive"
+      },
+      {
+        "action": "interact",
+        "id": "read-letter"
+      },
+      {
+        "action": "interact",
+        "id": "talk-archivist"
+      },
+      {
+        "action": "exit",
+        "id": "leave-archive"
+      },
+      {
+        "action": "interact",
+        "id": "light-beacon"
+      },
+      {
+        "action": "interact",
+        "id": "talk-keeper"
+      },
+      {
+        "action": "choice",
+        "label": "把信留在身边，告诉他灯亮了"
+      }
+    ]
+  },
+  {
+    "id": "station-main",
+    "config": "station.json",
+    "endingId": "together",
+    "steps": [
+      {
+        "action": "exit",
+        "id": "leave-cottage"
+      },
+      {
+        "action": "interact",
+        "id": "talk-keeper"
+      },
+      {
+        "action": "exit",
+        "id": "enter-archive"
+      },
+      {
+        "action": "interact",
+        "id": "read-letter"
+      },
+      {
+        "action": "interact",
+        "id": "talk-archivist"
+      },
+      {
+        "action": "exit",
+        "id": "leave-archive"
+      },
+      {
+        "action": "interact",
+        "id": "light-beacon"
+      },
+      {
+        "action": "interact",
+        "id": "talk-keeper"
+      },
+      {
+        "action": "choice",
+        "label": "把信交给他，让他读一读"
+      }
+    ]
+  },
+  {
+    "id": "station-depart",
+    "config": "station.json",
+    "endingId": "depart",
+    "steps": [
+      {
+        "action": "exit",
+        "id": "leave-cottage"
+      },
+      {
+        "action": "interact",
+        "id": "talk-keeper"
+      },
+      {
+        "action": "exit",
+        "id": "enter-archive"
+      },
+      {
+        "action": "interact",
+        "id": "read-letter"
+      },
+      {
+        "action": "interact",
+        "id": "talk-archivist"
+      },
+      {
+        "action": "exit",
+        "id": "leave-archive"
+      },
+      {
+        "action": "interact",
+        "id": "light-beacon"
+      },
+      {
+        "action": "interact",
+        "id": "talk-keeper"
+      },
+      {
+        "action": "choice",
+        "label": "把信留在身边，告诉他灯亮了"
+      }
+    ]
+  }
+]

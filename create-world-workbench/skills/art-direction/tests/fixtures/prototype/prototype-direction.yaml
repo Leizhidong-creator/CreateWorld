@@ -1,0 +1,100 @@
+schema_version: prototype-1.0
+mode: prototype-production
+status: prototype_selected_unvalidated
+revision: 1
+project_slug: portability-fixture
+brief:
+  user_request: Build a bounded pixel game prototype before preference testing.
+  scope: One location, three NPCs, two mechanics.
+  rationale: Fixed camera and a shared scale support readable interaction.
+  native_resolution:
+  - 640
+  - 360
+  camera: fixed top down
+  tile_size: 32
+  character_size:
+  - 24
+  - 40
+  constraints:
+  - nearest-neighbor scaling
+  - code-rendered text
+sample:
+  path: sample.svg
+  sha256: 469253359dffbb540714e81145984f793dd33d9bbbd9dac4d93890b33ab77880
+  width: 640
+  height: 360
+  panels:
+  - gameplay_scene
+  - native_character
+  - ui_hud
+  - narrative_frame
+  origin: manual
+checks:
+- category: source_function
+  status: pass
+  method: deterministic fixture, not real player evidence
+  evidence: fixture covers four labeled panels; this record tests export mechanics
+    only
+- category: craft
+  status: pass
+  method: deterministic fixture, not real player evidence
+  evidence: fixture covers four labeled panels; this record tests export mechanics
+    only
+- category: readability
+  status: pass
+  method: deterministic fixture, not real player evidence
+  evidence: fixture covers four labeled panels; this record tests export mechanics
+    only
+- category: technical
+  status: pass
+  method: deterministic fixture, not real player evidence
+  evidence: fixture covers four labeled panels; this record tests export mechanics
+    only
+- category: production
+  status: pass
+  method: deterministic fixture, not real player evidence
+  evidence: fixture covers four labeled panels; this record tests export mechanics
+    only
+style_system:
+  style_anchor: 潮湿封闭海港中的硬边混合像素视觉，以旧金信号光切开低彩蓝灰空间
+  pixel_policy: 可玩场景严格最近邻，剧情帧允许高细节硬边栅格
+  palette:
+  - 蓝灰阴影
+  - 锈褐中间调
+  - 旧金交互强调
+  - 米白 UI 文字
+  shape_language:
+  - 厚重矩形环境
+  - 清晰角色轮廓
+  - 窄门与长阴影
+  lighting:
+  - 低明度常态
+  - 出口和回信使用旧金边缘光
+  camera:
+  - 固定俯视玩法镜头
+  - 剧情帧使用受压迫近景
+  ui:
+  - 深色实底
+  - 旧金细框
+  - 米白高对比文字
+  motion:
+  - 短促步行动画
+  - 环境低频循环
+  - 回信时一次性光线释放
+  negative_rules:
+  - 不用双线性缩放
+  - 不让材质噪点盖住路径
+  - 不把金色用于普通装饰
+  asset_overrides:
+    gameplay_environment:
+    - 限制纹理对比，出口高一个明度层级
+    characters:
+    - 原生尺寸保持一像素深色轮廓
+    ui_hud:
+    - 文字对比优先于材质
+    narrative_frame:
+    - 允许更多颗粒与电影式近景
+assumptions:
+- No target-player preference data collected.
+limitations:
+- Fixture only. Not a user game asset or proof of visual appeal.

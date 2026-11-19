@@ -1,0 +1,51 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {promises as fs} from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {StoryStore} from '../packages/runtime/state.js';
+import {transitionScene} from '../packages/runtime/scene-transition.js';
+import {canStand,moveBody,imageToWorld,worldToImage,cameraFor} from '../packages/runtime/geometry.js';
+import {frameFor,characterRect} from '../packages/runtime/animation.js';
+import {compileGame,verifyBuild} from '../packages/compiler/index.js';
+const fixture=()=>fs.readFile(new URL('../fixtures/harbor.json',import.meta.url),'utf8').then(JSON.parse);
+const assetDir=fileURLToPath(new URL('../fixtures/assets/',import.meta.url));
+test('failed transaction rolls back state, once, profile and UI commands',async()=>{const c=await fixture(),s=new StoryStore(c);const before=s.snapshot(),events:any[]=[];s.on('command',(v:any)=>events.push(v));s.on('notice',(v:any)=>events.push(v));assert.throws(()=>s.commit([{type:'flag',id:'changed'},{type:'dialogue',id:'note'},{type:'give',id:'key'},{type:'take',id:'letter'}],'bad'));assert.deepEqual(s.snapshot(),before);assert.equal(s.revision,0);assert.deepEqual(events,[]);});
+test('guard observes old state and once commits only after success',async()=>{const s=new StoryStore(await fixture());assert.equal(s.commit([{type:'flag',id:'met'}],'meet',{flag:'met'}),false);assert.equal(s.run.once.includes('meet'),false);assert.equal(s.commit([{type:'flag',id:'met'}],'meet'),true);assert.equal(s.commit([{type:'give',id:'key'}],'meet'),false);assert.equal(s.run.items.key,undefined);});
+test('typed state and invariants reject whole candidate',async()=>{const c=await fixture();c.state={variables:[{id:'energy',type:'int',initial:1,min:0,max:2}],invariants:[{id:'no-empty',if:[{var:'energy',op:'eq',value:0}],then:[{flag:'rested'}]}]};const s=new StoryStore(c);assert.throws(()=>s.commit([{type:'flag',id:'energy',value:3}]));assert.throws(()=>s.commit([{type:'flag',id:'energy',value:0}]));assert.equal(s.run.flags.energy,1);s.commit([{type:'flag',id:'rested'},{type:'flag',id:'energy',value:0}]);assert.equal(s.run.flags.energy,0);});
+test('reward failure rolls back quest progression',async()=>{const c=await fixture();c.quests[0].onComplete=[{type:'take',id:'letter'}];const s=new StoryStore(c);assert.throws(()=>s.commit([{type:'flag',id:'met'}],'meet'));assert.equal(s.run.quests.meet,'active');assert.equal(s.run.flags.met,undefined);assert.deepEqual(s.run.once,[]);});
+test('early acquisition settles later quests once',async()=>{const s=new StoryStore(await fixture());s.commit([{type:'give',id:'letter'},{type:'flag',id:'met'}]);assert.equal(s.run.quests.letter,'done');const before=s.run.once.length;s.commit([]);assert.equal(s.run.once.length,before);});
+test('circle foot cannot clip polygon boundary or circle obstacle',()=>{const scene={width:100,height:100,walkPolygon:[{x:0,y:0},{x:100,y:0},{x:100,y:100},{x:0,y:100}],collisions:[{type:'circle',x:50,y:50,r:10}]};assert.equal(canStand({x:6,y:20},scene,scene.collisions,7),false);assert.equal(canStand({x:35,y:50},scene,scene.collisions,7),false);assert.equal(canStand({x:32,y:50},scene,scene.collisions,7),true);const p={x:20,y:50};moveBody(p,70,0,scene,scene.collisions,7);assert.ok(p.x<=33);});
+test('polygon obstacle and coordinate round trip',()=>{const scene={width:640,height:360,sourceSize:{width:1280,height:720},collisions:[{type:'polygon',points:[{x:100,y:100},{x:200,y:100},{x:150,y:200}]}]};assert.equal(canStand({x:150,y:140},scene),false);assert.equal(canStand({x:50,y:50},scene),true);const roundTrip=worldToImage(imageToWorld({x:230,y:440},scene),scene);assert.ok(Math.abs(roundTrip.x-230)<1e-9&&Math.abs(roundTrip.y-440)<1e-9);assert.deepEqual(cameraFor({x:700,y:500},{width:960,height:640,camera:{mode:'fixed',x:10,y:20}}),{x:10,y:20});});
+test('four-frame atlas and normalized foot anchors',()=>{const d={frameWidth:16,frameHeight:24,width:32,height:48,atlas:{columns:4,rows:{down:0,left:1,right:2,up:3},fps:8,idleFrame:0},anchor:{x:.5,y:.9}};assert.deepEqual(frameFor(d,'up',true,3/8),{x:48,y:72,w:16,h:24});assert.deepEqual(characterRect({x:100,y:100},d),{x:84,y:57,w:32,h:48});const rect={x:5,y:6,w:12,h:15};assert.deepEqual(frameFor({atlas:{directions:{down:[rect]}}},'down'),rect);});
+test('compiler produces relocatable verified build and detects altered/extra resources',async()=>{const tmp=await fs.mkdtemp(path.join(os.tmpdir(),'cw-runtime-'));try{const output=path.join(tmp,'build');const built=await compileGame({config:await fixture(),assetDir,outDir:output,revisionId:'test-1'});assert.equal((await verifyBuild(output)).valid,true);assert.ok(built.manifest.files.some(f=>f.path==='runtime/assets/joystick-base.svg'));for(const notice of ['SOURCE-NOTICE.zh-CN.md','provenance/source.json','provenance/legacy-kit-license-notice.txt','启动说明.txt'])assert.ok(built.manifest.files.some(f=>f.path===notice));assert.match(await fs.readFile(path.join(output,'provenance/legacy-kit-license-notice.txt'),'utf8'),/UNLICENSED/);const bootstrap=await fs.readFile(path.join(output,'bootstrap.js'),'utf8');assert.match(bootstrap,/__CREATE_WORLD_OBSERVE__/);assert.doesNotMatch(bootstrap,/window\.game/);await fs.appendFile(path.join(output,'assets/traveler.svg'),' ');assert.equal((await verifyBuild(output)).valid,false);await fs.writeFile(path.join(output,'unexpected.js'),'');assert.ok((await verifyBuild(output)).errors.some(e=>e.includes('未声明')));}finally{await fs.rm(tmp,{recursive:true,force:true});}});
+test('compiler refuses escaped/remote/symlink assets and missing plugins',async()=>{const tmp=await fs.mkdtemp(path.join(os.tmpdir(),'cw-reject-'));try{for(const src of ['../harbor.json','https://example.com/a.png','%2e%2e/a.png']){const c=await fixture();c.assets[0].src=src;await assert.rejects(compileGame({config:c,assetDir,outDir:path.join(tmp,'x'),revisionId:'reject'}));}const c=await fixture();c.minigames.push({id:'unimplemented',title:'Missing'});await assert.rejects(compileGame({config:c,assetDir,outDir:path.join(tmp,'x'),revisionId:'reject'}),/extensions/);
+// Directory junctions/symlinks are testable without Windows file-symlink privileges.
+const link=path.join(tmp,'assets-link');
+try{await fs.symlink(assetDir,link,process.platform==='win32'?'junction':undefined);await assert.rejects(compileGame({config:await fixture(),assetDir:link,outDir:path.join(tmp,'x'),revisionId:'reject'}),/符号链接/);}catch(error:any){if(error?.code!=='EPERM'&&error?.code!=='EACCES'&&error?.code!=='EINVAL')throw error;}}finally{await fs.rm(tmp,{recursive:true,force:true});}});
+test('compiler rejects atlas rectangles outside actual image',async()=>{const c=await fixture();c.characters[0].atlas={columns:99};await assert.rejects(compileGame({config:c,assetDir,outDir:path.join(os.tmpdir(),'cw-never-created'),revisionId:'reject'}),/越出/);});
+
+test('bounded explorer uses transaction semantics and produces ending witnesses',async()=>{const {analyzeReachability}=await import('../packages/compiler/reachability.js');const c=await fixture();const r=analyzeReachability(c,{maxStates:10000});assert.equal(r.status,'passed',JSON.stringify({errors:r.errors,softlocks:r.softlocks,states:r.statesExplored}));assert.deepEqual(r.reachableEndings.sort(),['depart','together']);assert.ok(r.witnesses.together.some(s=>s.action==='choice'));});
+test('explorer detects softlock and reports budget/custom as unknown',async()=>{const {analyzeReachability}=await import('../packages/compiler/reachability.js');const c=await fixture();c.scenes[0].exits=[];assert.equal(analyzeReachability(c).status,'failed');assert.equal(analyzeReachability(await fixture(),{maxStates:1}).status,'unknown');const plugin=await fixture();plugin.scenes[0].interactions[0].actions=[{type:'custom',id:'test'}];assert.equal(analyzeReachability(plugin).status,'unknown');});
+
+test('scene transition validates destination and onEnter as one transaction',()=>{
+ const config:any={id:'transition-test',start:{scene:'a',position:{x:20,y:20}},player:{speed:100,radius:7,character:'hero'},quests:[],items:[],state:{variables:[]},scenes:[
+  {id:'a',width:640,height:360,collisions:[],objects:[],onEnter:[]},
+  {id:'b',width:640,height:360,collisions:[{x:0,y:0,w:100,h:100}],objects:[],onEnter:[{type:'flag',id:'entered'}]},
+ ]};
+ const store=new StoryStore(config),before=store.snapshot();
+ assert.throws(()=>transitionScene(store,config,'b',{x:20,y:20}),/落点被物件阻挡/);
+ assert.deepEqual(store.snapshot(),before);
+ config.scenes[1].collisions=[];
+ transitionScene(store,config,'b',{x:200,y:200});
+ assert.equal(store.run.scene,'b');assert.equal(store.run.visits.b,1);assert.equal(store.run.flags.entered,true);assert.ok(store.run.once.includes('enter:b'));
+ config.scenes[1].onEnter=[{type:'take',id:'missing'}];
+ const fresh=new StoryStore(config),restored=fresh.snapshot();
+ assert.throws(()=>transitionScene(fresh,config,'b',{x:200,y:200}));
+ assert.deepEqual(fresh.snapshot(),restored);
+});
+
+// Commands must be visible to persistence only after the transaction's effects publish.
+test('command events precede persistence and failed commits publish neither',async()=>{const s=new StoryStore(await fixture()),queue:any[]=[],saved:any[]=[];s.on('command',(a:any)=>queue.push(a));s.on('change',()=>saved.push({...s.snapshot(),queue:structuredClone(queue)}));s.commit([{type:'dialogue',id:'note'}],'interaction:note');assert.equal(saved[0].queue[0].id,'note');assert.ok(saved[0].run.once.includes('interaction:note'));assert.throws(()=>s.commit([{type:'dialogue',id:'note'},{type:'take',id:'letter'}]));assert.equal(saved.length,1);});
+test('damaged saved state and missing pending references are rejected without throwing',async()=>{const {validRun}=await import('../packages/runtime/storage.js');const c=await fixture(),s=new StoryStore(c);c.scenes[0].objects.push({id:'conditional',when:{flag:'lock'},solid:{x:10,y:10,w:20,h:20}});const malformed=structuredClone(s.run);delete malformed.flags;assert.equal(validRun(malformed,c),false);const stale=structuredClone(s.run);stale.pendingCommands=[{type:'dialogue',id:'removed-dialogue'}];assert.equal(validRun(stale,c),false);const valid=structuredClone(s.run);valid.pendingCommands=[{type:'dialogue',id:'note'}];assert.equal(validRun(valid,c),true);});
