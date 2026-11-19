@@ -381,21 +381,6 @@ From art direction to acceptance
 </tr>
 </table>
 
-<br/>
-
-**Progress and plan**
-
-- [x] Front-end experience live at `createworld.games`
-- [x] Full production runs for *The Three-Body Problem* and *Beyond the High Walls*
-- [x] Plugin market, co-creation pages and workbench versioning
-- [ ] Backend concurrency and failure recovery
-- [ ] Staged closed beta
-- [ ] Commercial pilots: subscription, IP commissions, marketplace
-
-<sub>Beta figures are provided by the team; the two groups may overlap.</sub>
-
----
-
 ---
 
 <div align="center">
@@ -412,4 +397,6 @@ From art direction to acceptance
 <sub>Works based on third-party IP are fan-made demos by beta users. All rights remain with their respective rights holders; removal on request.</sub>
 
 </div>
+
+
 

@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
   <img src="assets/brand/banner.jpg" alt="Create World — 你的故事，世界的开始" width="100%" />
 </div>
 
@@ -272,18 +272,6 @@ https://github.com/user-attachments/assets/04df0dd9-7341-461d-b7ec-2a46d0729d8b
 - 《高墙之外》《雾港来信》《山风归途》《轨道余声》《尘埃之外》等作品已完成制作或上架。
 - 产品依据核心用户反馈每日迭代。
 
-**进展与计划**
-
-- [ ] 完善后台并发调度、API 稳健性与异常恢复
-- [ ] 从内测意向群与核心社群分批开放灰度
-- [ ] 持续修复生成、修改、运行与社区反馈中的问题
-- [ ] 验证稳定性后，准备区域性更大范围上线
-- [ ] 并行推进 IP 共创、定制与推广试点
-
-<sub>内测用户与社群成员两类群体可能重合，不合并计算。</sub>
-
----
-
 ---
 
 <div align="center">
@@ -299,3 +287,5 @@ https://github.com/user-attachments/assets/04df0dd9-7341-461d-b7ec-2a46d0729d8b
 <sub>© 2026 CW Team. All rights reserved. Product figures provided by the team. Works based on third-party IP are fan-made demos by beta users.</sub>
 
 </div>
+
+

@@ -396,21 +396,6 @@ CreateWorld/
 </tr>
 </table>
 
-<br/>
-
-**进展与计划**
-
-- [x] 纯前端体验版上线（`createworld.games`）
-- [x] 《三体》《高墙之外》等作品完成全流程制作
-- [x] 插件市场、共创页与工作台版本管理
-- [ ] 后台并发调度与异常恢复
-- [ ] 核心用户灰度，分批开放
-- [ ] 商业化试点：创作订阅、IP 定制与作品交易
-
-<sub>内测数据由项目方提供，两类群体可能重合，不合并计算。</sub>
-
----
-
 ---
 
 <div align="center">
@@ -427,4 +412,6 @@ CreateWorld/
 <sub>Works based on third-party IP are fan-made demos by beta users. All rights remain with their respective rights holders; removal on request.</sub>
 
 </div>
+
+
 
